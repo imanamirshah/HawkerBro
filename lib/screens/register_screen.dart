@@ -1,7 +1,7 @@
 import 'package:country_picker/country_picker.dart';
 import 'package:flutter/material.dart';
-import 'package:orbitalflutter/provider/auth_provider.dart';
-import 'package:orbitalflutter/widgets/custom_button.dart';
+import 'package:hawkerbro/provider/auth_provider.dart';
+import 'package:hawkerbro/widgets/custom_button.dart';
 import 'package:provider/provider.dart';
 //import 'package:firebase_auth/firebase_auth.dart';
 

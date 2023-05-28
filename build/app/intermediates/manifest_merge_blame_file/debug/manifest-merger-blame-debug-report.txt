@@ -1,6 +1,6 @@
 1<?xml version="1.0" encoding="utf-8"?>
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-3    package="com.example.orbitalflutter"
+3    package="com.example.hawkerbro"
 4    android:versionCode="1"
 5    android:versionName="1.0.0" >
 6
@@ -13,14 +13,14 @@
 13         to allow setting breakpoints, to provide hot reload, etc.
 14    -->
 15    <uses-permission android:name="android.permission.INTERNET" />
-15-->C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\android\app\src\debug\AndroidManifest.xml:6:5-66
-15-->C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\android\app\src\debug\AndroidManifest.xml:6:22-64
+15-->C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\android\app\src\debug\AndroidManifest.xml:6:5-66
+15-->C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\android\app\src\debug\AndroidManifest.xml:6:22-64
 16    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-16-->[:firebase_analytics] C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\firebase_analytics\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-79
-16-->[:firebase_analytics] C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\firebase_analytics\intermediates\merged_manifest\debug\AndroidManifest.xml:9:22-76
+16-->[:firebase_analytics] C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\firebase_analytics\intermediates\merged_manifest\debug\AndroidManifest.xml:9:5-79
+16-->[:firebase_analytics] C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\firebase_analytics\intermediates\merged_manifest\debug\AndroidManifest.xml:9:22-76
 17    <uses-permission android:name="android.permission.WAKE_LOCK" />
-17-->[:firebase_analytics] C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\firebase_analytics\intermediates\merged_manifest\debug\AndroidManifest.xml:11:5-68
-17-->[:firebase_analytics] C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\firebase_analytics\intermediates\merged_manifest\debug\AndroidManifest.xml:11:22-65
+17-->[:firebase_analytics] C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\firebase_analytics\intermediates\merged_manifest\debug\AndroidManifest.xml:11:5-68
+17-->[:firebase_analytics] C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\firebase_analytics\intermediates\merged_manifest\debug\AndroidManifest.xml:11:22-65
 18    <uses-permission android:name="com.google.android.gms.permission.AD_ID" />
 18-->[com.google.android.gms:play-services-measurement-api:21.2.2] C:\Users\imana\.gradle\caches\transforms-3\6a0160c789a7034a6bdb138a5b2184e5\transformed\jetified-play-services-measurement-api-21.2.2\AndroidManifest.xml:25:5-79
 18-->[com.google.android.gms:play-services-measurement-api:21.2.2] C:\Users\imana\.gradle\caches\transforms-3\6a0160c789a7034a6bdb138a5b2184e5\transformed\jetified-play-services-measurement-api-21.2.2\AndroidManifest.xml:25:22-76
@@ -30,12 +30,12 @@
 20
 21    <permission
 21-->[androidx.core:core:1.9.0] C:\Users\imana\.gradle\caches\transforms-3\c2aff38445ebad8ddeaa989ecf50f56e\transformed\core-1.9.0\AndroidManifest.xml:22:5-24:47
-22        android:name="com.example.orbitalflutter.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+22        android:name="com.example.hawkerbro.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
 22-->[androidx.core:core:1.9.0] C:\Users\imana\.gradle\caches\transforms-3\c2aff38445ebad8ddeaa989ecf50f56e\transformed\core-1.9.0\AndroidManifest.xml:23:9-81
 23        android:protectionLevel="signature" />
 23-->[androidx.core:core:1.9.0] C:\Users\imana\.gradle\caches\transforms-3\c2aff38445ebad8ddeaa989ecf50f56e\transformed\core-1.9.0\AndroidManifest.xml:24:9-44
 24
-25    <uses-permission android:name="com.example.orbitalflutter.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+25    <uses-permission android:name="com.example.hawkerbro.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
 25-->[androidx.core:core:1.9.0] C:\Users\imana\.gradle\caches\transforms-3\c2aff38445ebad8ddeaa989ecf50f56e\transformed\core-1.9.0\AndroidManifest.xml:26:5-97
 25-->[androidx.core:core:1.9.0] C:\Users\imana\.gradle\caches\transforms-3\c2aff38445ebad8ddeaa989ecf50f56e\transformed\core-1.9.0\AndroidManifest.xml:26:22-94
 26
@@ -45,9 +45,9 @@
 29-->[androidx.core:core:1.9.0] C:\Users\imana\.gradle\caches\transforms-3\c2aff38445ebad8ddeaa989ecf50f56e\transformed\core-1.9.0\AndroidManifest.xml:28:18-86
 30        android:debuggable="true"
 31        android:icon="@mipmap/ic_launcher"
-32        android:label="orbitalflutter" >
+32        android:label="hawkerbro" >
 33        <activity
-34            android:name="com.example.orbitalflutter.MainActivity"
+34            android:name="com.example.hawkerbro.MainActivity"
 35            android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
 36            android:exported="true"
 37            android:hardwareAccelerated="true"
@@ -80,43 +80,43 @@
 64            android:value="2" />
 65
 66        <service
-66-->[:firebase_analytics] C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\firebase_analytics\intermediates\merged_manifest\debug\AndroidManifest.xml:14:9-18:19
+66-->[:firebase_analytics] C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\firebase_analytics\intermediates\merged_manifest\debug\AndroidManifest.xml:14:9-18:19
 67            android:name="com.google.firebase.components.ComponentDiscoveryService"
-67-->[:firebase_analytics] C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\firebase_analytics\intermediates\merged_manifest\debug\AndroidManifest.xml:14:18-89
+67-->[:firebase_analytics] C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\firebase_analytics\intermediates\merged_manifest\debug\AndroidManifest.xml:14:18-89
 68            android:directBootAware="true"
 68-->[com.google.firebase:firebase-common:20.3.2] C:\Users\imana\.gradle\caches\transforms-3\6e10d488ebcc23afefc866560645fd3c\transformed\jetified-firebase-common-20.3.2\AndroidManifest.xml:34:13-43
 69            android:exported="false" >
 69-->[com.google.firebase:firebase-auth:22.0.0] C:\Users\imana\.gradle\caches\transforms-3\addd1e7d7380e6c086f46a0c78155c8a\transformed\jetified-firebase-auth-22.0.0\AndroidManifest.xml:68:13-37
 70            <meta-data
-70-->[:firebase_analytics] C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\firebase_analytics\intermediates\merged_manifest\debug\AndroidManifest.xml:15:13-17:85
+70-->[:firebase_analytics] C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\firebase_analytics\intermediates\merged_manifest\debug\AndroidManifest.xml:15:13-17:85
 71                android:name="com.google.firebase.components:io.flutter.plugins.firebase.analytics.FlutterFirebaseAppRegistrar"
-71-->[:firebase_analytics] C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\firebase_analytics\intermediates\merged_manifest\debug\AndroidManifest.xml:16:17-128
+71-->[:firebase_analytics] C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\firebase_analytics\intermediates\merged_manifest\debug\AndroidManifest.xml:16:17-128
 72                android:value="com.google.firebase.components.ComponentRegistrar" />
-72-->[:firebase_analytics] C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\firebase_analytics\intermediates\merged_manifest\debug\AndroidManifest.xml:17:17-82
+72-->[:firebase_analytics] C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\firebase_analytics\intermediates\merged_manifest\debug\AndroidManifest.xml:17:17-82
 73            <meta-data
-73-->[:firebase_auth] C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-13:85
+73-->[:firebase_auth] C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-13:85
 74                android:name="com.google.firebase.components:io.flutter.plugins.firebase.auth.FlutterFirebaseAuthRegistrar"
-74-->[:firebase_auth] C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:12:17-124
+74-->[:firebase_auth] C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:12:17-124
 75                android:value="com.google.firebase.components.ComponentRegistrar" />
-75-->[:firebase_auth] C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:13:17-82
+75-->[:firebase_auth] C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\firebase_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:13:17-82
 76            <meta-data
-76-->[:firebase_storage] C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\firebase_storage\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-13:85
+76-->[:firebase_storage] C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\firebase_storage\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-13:85
 77                android:name="com.google.firebase.components:io.flutter.plugins.firebase.storage.FlutterFirebaseAppRegistrar"
-77-->[:firebase_storage] C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\firebase_storage\intermediates\merged_manifest\debug\AndroidManifest.xml:12:17-126
+77-->[:firebase_storage] C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\firebase_storage\intermediates\merged_manifest\debug\AndroidManifest.xml:12:17-126
 78                android:value="com.google.firebase.components.ComponentRegistrar" />
-78-->[:firebase_storage] C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\firebase_storage\intermediates\merged_manifest\debug\AndroidManifest.xml:13:17-82
+78-->[:firebase_storage] C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\firebase_storage\intermediates\merged_manifest\debug\AndroidManifest.xml:13:17-82
 79            <meta-data
-79-->[:cloud_firestore] C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-13:85
+79-->[:cloud_firestore] C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-13:85
 80                android:name="com.google.firebase.components:io.flutter.plugins.firebase.firestore.FlutterFirebaseFirestoreRegistrar"
-80-->[:cloud_firestore] C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:12:17-134
+80-->[:cloud_firestore] C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:12:17-134
 81                android:value="com.google.firebase.components.ComponentRegistrar" />
-81-->[:cloud_firestore] C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:13:17-82
+81-->[:cloud_firestore] C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\cloud_firestore\intermediates\merged_manifest\debug\AndroidManifest.xml:13:17-82
 82            <meta-data
-82-->[:firebase_core] C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-13:85
+82-->[:firebase_core] C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-13:85
 83                android:name="com.google.firebase.components:io.flutter.plugins.firebase.core.FlutterFirebaseCoreRegistrar"
-83-->[:firebase_core] C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:12:17-124
+83-->[:firebase_core] C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:12:17-124
 84                android:value="com.google.firebase.components.ComponentRegistrar" />
-84-->[:firebase_core] C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:13:17-82
+84-->[:firebase_core] C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:13:17-82
 85            <meta-data
 85-->[com.google.firebase:firebase-auth:22.0.0] C:\Users\imana\.gradle\caches\transforms-3\addd1e7d7380e6c086f46a0c78155c8a\transformed\jetified-firebase-auth-22.0.0\AndroidManifest.xml:69:13-71:85
 86                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
@@ -150,21 +150,21 @@
 100        </service>
 101
 102        <provider
-102-->[:image_picker_android] C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-18:20
+102-->[:image_picker_android] C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:10:9-18:20
 103            android:name="io.flutter.plugins.imagepicker.ImagePickerFileProvider"
-103-->[:image_picker_android] C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-82
-104            android:authorities="com.example.orbitalflutter.flutter.image_provider"
-104-->[:image_picker_android] C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:12:13-74
+103-->[:image_picker_android] C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:11:13-82
+104            android:authorities="com.example.hawkerbro.flutter.image_provider"
+104-->[:image_picker_android] C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:12:13-74
 105            android:exported="false"
-105-->[:image_picker_android] C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:13:13-37
+105-->[:image_picker_android] C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:13:13-37
 106            android:grantUriPermissions="true" >
-106-->[:image_picker_android] C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:14:13-47
+106-->[:image_picker_android] C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:14:13-47
 107            <meta-data
-107-->[:image_picker_android] C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:15:13-17:75
+107-->[:image_picker_android] C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:15:13-17:75
 108                android:name="android.support.FILE_PROVIDER_PATHS"
-108-->[:image_picker_android] C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:16:17-67
+108-->[:image_picker_android] C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:16:17-67
 109                android:resource="@xml/flutter_image_picker_file_paths" />
-109-->[:image_picker_android] C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:17:17-72
+109-->[:image_picker_android] C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:17:17-72
 110        </provider>
 111
 112        <activity
@@ -275,7 +275,7 @@
 168-->[com.google.firebase:firebase-common:20.3.2] C:\Users\imana\.gradle\caches\transforms-3\6e10d488ebcc23afefc866560645fd3c\transformed\jetified-firebase-common-20.3.2\AndroidManifest.xml:25:9-30:39
 169            android:name="com.google.firebase.provider.FirebaseInitProvider"
 169-->[com.google.firebase:firebase-common:20.3.2] C:\Users\imana\.gradle\caches\transforms-3\6e10d488ebcc23afefc866560645fd3c\transformed\jetified-firebase-common-20.3.2\AndroidManifest.xml:26:13-77
-170            android:authorities="com.example.orbitalflutter.firebaseinitprovider"
+170            android:authorities="com.example.hawkerbro.firebaseinitprovider"
 170-->[com.google.firebase:firebase-common:20.3.2] C:\Users\imana\.gradle\caches\transforms-3\6e10d488ebcc23afefc866560645fd3c\transformed\jetified-firebase-common-20.3.2\AndroidManifest.xml:27:13-72
 171            android:directBootAware="true"
 171-->[com.google.firebase:firebase-common:20.3.2] C:\Users\imana\.gradle\caches\transforms-3\6e10d488ebcc23afefc866560645fd3c\transformed\jetified-firebase-common-20.3.2\AndroidManifest.xml:28:13-43
@@ -337,7 +337,7 @@
 202-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\imana\.gradle\caches\transforms-3\635b1770925726da461e843c0a3c6641\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:24:9-32:20
 203            android:name="androidx.startup.InitializationProvider"
 203-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\imana\.gradle\caches\transforms-3\635b1770925726da461e843c0a3c6641\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:25:13-67
-204            android:authorities="com.example.orbitalflutter.androidx-startup"
+204            android:authorities="com.example.hawkerbro.androidx-startup"
 204-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\imana\.gradle\caches\transforms-3\635b1770925726da461e843c0a3c6641\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:26:13-68
 205            android:exported="false" >
 205-->[androidx.profileinstaller:profileinstaller:1.3.0] C:\Users\imana\.gradle\caches\transforms-3\635b1770925726da461e843c0a3c6641\transformed\jetified-profileinstaller-1.3.0\AndroidManifest.xml:27:13-37

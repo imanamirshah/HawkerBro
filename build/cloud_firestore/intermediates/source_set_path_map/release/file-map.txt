@@ -7,10 +7,10 @@ io.flutter.plugins.firebase.firestore.cloud_firestore-jetified-play-services-bas
 io.flutter.plugins.firebase.firestore.cloud_firestore-jetified-window-java-1.0.0-beta04-6 C:\Users\imana\.gradle\caches\transforms-3\ae81e06d24c799147c26814497a2a305\transformed\jetified-window-java-1.0.0-beta04\res
 io.flutter.plugins.firebase.firestore.cloud_firestore-main-7 C:\Users\imana\AppData\Local\Pub\Cache\hosted\pub.dev\cloud_firestore-4.7.1\android\src\main\res
 io.flutter.plugins.firebase.firestore.cloud_firestore-release-8 C:\Users\imana\AppData\Local\Pub\Cache\hosted\pub.dev\cloud_firestore-4.7.1\android\src\release\res
-io.flutter.plugins.firebase.firestore.cloud_firestore-pngs-9 C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\cloud_firestore\generated\res\pngs\release
-io.flutter.plugins.firebase.firestore.cloud_firestore-resValues-10 C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\cloud_firestore\generated\res\resValues\release
-io.flutter.plugins.firebase.firestore.cloud_firestore-rs-11 C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\cloud_firestore\generated\res\rs\release
-io.flutter.plugins.firebase.firestore.cloud_firestore-mergeReleaseResources-12 C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\cloud_firestore\intermediates\incremental\release\mergeReleaseResources\merged.dir
-io.flutter.plugins.firebase.firestore.cloud_firestore-mergeReleaseResources-13 C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\cloud_firestore\intermediates\incremental\release\mergeReleaseResources\stripped.dir
-io.flutter.plugins.firebase.firestore.cloud_firestore-merged_res-14 C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\cloud_firestore\intermediates\merged_res\release
-io.flutter.plugins.firebase.firestore.cloud_firestore-packaged_res-15 C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\firebase_core\intermediates\packaged_res\release
+io.flutter.plugins.firebase.firestore.cloud_firestore-pngs-9 C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\cloud_firestore\generated\res\pngs\release
+io.flutter.plugins.firebase.firestore.cloud_firestore-resValues-10 C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\cloud_firestore\generated\res\resValues\release
+io.flutter.plugins.firebase.firestore.cloud_firestore-rs-11 C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\cloud_firestore\generated\res\rs\release
+io.flutter.plugins.firebase.firestore.cloud_firestore-mergeReleaseResources-12 C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\cloud_firestore\intermediates\incremental\release\mergeReleaseResources\merged.dir
+io.flutter.plugins.firebase.firestore.cloud_firestore-mergeReleaseResources-13 C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\cloud_firestore\intermediates\incremental\release\mergeReleaseResources\stripped.dir
+io.flutter.plugins.firebase.firestore.cloud_firestore-merged_res-14 C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\cloud_firestore\intermediates\merged_res\release
+io.flutter.plugins.firebase.firestore.cloud_firestore-packaged_res-15 C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\firebase_core\intermediates\packaged_res\release

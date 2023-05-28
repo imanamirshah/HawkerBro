@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.orbitalflutter.app-mergeReleaseResources-25:/values-pt-rPT/values-pt-rPT.xml",
+            "outputFile": "com.example.hawkerbro.app-mergeReleaseResources-25:/values-pt-rPT/values-pt-rPT.xml",
             "map": [
                 {
                     "source": "C:\\Users\\imana\\.gradle\\caches\\transforms-3\\aba8f806953ea3dd8f794da3aeb78a12\\transformed\\jetified-play-services-base-18.0.1\\res\\values-pt-rPT\\values.xml",

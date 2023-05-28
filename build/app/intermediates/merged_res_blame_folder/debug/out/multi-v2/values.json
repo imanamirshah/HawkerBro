@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.orbitalflutter.app-mergeDebugResources-25:/values/values.xml",
+            "outputFile": "com.example.hawkerbro.app-mergeDebugResources-25:/values/values.xml",
             "map": [
                 {
                     "source": "C:\\Users\\imana\\.gradle\\caches\\transforms-3\\25cee5f028ac2a6b79fd6278ff5b59e2\\transformed\\jetified-window-1.0.0-beta04\\res\\values\\values.xml",
@@ -54,6 +54,25 @@
                         "startOffsets": "6579",
                         "endColumns": "53",
                         "endOffsets": "6628"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\imana\\OneDrive\\Documents\\flutter\\hawkerbro\\android\\app\\src\\main\\res\\values\\styles.xml",
+                    "from": {
+                        "startLines": "3,14",
+                        "startColumns": "4,4",
+                        "startOffsets": "176,832",
+                        "endLines": "7,16",
+                        "endColumns": "12,12",
+                        "endOffsets": "483,998"
+                    },
+                    "to": {
+                        "startLines": "136,140",
+                        "startColumns": "4,4",
+                        "startOffsets": "9591,9772",
+                        "endLines": "139,142",
+                        "endColumns": "12,12",
+                        "endOffsets": "9767,9936"
                     }
                 },
                 {
@@ -160,25 +179,6 @@
                         "startOffsets": "6633",
                         "endColumns": "49",
                         "endOffsets": "6678"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\imana\\OneDrive\\Documents\\flutter\\orbitalflutter\\android\\app\\src\\main\\res\\values\\styles.xml",
-                    "from": {
-                        "startLines": "3,14",
-                        "startColumns": "4,4",
-                        "startOffsets": "176,832",
-                        "endLines": "7,16",
-                        "endColumns": "12,12",
-                        "endOffsets": "483,998"
-                    },
-                    "to": {
-                        "startLines": "136,140",
-                        "startColumns": "4,4",
-                        "startOffsets": "9591,9772",
-                        "endLines": "139,142",
-                        "endColumns": "12,12",
-                        "endOffsets": "9767,9936"
                     }
                 },
                 {

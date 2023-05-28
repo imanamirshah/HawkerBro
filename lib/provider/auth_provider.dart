@@ -4,9 +4,9 @@ import 'dart:io';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
-import 'package:orbitalflutter/model/user_model.dart';
-import 'package:orbitalflutter/screens/otp_screen.dart';
-import 'package:orbitalflutter/utils/utils.dart';
+import 'package:hawkerbro/model/user_model.dart';
+import 'package:hawkerbro/screens/otp_screen.dart';
+import 'package:hawkerbro/utils/utils.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 

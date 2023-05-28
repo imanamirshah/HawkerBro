@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.orbitalflutter.app-mergeReleaseResources-25:/values-sl/values-sl.xml",
+            "outputFile": "com.example.hawkerbro.app-mergeReleaseResources-25:/values-sl/values-sl.xml",
             "map": [
                 {
                     "source": "C:\\Users\\imana\\.gradle\\caches\\transforms-3\\c2aff38445ebad8ddeaa989ecf50f56e\\transformed\\core-1.9.0\\res\\values-sl\\values-sl.xml",

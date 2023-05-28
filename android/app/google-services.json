@@ -9,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:484751014681:android:8a6c2e55414ec3080ca388",
         "android_client_info": {
-          "package_name": "com.example.orbitalflutter"
+          "package_name": "com.example.hawkerbro"
         }
       },
       "oauth_client": [
@@ -17,7 +17,7 @@
           "client_id": "484751014681-mkk29kmdqtepcfkq6k7pqk535es54d33.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.orbitalflutter",
+            "package_name": "com.example.hawkerbro",
             "certificate_hash": "01d55c9335a2951a0fa636a279de33f250a51e91"
           }
         },
@@ -42,7 +42,7 @@
               "client_id": "484751014681-2usrrom8hqa0kqjqle5qarqs9c4bov4o.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.example.orbitalflutter.RunnerTests"
+                "bundle_id": "com.example.hawkerbro.RunnerTests"
               }
             }
           ]

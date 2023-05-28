@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.orbitalflutter.app-mergeReleaseResources-25:/values-night-v8/values-night-v8.xml",
+            "outputFile": "com.example.hawkerbro.app-mergeReleaseResources-25:/values-night-v8/values-night-v8.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\imana\\OneDrive\\Documents\\flutter\\orbitalflutter\\android\\app\\src\\main\\res\\values-night\\styles.xml",
+                    "source": "C:\\Users\\imana\\OneDrive\\Documents\\flutter\\hawkerbro\\android\\app\\src\\main\\res\\values-night\\styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",

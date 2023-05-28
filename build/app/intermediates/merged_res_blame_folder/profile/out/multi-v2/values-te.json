@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.orbitalflutter.app-mergeProfileResources-13:/values-te/values-te.xml",
+            "outputFile": "com.example.hawkerbro.app-mergeProfileResources-13:/values-te/values-te.xml",
             "map": [
                 {
                     "source": "C:\\Users\\imana\\.gradle\\caches\\transforms-3\\58aa1384bde170d075503b845cfcf44c\\transformed\\jetified-play-services-basement-18.1.0\\res\\values-te\\values.xml",

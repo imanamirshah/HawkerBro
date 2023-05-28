@@ -1,11 +1,11 @@
 <lint-module
     format="1"
-    dir="C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\android\app"
+    dir="C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\android\app"
     name=":app"
     type="APP"
     maven="android:app:"
     gradle="7.3.0"
-    buildFolder="C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\app"
+    buildFolder="C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\app"
     bootClassPath="C:\Users\imana\AppData\Local\Android\sdk\platforms\android-33\android.jar;C:\Users\imana\AppData\Local\Android\sdk\build-tools\30.0.3\core-lambda-stubs.jar"
     javaSourceLevel="1.8"
     compileTarget="android-33">

@@ -1,16 +1,16 @@
 -- Merging decision tree log ---
 application
-INJECTED from C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\android\app\src\main\AndroidManifest.xml:2:5-32:19
-MERGED from [:firebase_analytics] C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\firebase_analytics\intermediates\merged_manifest\profile\AndroidManifest.xml:13:5-19:19
-MERGED from [:firebase_analytics] C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\firebase_analytics\intermediates\merged_manifest\profile\AndroidManifest.xml:13:5-19:19
-MERGED from [:firebase_auth] C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\firebase_auth\intermediates\merged_manifest\profile\AndroidManifest.xml:9:5-15:19
-MERGED from [:firebase_auth] C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\firebase_auth\intermediates\merged_manifest\profile\AndroidManifest.xml:9:5-15:19
-MERGED from [:firebase_storage] C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\firebase_storage\intermediates\merged_manifest\profile\AndroidManifest.xml:9:5-15:19
-MERGED from [:firebase_storage] C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\firebase_storage\intermediates\merged_manifest\profile\AndroidManifest.xml:9:5-15:19
-MERGED from [:cloud_firestore] C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\cloud_firestore\intermediates\merged_manifest\profile\AndroidManifest.xml:9:5-15:19
-MERGED from [:cloud_firestore] C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\cloud_firestore\intermediates\merged_manifest\profile\AndroidManifest.xml:9:5-15:19
-MERGED from [:firebase_core] C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\firebase_core\intermediates\merged_manifest\profile\AndroidManifest.xml:9:5-15:19
-MERGED from [:firebase_core] C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\firebase_core\intermediates\merged_manifest\profile\AndroidManifest.xml:9:5-15:19
+INJECTED from C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\android\app\src\main\AndroidManifest.xml:2:5-32:19
+MERGED from [:firebase_analytics] C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\firebase_analytics\intermediates\merged_manifest\profile\AndroidManifest.xml:13:5-19:19
+MERGED from [:firebase_analytics] C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\firebase_analytics\intermediates\merged_manifest\profile\AndroidManifest.xml:13:5-19:19
+MERGED from [:firebase_auth] C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\firebase_auth\intermediates\merged_manifest\profile\AndroidManifest.xml:9:5-15:19
+MERGED from [:firebase_auth] C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\firebase_auth\intermediates\merged_manifest\profile\AndroidManifest.xml:9:5-15:19
+MERGED from [:firebase_storage] C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\firebase_storage\intermediates\merged_manifest\profile\AndroidManifest.xml:9:5-15:19
+MERGED from [:firebase_storage] C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\firebase_storage\intermediates\merged_manifest\profile\AndroidManifest.xml:9:5-15:19
+MERGED from [:cloud_firestore] C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\cloud_firestore\intermediates\merged_manifest\profile\AndroidManifest.xml:9:5-15:19
+MERGED from [:cloud_firestore] C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\cloud_firestore\intermediates\merged_manifest\profile\AndroidManifest.xml:9:5-15:19
+MERGED from [:firebase_core] C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\firebase_core\intermediates\merged_manifest\profile\AndroidManifest.xml:9:5-15:19
+MERGED from [:firebase_core] C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\firebase_core\intermediates\merged_manifest\profile\AndroidManifest.xml:9:5-15:19
 MERGED from [androidx.window:window:1.0.0-beta04] C:\Users\imana\.gradle\caches\transforms-3\25cee5f028ac2a6b79fd6278ff5b59e2\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:24:5-31:19
 MERGED from [androidx.window:window:1.0.0-beta04] C:\Users\imana\.gradle\caches\transforms-3\25cee5f028ac2a6b79fd6278ff5b59e2\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:24:5-31:19
 MERGED from [com.google.firebase:firebase-auth:22.0.0] C:\Users\imana\.gradle\caches\transforms-3\addd1e7d7380e6c086f46a0c78155c8a\transformed\jetified-firebase-auth-22.0.0\AndroidManifest.xml:28:5-73:19
@@ -60,19 +60,19 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\im
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.6.0] C:\Users\imana\.gradle\caches\transforms-3\7e9df2ac2213a6bd3cef0f2f27870d79\transformed\core-1.6.0\AndroidManifest.xml:24:18-86
 	android:name
-		INJECTED from C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\android\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\android\app\src\main\AndroidManifest.xml
 manifest
-ADDED from C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\android\app\src\main\AndroidManifest.xml:1:1-33:12
-INJECTED from C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\android\app\src\main\AndroidManifest.xml:1:1-33:12
-INJECTED from C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\android\app\src\main\AndroidManifest.xml:1:1-33:12
-INJECTED from C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\android\app\src\main\AndroidManifest.xml:1:1-33:12
-MERGED from C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\android\app\src\main\AndroidManifest.xml:1:1-33:12
-MERGED from [:shared_preferences_android] C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\shared_preferences_android\intermediates\merged_manifest\profile\AndroidManifest.xml:2:1-9:12
-MERGED from [:firebase_analytics] C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\firebase_analytics\intermediates\merged_manifest\profile\AndroidManifest.xml:2:1-21:12
-MERGED from [:firebase_auth] C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\firebase_auth\intermediates\merged_manifest\profile\AndroidManifest.xml:2:1-17:12
-MERGED from [:firebase_storage] C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\firebase_storage\intermediates\merged_manifest\profile\AndroidManifest.xml:2:1-17:12
-MERGED from [:cloud_firestore] C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\cloud_firestore\intermediates\merged_manifest\profile\AndroidManifest.xml:2:1-17:12
-MERGED from [:firebase_core] C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\firebase_core\intermediates\merged_manifest\profile\AndroidManifest.xml:2:1-17:12
+ADDED from C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\android\app\src\main\AndroidManifest.xml:1:1-33:12
+INJECTED from C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\android\app\src\main\AndroidManifest.xml:1:1-33:12
+INJECTED from C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\android\app\src\main\AndroidManifest.xml:1:1-33:12
+INJECTED from C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\android\app\src\main\AndroidManifest.xml:1:1-33:12
+MERGED from C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\android\app\src\main\AndroidManifest.xml:1:1-33:12
+MERGED from [:shared_preferences_android] C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\shared_preferences_android\intermediates\merged_manifest\profile\AndroidManifest.xml:2:1-9:12
+MERGED from [:firebase_analytics] C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\firebase_analytics\intermediates\merged_manifest\profile\AndroidManifest.xml:2:1-21:12
+MERGED from [:firebase_auth] C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\firebase_auth\intermediates\merged_manifest\profile\AndroidManifest.xml:2:1-17:12
+MERGED from [:firebase_storage] C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\firebase_storage\intermediates\merged_manifest\profile\AndroidManifest.xml:2:1-17:12
+MERGED from [:cloud_firestore] C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\cloud_firestore\intermediates\merged_manifest\profile\AndroidManifest.xml:2:1-17:12
+MERGED from [:firebase_core] C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\firebase_core\intermediates\merged_manifest\profile\AndroidManifest.xml:2:1-17:12
 MERGED from [androidx.window:window-java:1.0.0-beta04] C:\Users\imana\.gradle\caches\transforms-3\ae81e06d24c799147c26814497a2a305\transformed\jetified-window-java-1.0.0-beta04\AndroidManifest.xml:17:1-23:12
 MERGED from [androidx.window:window:1.0.0-beta04] C:\Users\imana\.gradle\caches\transforms-3\25cee5f028ac2a6b79fd6278ff5b59e2\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:17:1-33:12
 MERGED from [com.google.firebase:firebase-auth:22.0.0] C:\Users\imana\.gradle\caches\transforms-3\addd1e7d7380e6c086f46a0c78155c8a\transformed\jetified-firebase-auth-22.0.0\AndroidManifest.xml:17:1-75:12
@@ -125,39 +125,39 @@ MERGED from [androidx.print:print:1.0.0] C:\Users\imana\.gradle\caches\transform
 MERGED from [androidx.annotation:annotation-experimental:1.1.0] C:\Users\imana\.gradle\caches\transforms-3\6c0c163cc77ae6c91f9f7dfcd179c29c\transformed\jetified-annotation-experimental-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.firebase:protolite-well-known-types:18.0.0] C:\Users\imana\.gradle\caches\transforms-3\a5d05b72cf3b664de17b0b9a9aff136c\transformed\jetified-protolite-well-known-types-18.0.0\AndroidManifest.xml:2:1-11:12
 MERGED from [io.grpc:grpc-android:1.52.1] C:\Users\imana\.gradle\caches\transforms-3\c438b1adc71bb659ff68d05d154f5d46\transformed\jetified-grpc-android-1.52.1\AndroidManifest.xml:2:1-11:12
-INJECTED from C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\android\app\src\profile\AndroidManifest.xml:1:1-7:12
-INJECTED from C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\android\app\src\profile\AndroidManifest.xml:1:1-7:12
-INJECTED from C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\android\app\src\profile\AndroidManifest.xml:1:1-7:12
+INJECTED from C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\android\app\src\profile\AndroidManifest.xml:1:1-7:12
+INJECTED from C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\android\app\src\profile\AndroidManifest.xml:1:1-7:12
+INJECTED from C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\android\app\src\profile\AndroidManifest.xml:1:1-7:12
 	package
-		INJECTED from C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\android\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\android\app\src\main\AndroidManifest.xml:1:1-33:12
-		INJECTED from C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\android\app\src\profile\AndroidManifest.xml
+		INJECTED from C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\android\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\android\app\src\main\AndroidManifest.xml:1:1-33:12
+		INJECTED from C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\android\app\src\profile\AndroidManifest.xml
 	android:versionName
-		INJECTED from C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\android\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\android\app\src\main\AndroidManifest.xml:1:1-33:12
-		INJECTED from C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\android\app\src\profile\AndroidManifest.xml
+		INJECTED from C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\android\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\android\app\src\main\AndroidManifest.xml:1:1-33:12
+		INJECTED from C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\android\app\src\profile\AndroidManifest.xml
 	android:versionCode
-		INJECTED from C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\android\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\android\app\src\main\AndroidManifest.xml:1:1-33:12
-		INJECTED from C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\android\app\src\profile\AndroidManifest.xml
+		INJECTED from C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\android\app\src\main\AndroidManifest.xml
+		ADDED from C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\android\app\src\main\AndroidManifest.xml:1:1-33:12
+		INJECTED from C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\android\app\src\profile\AndroidManifest.xml
 	xmlns:android
-		ADDED from C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\android\app\src\main\AndroidManifest.xml:1:11-69
+		ADDED from C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\android\app\src\main\AndroidManifest.xml:1:11-69
 uses-sdk
-INJECTED from C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\android\app\src\main\AndroidManifest.xml
-INJECTED from C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\android\app\src\main\AndroidManifest.xml
-MERGED from [:shared_preferences_android] C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\shared_preferences_android\intermediates\merged_manifest\profile\AndroidManifest.xml:5:5-7:41
-MERGED from [:shared_preferences_android] C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\shared_preferences_android\intermediates\merged_manifest\profile\AndroidManifest.xml:5:5-7:41
-MERGED from [:firebase_analytics] C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\firebase_analytics\intermediates\merged_manifest\profile\AndroidManifest.xml:5:5-7:41
-MERGED from [:firebase_analytics] C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\firebase_analytics\intermediates\merged_manifest\profile\AndroidManifest.xml:5:5-7:41
-MERGED from [:firebase_auth] C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\firebase_auth\intermediates\merged_manifest\profile\AndroidManifest.xml:5:5-7:41
-MERGED from [:firebase_auth] C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\firebase_auth\intermediates\merged_manifest\profile\AndroidManifest.xml:5:5-7:41
-MERGED from [:firebase_storage] C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\firebase_storage\intermediates\merged_manifest\profile\AndroidManifest.xml:5:5-7:41
-MERGED from [:firebase_storage] C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\firebase_storage\intermediates\merged_manifest\profile\AndroidManifest.xml:5:5-7:41
-MERGED from [:cloud_firestore] C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\cloud_firestore\intermediates\merged_manifest\profile\AndroidManifest.xml:5:5-7:41
-MERGED from [:cloud_firestore] C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\cloud_firestore\intermediates\merged_manifest\profile\AndroidManifest.xml:5:5-7:41
-MERGED from [:firebase_core] C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\firebase_core\intermediates\merged_manifest\profile\AndroidManifest.xml:5:5-7:41
-MERGED from [:firebase_core] C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\firebase_core\intermediates\merged_manifest\profile\AndroidManifest.xml:5:5-7:41
+INJECTED from C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\android\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\android\app\src\main\AndroidManifest.xml
+INJECTED from C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\android\app\src\main\AndroidManifest.xml
+MERGED from [:shared_preferences_android] C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\shared_preferences_android\intermediates\merged_manifest\profile\AndroidManifest.xml:5:5-7:41
+MERGED from [:shared_preferences_android] C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\shared_preferences_android\intermediates\merged_manifest\profile\AndroidManifest.xml:5:5-7:41
+MERGED from [:firebase_analytics] C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\firebase_analytics\intermediates\merged_manifest\profile\AndroidManifest.xml:5:5-7:41
+MERGED from [:firebase_analytics] C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\firebase_analytics\intermediates\merged_manifest\profile\AndroidManifest.xml:5:5-7:41
+MERGED from [:firebase_auth] C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\firebase_auth\intermediates\merged_manifest\profile\AndroidManifest.xml:5:5-7:41
+MERGED from [:firebase_auth] C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\firebase_auth\intermediates\merged_manifest\profile\AndroidManifest.xml:5:5-7:41
+MERGED from [:firebase_storage] C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\firebase_storage\intermediates\merged_manifest\profile\AndroidManifest.xml:5:5-7:41
+MERGED from [:firebase_storage] C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\firebase_storage\intermediates\merged_manifest\profile\AndroidManifest.xml:5:5-7:41
+MERGED from [:cloud_firestore] C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\cloud_firestore\intermediates\merged_manifest\profile\AndroidManifest.xml:5:5-7:41
+MERGED from [:cloud_firestore] C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\cloud_firestore\intermediates\merged_manifest\profile\AndroidManifest.xml:5:5-7:41
+MERGED from [:firebase_core] C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\firebase_core\intermediates\merged_manifest\profile\AndroidManifest.xml:5:5-7:41
+MERGED from [:firebase_core] C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\firebase_core\intermediates\merged_manifest\profile\AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.window:window-java:1.0.0-beta04] C:\Users\imana\.gradle\caches\transforms-3\ae81e06d24c799147c26814497a2a305\transformed\jetified-window-java-1.0.0-beta04\AndroidManifest.xml:19:5-21:41
 MERGED from [androidx.window:window-java:1.0.0-beta04] C:\Users\imana\.gradle\caches\transforms-3\ae81e06d24c799147c26814497a2a305\transformed\jetified-window-java-1.0.0-beta04\AndroidManifest.xml:19:5-21:41
 MERGED from [androidx.window:window:1.0.0-beta04] C:\Users\imana\.gradle\caches\transforms-3\25cee5f028ac2a6b79fd6278ff5b59e2\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:20:5-22:41
@@ -262,20 +262,20 @@ MERGED from [com.google.firebase:protolite-well-known-types:18.0.0] C:\Users\ima
 MERGED from [com.google.firebase:protolite-well-known-types:18.0.0] C:\Users\imana\.gradle\caches\transforms-3\a5d05b72cf3b664de17b0b9a9aff136c\transformed\jetified-protolite-well-known-types-18.0.0\AndroidManifest.xml:7:5-9:41
 MERGED from [io.grpc:grpc-android:1.52.1] C:\Users\imana\.gradle\caches\transforms-3\c438b1adc71bb659ff68d05d154f5d46\transformed\jetified-grpc-android-1.52.1\AndroidManifest.xml:5:5-7:41
 MERGED from [io.grpc:grpc-android:1.52.1] C:\Users\imana\.gradle\caches\transforms-3\c438b1adc71bb659ff68d05d154f5d46\transformed\jetified-grpc-android-1.52.1\AndroidManifest.xml:5:5-7:41
-INJECTED from C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\android\app\src\profile\AndroidManifest.xml
-INJECTED from C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\android\app\src\profile\AndroidManifest.xml
+INJECTED from C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\android\app\src\profile\AndroidManifest.xml
+INJECTED from C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\android\app\src\profile\AndroidManifest.xml
 	tools:overrideLibrary
 		ADDED from [com.google.firebase:firebase-auth:22.0.0] C:\Users\imana\.gradle\caches\transforms-3\addd1e7d7380e6c086f46a0c78155c8a\transformed\jetified-firebase-auth-22.0.0\AndroidManifest.xml:23:9-61
 	android:targetSdkVersion
-		INJECTED from C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\android\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\android\app\src\profile\AndroidManifest.xml
+		INJECTED from C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\android\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\android\app\src\profile\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\android\app\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\android\app\src\profile\AndroidManifest.xml
+		INJECTED from C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\android\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\android\app\src\profile\AndroidManifest.xml
 uses-permission#android.permission.INTERNET
-ADDED from C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\android\app\src\profile\AndroidManifest.xml:6:5-66
-MERGED from [:firebase_analytics] C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\firebase_analytics\intermediates\merged_manifest\profile\AndroidManifest.xml:10:5-67
-MERGED from [:firebase_analytics] C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\firebase_analytics\intermediates\merged_manifest\profile\AndroidManifest.xml:10:5-67
+ADDED from C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\android\app\src\profile\AndroidManifest.xml:6:5-66
+MERGED from [:firebase_analytics] C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\firebase_analytics\intermediates\merged_manifest\profile\AndroidManifest.xml:10:5-67
+MERGED from [:firebase_analytics] C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\firebase_analytics\intermediates\merged_manifest\profile\AndroidManifest.xml:10:5-67
 MERGED from [com.google.firebase:firebase-auth:22.0.0] C:\Users\imana\.gradle\caches\transforms-3\addd1e7d7380e6c086f46a0c78155c8a\transformed\jetified-firebase-auth-22.0.0\AndroidManifest.xml:25:5-67
 MERGED from [com.google.firebase:firebase-auth:22.0.0] C:\Users\imana\.gradle\caches\transforms-3\addd1e7d7380e6c086f46a0c78155c8a\transformed\jetified-firebase-auth-22.0.0\AndroidManifest.xml:25:5-67
 MERGED from [com.google.android.recaptcha:recaptcha:18.1.2] C:\Users\imana\.gradle\caches\transforms-3\3ed458108fbd69ced1e2054ebc5e875f\transformed\jetified-recaptcha-18.1.2\AndroidManifest.xml:7:5-67
@@ -295,9 +295,9 @@ MERGED from [com.google.android.gms:play-services-measurement-impl:21.2.2] C:\Us
 MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.2.2] C:\Users\imana\.gradle\caches\transforms-3\fe57bf5ebc889da31fadb4284591b297\transformed\jetified-play-services-measurement-sdk-api-21.2.2\AndroidManifest.xml:23:5-67
 MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.2.2] C:\Users\imana\.gradle\caches\transforms-3\fe57bf5ebc889da31fadb4284591b297\transformed\jetified-play-services-measurement-sdk-api-21.2.2\AndroidManifest.xml:23:5-67
 	android:name
-		ADDED from C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\android\app\src\profile\AndroidManifest.xml:6:22-64
+		ADDED from C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\android\app\src\profile\AndroidManifest.xml:6:22-64
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from [:firebase_analytics] C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\firebase_analytics\intermediates\merged_manifest\profile\AndroidManifest.xml:9:5-79
+ADDED from [:firebase_analytics] C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\firebase_analytics\intermediates\merged_manifest\profile\AndroidManifest.xml:9:5-79
 MERGED from [com.google.firebase:firebase-auth:22.0.0] C:\Users\imana\.gradle\caches\transforms-3\addd1e7d7380e6c086f46a0c78155c8a\transformed\jetified-firebase-auth-22.0.0\AndroidManifest.xml:26:5-79
 MERGED from [com.google.firebase:firebase-auth:22.0.0] C:\Users\imana\.gradle\caches\transforms-3\addd1e7d7380e6c086f46a0c78155c8a\transformed\jetified-firebase-auth-22.0.0\AndroidManifest.xml:26:5-79
 MERGED from [com.google.android.recaptcha:recaptcha:18.1.2] C:\Users\imana\.gradle\caches\transforms-3\3ed458108fbd69ced1e2054ebc5e875f\transformed\jetified-recaptcha-18.1.2\AndroidManifest.xml:8:5-79
@@ -319,9 +319,9 @@ MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.2.2] C:
 MERGED from [io.grpc:grpc-android:1.52.1] C:\Users\imana\.gradle\caches\transforms-3\c438b1adc71bb659ff68d05d154f5d46\transformed\jetified-grpc-android-1.52.1\AndroidManifest.xml:9:5-79
 MERGED from [io.grpc:grpc-android:1.52.1] C:\Users\imana\.gradle\caches\transforms-3\c438b1adc71bb659ff68d05d154f5d46\transformed\jetified-grpc-android-1.52.1\AndroidManifest.xml:9:5-79
 	android:name
-		ADDED from [:firebase_analytics] C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\firebase_analytics\intermediates\merged_manifest\profile\AndroidManifest.xml:9:22-76
+		ADDED from [:firebase_analytics] C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\firebase_analytics\intermediates\merged_manifest\profile\AndroidManifest.xml:9:22-76
 uses-permission#android.permission.WAKE_LOCK
-ADDED from [:firebase_analytics] C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\firebase_analytics\intermediates\merged_manifest\profile\AndroidManifest.xml:11:5-68
+ADDED from [:firebase_analytics] C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\firebase_analytics\intermediates\merged_manifest\profile\AndroidManifest.xml:11:5-68
 MERGED from [com.google.android.gms:play-services-measurement-api:21.2.2] C:\Users\imana\.gradle\caches\transforms-3\6a0160c789a7034a6bdb138a5b2184e5\transformed\jetified-play-services-measurement-api-21.2.2\AndroidManifest.xml:24:5-68
 MERGED from [com.google.android.gms:play-services-measurement-api:21.2.2] C:\Users\imana\.gradle\caches\transforms-3\6a0160c789a7034a6bdb138a5b2184e5\transformed\jetified-play-services-measurement-api-21.2.2\AndroidManifest.xml:24:5-68
 MERGED from [com.google.android.gms:play-services-measurement:21.2.2] C:\Users\imana\.gradle\caches\transforms-3\a68cd44a493d68c79261517b0ea4679c\transformed\jetified-play-services-measurement-21.2.2\AndroidManifest.xml:25:5-68
@@ -331,17 +331,17 @@ MERGED from [com.google.android.gms:play-services-measurement-impl:21.2.2] C:\Us
 MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.2.2] C:\Users\imana\.gradle\caches\transforms-3\fe57bf5ebc889da31fadb4284591b297\transformed\jetified-play-services-measurement-sdk-api-21.2.2\AndroidManifest.xml:25:5-68
 MERGED from [com.google.android.gms:play-services-measurement-sdk-api:21.2.2] C:\Users\imana\.gradle\caches\transforms-3\fe57bf5ebc889da31fadb4284591b297\transformed\jetified-play-services-measurement-sdk-api-21.2.2\AndroidManifest.xml:25:5-68
 	android:name
-		ADDED from [:firebase_analytics] C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\firebase_analytics\intermediates\merged_manifest\profile\AndroidManifest.xml:11:22-65
+		ADDED from [:firebase_analytics] C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\firebase_analytics\intermediates\merged_manifest\profile\AndroidManifest.xml:11:22-65
 service#com.google.firebase.components.ComponentDiscoveryService
-ADDED from [:firebase_analytics] C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\firebase_analytics\intermediates\merged_manifest\profile\AndroidManifest.xml:14:9-18:19
-MERGED from [:firebase_auth] C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\firebase_auth\intermediates\merged_manifest\profile\AndroidManifest.xml:10:9-14:19
-MERGED from [:firebase_auth] C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\firebase_auth\intermediates\merged_manifest\profile\AndroidManifest.xml:10:9-14:19
-MERGED from [:firebase_storage] C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\firebase_storage\intermediates\merged_manifest\profile\AndroidManifest.xml:10:9-14:19
-MERGED from [:firebase_storage] C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\firebase_storage\intermediates\merged_manifest\profile\AndroidManifest.xml:10:9-14:19
-MERGED from [:cloud_firestore] C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\cloud_firestore\intermediates\merged_manifest\profile\AndroidManifest.xml:10:9-14:19
-MERGED from [:cloud_firestore] C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\cloud_firestore\intermediates\merged_manifest\profile\AndroidManifest.xml:10:9-14:19
-MERGED from [:firebase_core] C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\firebase_core\intermediates\merged_manifest\profile\AndroidManifest.xml:10:9-14:19
-MERGED from [:firebase_core] C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\firebase_core\intermediates\merged_manifest\profile\AndroidManifest.xml:10:9-14:19
+ADDED from [:firebase_analytics] C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\firebase_analytics\intermediates\merged_manifest\profile\AndroidManifest.xml:14:9-18:19
+MERGED from [:firebase_auth] C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\firebase_auth\intermediates\merged_manifest\profile\AndroidManifest.xml:10:9-14:19
+MERGED from [:firebase_auth] C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\firebase_auth\intermediates\merged_manifest\profile\AndroidManifest.xml:10:9-14:19
+MERGED from [:firebase_storage] C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\firebase_storage\intermediates\merged_manifest\profile\AndroidManifest.xml:10:9-14:19
+MERGED from [:firebase_storage] C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\firebase_storage\intermediates\merged_manifest\profile\AndroidManifest.xml:10:9-14:19
+MERGED from [:cloud_firestore] C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\cloud_firestore\intermediates\merged_manifest\profile\AndroidManifest.xml:10:9-14:19
+MERGED from [:cloud_firestore] C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\cloud_firestore\intermediates\merged_manifest\profile\AndroidManifest.xml:10:9-14:19
+MERGED from [:firebase_core] C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\firebase_core\intermediates\merged_manifest\profile\AndroidManifest.xml:10:9-14:19
+MERGED from [:firebase_core] C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\firebase_core\intermediates\merged_manifest\profile\AndroidManifest.xml:10:9-14:19
 MERGED from [com.google.firebase:firebase-auth:22.0.0] C:\Users\imana\.gradle\caches\transforms-3\addd1e7d7380e6c086f46a0c78155c8a\transformed\jetified-firebase-auth-22.0.0\AndroidManifest.xml:66:9-72:19
 MERGED from [com.google.firebase:firebase-auth:22.0.0] C:\Users\imana\.gradle\caches\transforms-3\addd1e7d7380e6c086f46a0c78155c8a\transformed\jetified-firebase-auth-22.0.0\AndroidManifest.xml:66:9-72:19
 MERGED from [com.google.firebase:firebase-firestore:24.6.0] C:\Users\imana\.gradle\caches\transforms-3\72364d1d1285fb1570adb110caaa4c93\transformed\jetified-firebase-firestore-24.6.0\AndroidManifest.xml:16:9-22:19
@@ -361,37 +361,37 @@ MERGED from [com.google.firebase:firebase-common:20.3.2] C:\Users\imana\.gradle\
 	android:directBootAware
 		ADDED from [com.google.firebase:firebase-common:20.3.2] C:\Users\imana\.gradle\caches\transforms-3\6e10d488ebcc23afefc866560645fd3c\transformed\jetified-firebase-common-20.3.2\AndroidManifest.xml:34:13-43
 	android:name
-		ADDED from [:firebase_analytics] C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\firebase_analytics\intermediates\merged_manifest\profile\AndroidManifest.xml:14:18-89
+		ADDED from [:firebase_analytics] C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\firebase_analytics\intermediates\merged_manifest\profile\AndroidManifest.xml:14:18-89
 meta-data#com.google.firebase.components:io.flutter.plugins.firebase.analytics.FlutterFirebaseAppRegistrar
-ADDED from [:firebase_analytics] C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\firebase_analytics\intermediates\merged_manifest\profile\AndroidManifest.xml:15:13-17:85
+ADDED from [:firebase_analytics] C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\firebase_analytics\intermediates\merged_manifest\profile\AndroidManifest.xml:15:13-17:85
 	android:value
-		ADDED from [:firebase_analytics] C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\firebase_analytics\intermediates\merged_manifest\profile\AndroidManifest.xml:17:17-82
+		ADDED from [:firebase_analytics] C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\firebase_analytics\intermediates\merged_manifest\profile\AndroidManifest.xml:17:17-82
 	android:name
-		ADDED from [:firebase_analytics] C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\firebase_analytics\intermediates\merged_manifest\profile\AndroidManifest.xml:16:17-128
+		ADDED from [:firebase_analytics] C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\firebase_analytics\intermediates\merged_manifest\profile\AndroidManifest.xml:16:17-128
 meta-data#com.google.firebase.components:io.flutter.plugins.firebase.auth.FlutterFirebaseAuthRegistrar
-ADDED from [:firebase_auth] C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\firebase_auth\intermediates\merged_manifest\profile\AndroidManifest.xml:11:13-13:85
+ADDED from [:firebase_auth] C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\firebase_auth\intermediates\merged_manifest\profile\AndroidManifest.xml:11:13-13:85
 	android:value
-		ADDED from [:firebase_auth] C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\firebase_auth\intermediates\merged_manifest\profile\AndroidManifest.xml:13:17-82
+		ADDED from [:firebase_auth] C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\firebase_auth\intermediates\merged_manifest\profile\AndroidManifest.xml:13:17-82
 	android:name
-		ADDED from [:firebase_auth] C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\firebase_auth\intermediates\merged_manifest\profile\AndroidManifest.xml:12:17-124
+		ADDED from [:firebase_auth] C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\firebase_auth\intermediates\merged_manifest\profile\AndroidManifest.xml:12:17-124
 meta-data#com.google.firebase.components:io.flutter.plugins.firebase.storage.FlutterFirebaseAppRegistrar
-ADDED from [:firebase_storage] C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\firebase_storage\intermediates\merged_manifest\profile\AndroidManifest.xml:11:13-13:85
+ADDED from [:firebase_storage] C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\firebase_storage\intermediates\merged_manifest\profile\AndroidManifest.xml:11:13-13:85
 	android:value
-		ADDED from [:firebase_storage] C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\firebase_storage\intermediates\merged_manifest\profile\AndroidManifest.xml:13:17-82
+		ADDED from [:firebase_storage] C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\firebase_storage\intermediates\merged_manifest\profile\AndroidManifest.xml:13:17-82
 	android:name
-		ADDED from [:firebase_storage] C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\firebase_storage\intermediates\merged_manifest\profile\AndroidManifest.xml:12:17-126
+		ADDED from [:firebase_storage] C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\firebase_storage\intermediates\merged_manifest\profile\AndroidManifest.xml:12:17-126
 meta-data#com.google.firebase.components:io.flutter.plugins.firebase.firestore.FlutterFirebaseFirestoreRegistrar
-ADDED from [:cloud_firestore] C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\cloud_firestore\intermediates\merged_manifest\profile\AndroidManifest.xml:11:13-13:85
+ADDED from [:cloud_firestore] C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\cloud_firestore\intermediates\merged_manifest\profile\AndroidManifest.xml:11:13-13:85
 	android:value
-		ADDED from [:cloud_firestore] C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\cloud_firestore\intermediates\merged_manifest\profile\AndroidManifest.xml:13:17-82
+		ADDED from [:cloud_firestore] C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\cloud_firestore\intermediates\merged_manifest\profile\AndroidManifest.xml:13:17-82
 	android:name
-		ADDED from [:cloud_firestore] C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\cloud_firestore\intermediates\merged_manifest\profile\AndroidManifest.xml:12:17-134
+		ADDED from [:cloud_firestore] C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\cloud_firestore\intermediates\merged_manifest\profile\AndroidManifest.xml:12:17-134
 meta-data#com.google.firebase.components:io.flutter.plugins.firebase.core.FlutterFirebaseCoreRegistrar
-ADDED from [:firebase_core] C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\firebase_core\intermediates\merged_manifest\profile\AndroidManifest.xml:11:13-13:85
+ADDED from [:firebase_core] C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\firebase_core\intermediates\merged_manifest\profile\AndroidManifest.xml:11:13-13:85
 	android:value
-		ADDED from [:firebase_core] C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\firebase_core\intermediates\merged_manifest\profile\AndroidManifest.xml:13:17-82
+		ADDED from [:firebase_core] C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\firebase_core\intermediates\merged_manifest\profile\AndroidManifest.xml:13:17-82
 	android:name
-		ADDED from [:firebase_core] C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\firebase_core\intermediates\merged_manifest\profile\AndroidManifest.xml:12:17-124
+		ADDED from [:firebase_core] C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\firebase_core\intermediates\merged_manifest\profile\AndroidManifest.xml:12:17-124
 uses-library#androidx.window.extensions
 ADDED from [androidx.window:window:1.0.0-beta04] C:\Users\imana\.gradle\caches\transforms-3\25cee5f028ac2a6b79fd6278ff5b59e2\transformed\jetified-window-1.0.0-beta04\AndroidManifest.xml:25:9-27:40
 	android:required

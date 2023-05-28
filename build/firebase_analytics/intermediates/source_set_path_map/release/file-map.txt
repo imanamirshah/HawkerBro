@@ -6,10 +6,10 @@ io.flutter.plugins.firebase.analytics.firebase_analytics-core-1.6.0-4 C:\Users\i
 io.flutter.plugins.firebase.analytics.firebase_analytics-jetified-window-java-1.0.0-beta04-5 C:\Users\imana\.gradle\caches\transforms-3\ae81e06d24c799147c26814497a2a305\transformed\jetified-window-java-1.0.0-beta04\res
 io.flutter.plugins.firebase.analytics.firebase_analytics-main-6 C:\Users\imana\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_analytics-10.4.1\android\src\main\res
 io.flutter.plugins.firebase.analytics.firebase_analytics-release-7 C:\Users\imana\AppData\Local\Pub\Cache\hosted\pub.dev\firebase_analytics-10.4.1\android\src\release\res
-io.flutter.plugins.firebase.analytics.firebase_analytics-pngs-8 C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\firebase_analytics\generated\res\pngs\release
-io.flutter.plugins.firebase.analytics.firebase_analytics-resValues-9 C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\firebase_analytics\generated\res\resValues\release
-io.flutter.plugins.firebase.analytics.firebase_analytics-rs-10 C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\firebase_analytics\generated\res\rs\release
-io.flutter.plugins.firebase.analytics.firebase_analytics-mergeReleaseResources-11 C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\firebase_analytics\intermediates\incremental\release\mergeReleaseResources\merged.dir
-io.flutter.plugins.firebase.analytics.firebase_analytics-mergeReleaseResources-12 C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\firebase_analytics\intermediates\incremental\release\mergeReleaseResources\stripped.dir
-io.flutter.plugins.firebase.analytics.firebase_analytics-merged_res-13 C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\firebase_analytics\intermediates\merged_res\release
-io.flutter.plugins.firebase.analytics.firebase_analytics-packaged_res-14 C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\firebase_core\intermediates\packaged_res\release
+io.flutter.plugins.firebase.analytics.firebase_analytics-pngs-8 C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\firebase_analytics\generated\res\pngs\release
+io.flutter.plugins.firebase.analytics.firebase_analytics-resValues-9 C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\firebase_analytics\generated\res\resValues\release
+io.flutter.plugins.firebase.analytics.firebase_analytics-rs-10 C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\firebase_analytics\generated\res\rs\release
+io.flutter.plugins.firebase.analytics.firebase_analytics-mergeReleaseResources-11 C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\firebase_analytics\intermediates\incremental\release\mergeReleaseResources\merged.dir
+io.flutter.plugins.firebase.analytics.firebase_analytics-mergeReleaseResources-12 C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\firebase_analytics\intermediates\incremental\release\mergeReleaseResources\stripped.dir
+io.flutter.plugins.firebase.analytics.firebase_analytics-merged_res-13 C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\firebase_analytics\intermediates\merged_res\release
+io.flutter.plugins.firebase.analytics.firebase_analytics-packaged_res-14 C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\firebase_core\intermediates\packaged_res\release
