@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>484751014681-lcjstofulfpk7eaqijr27vvnlra28utm.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.484751014681-lcjstofulfpk7eaqijr27vvnlra28utm</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>484751014681-mkk29kmdqtepcfkq6k7pqk535es54d33.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDxVOet3ECtpkVK46VIg1BWP-nXhqerTiw</string>
+	<key>GCM_SENDER_ID</key>
+	<string>484751014681</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.orbitalflutter</string>
+	<key>PROJECT_ID</key>
+	<string>orbitalflutterhawkerbro</string>
+	<key>STORAGE_BUCKET</key>
+	<string>orbitalflutterhawkerbro.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:484751014681:ios:0249493a6a91f8400ca388</string>
+</dict>
+</plist>
