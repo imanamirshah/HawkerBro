@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:orbitalflutter/provider/auth_provider.dart';
-import 'package:orbitalflutter/screens/home_screen.dart';
-import 'package:orbitalflutter/screens/register_screen.dart';
-import 'package:orbitalflutter/widgets/custom_button.dart';
+import 'package:hawkerbro/provider/auth_provider.dart';
+import 'package:hawkerbro/screens/home_screen.dart';
+import 'package:hawkerbro/screens/register_screen.dart';
+import 'package:hawkerbro/widgets/custom_button.dart';
 import 'package:provider/provider.dart';
 
 class WelcomeScreen extends StatefulWidget {

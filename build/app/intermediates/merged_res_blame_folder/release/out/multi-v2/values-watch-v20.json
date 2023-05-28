@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.orbitalflutter.app-mergeReleaseResources-25:/values-watch-v20/values-watch-v20.xml",
+            "outputFile": "com.example.hawkerbro.app-mergeReleaseResources-25:/values-watch-v20/values-watch-v20.xml",
             "map": [
                 {
                     "source": "C:\\Users\\imana\\.gradle\\caches\\transforms-3\\9fbd8b6fada67877222f712826ad1a35\\transformed\\jetified-play-services-auth-20.4.0\\res\\values-watch-v20\\values.xml",

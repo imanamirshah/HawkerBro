@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.orbitalflutter.app-merged_res-15:/values-eu_values-eu.arsc.flat",
+            "outputFile": "com.example.hawkerbro.app-merged_res-15:/values-eu_values-eu.arsc.flat",
             "map": [
                 {
                     "source": "C:\\Users\\imana\\.gradle\\caches\\transforms-3\\7e9df2ac2213a6bd3cef0f2f27870d79\\transformed\\core-1.6.0\\res\\values-eu\\values-eu.xml",
@@ -74,7 +74,7 @@
             ]
         },
         {
-            "outputFile": "com.example.orbitalflutter.app-merged_res-15:/values-v21_values-v21.arsc.flat",
+            "outputFile": "com.example.hawkerbro.app-merged_res-15:/values-v21_values-v21.arsc.flat",
             "map": [
                 {
                     "source": "C:\\Users\\imana\\.gradle\\caches\\transforms-3\\7e9df2ac2213a6bd3cef0f2f27870d79\\transformed\\core-1.6.0\\res\\values-v21\\values-v21.xml",
@@ -90,7 +90,7 @@
             ]
         },
         {
-            "outputFile": "com.example.orbitalflutter.app-merged_res-15:/values-sv_values-sv.arsc.flat",
+            "outputFile": "com.example.hawkerbro.app-merged_res-15:/values-sv_values-sv.arsc.flat",
             "map": [
                 {
                     "source": "C:\\Users\\imana\\.gradle\\caches\\transforms-3\\aba8f806953ea3dd8f794da3aeb78a12\\transformed\\jetified-play-services-base-18.0.1\\res\\values-sv\\values.xml",
@@ -163,7 +163,7 @@
             ]
         },
         {
-            "outputFile": "com.example.orbitalflutter.app-merged_res-15:/values-ur_values-ur.arsc.flat",
+            "outputFile": "com.example.hawkerbro.app-merged_res-15:/values-ur_values-ur.arsc.flat",
             "map": [
                 {
                     "source": "C:\\Users\\imana\\.gradle\\caches\\transforms-3\\aba8f806953ea3dd8f794da3aeb78a12\\transformed\\jetified-play-services-base-18.0.1\\res\\values-ur\\values.xml",
@@ -236,7 +236,7 @@
             ]
         },
         {
-            "outputFile": "com.example.orbitalflutter.app-merged_res-15:/values-zh-rHK_values-zh-rHK.arsc.flat",
+            "outputFile": "com.example.hawkerbro.app-merged_res-15:/values-zh-rHK_values-zh-rHK.arsc.flat",
             "map": [
                 {
                     "source": "C:\\Users\\imana\\.gradle\\caches\\transforms-3\\aba8f806953ea3dd8f794da3aeb78a12\\transformed\\jetified-play-services-base-18.0.1\\res\\values-zh-rHK\\values.xml",
@@ -309,7 +309,7 @@
             ]
         },
         {
-            "outputFile": "com.example.orbitalflutter.app-merged_res-15:/values-ro_values-ro.arsc.flat",
+            "outputFile": "com.example.hawkerbro.app-merged_res-15:/values-ro_values-ro.arsc.flat",
             "map": [
                 {
                     "source": "C:\\Users\\imana\\.gradle\\caches\\transforms-3\\aba8f806953ea3dd8f794da3aeb78a12\\transformed\\jetified-play-services-base-18.0.1\\res\\values-ro\\values.xml",
@@ -382,7 +382,7 @@
             ]
         },
         {
-            "outputFile": "com.example.orbitalflutter.app-merged_res-15:/values-en-rCA_values-en-rCA.arsc.flat",
+            "outputFile": "com.example.hawkerbro.app-merged_res-15:/values-en-rCA_values-en-rCA.arsc.flat",
             "map": [
                 {
                     "source": "C:\\Users\\imana\\.gradle\\caches\\transforms-3\\6d3bbaf4594b8ed85e4722883be764b3\\transformed\\browser-1.4.0\\res\\values-en-rCA\\values-en-rCA.xml",
@@ -414,7 +414,7 @@
             ]
         },
         {
-            "outputFile": "com.example.orbitalflutter.app-merged_res-15:/values-mn_values-mn.arsc.flat",
+            "outputFile": "com.example.hawkerbro.app-merged_res-15:/values-mn_values-mn.arsc.flat",
             "map": [
                 {
                     "source": "C:\\Users\\imana\\.gradle\\caches\\transforms-3\\6d3bbaf4594b8ed85e4722883be764b3\\transformed\\browser-1.4.0\\res\\values-mn\\values-mn.xml",
@@ -487,7 +487,7 @@
             ]
         },
         {
-            "outputFile": "com.example.orbitalflutter.app-merged_res-15:/values-el_values-el.arsc.flat",
+            "outputFile": "com.example.hawkerbro.app-merged_res-15:/values-el_values-el.arsc.flat",
             "map": [
                 {
                     "source": "C:\\Users\\imana\\.gradle\\caches\\transforms-3\\6d3bbaf4594b8ed85e4722883be764b3\\transformed\\browser-1.4.0\\res\\values-el\\values-el.xml",
@@ -560,7 +560,7 @@
             ]
         },
         {
-            "outputFile": "com.example.orbitalflutter.app-merged_res-15:/values-zh-rTW_values-zh-rTW.arsc.flat",
+            "outputFile": "com.example.hawkerbro.app-merged_res-15:/values-zh-rTW_values-zh-rTW.arsc.flat",
             "map": [
                 {
                     "source": "C:\\Users\\imana\\.gradle\\caches\\transforms-3\\7e9df2ac2213a6bd3cef0f2f27870d79\\transformed\\core-1.6.0\\res\\values-zh-rTW\\values-zh-rTW.xml",
@@ -633,7 +633,7 @@
             ]
         },
         {
-            "outputFile": "com.example.orbitalflutter.app-merged_res-15:/values-tr_values-tr.arsc.flat",
+            "outputFile": "com.example.hawkerbro.app-merged_res-15:/values-tr_values-tr.arsc.flat",
             "map": [
                 {
                     "source": "C:\\Users\\imana\\.gradle\\caches\\transforms-3\\aba8f806953ea3dd8f794da3aeb78a12\\transformed\\jetified-play-services-base-18.0.1\\res\\values-tr\\values.xml",
@@ -706,7 +706,7 @@
             ]
         },
         {
-            "outputFile": "com.example.orbitalflutter.app-merged_res-15:/values-be_values-be.arsc.flat",
+            "outputFile": "com.example.hawkerbro.app-merged_res-15:/values-be_values-be.arsc.flat",
             "map": [
                 {
                     "source": "C:\\Users\\imana\\.gradle\\caches\\transforms-3\\aba8f806953ea3dd8f794da3aeb78a12\\transformed\\jetified-play-services-base-18.0.1\\res\\values-be\\values.xml",
@@ -779,7 +779,7 @@
             ]
         },
         {
-            "outputFile": "com.example.orbitalflutter.app-merged_res-15:/values-es_values-es.arsc.flat",
+            "outputFile": "com.example.hawkerbro.app-merged_res-15:/values-es_values-es.arsc.flat",
             "map": [
                 {
                     "source": "C:\\Users\\imana\\.gradle\\caches\\transforms-3\\6d3bbaf4594b8ed85e4722883be764b3\\transformed\\browser-1.4.0\\res\\values-es\\values-es.xml",
@@ -852,7 +852,7 @@
             ]
         },
         {
-            "outputFile": "com.example.orbitalflutter.app-merged_res-15:/values-ar_values-ar.arsc.flat",
+            "outputFile": "com.example.hawkerbro.app-merged_res-15:/values-ar_values-ar.arsc.flat",
             "map": [
                 {
                     "source": "C:\\Users\\imana\\.gradle\\caches\\transforms-3\\58aa1384bde170d075503b845cfcf44c\\transformed\\jetified-play-services-basement-18.1.0\\res\\values-ar\\values.xml",
@@ -925,7 +925,7 @@
             ]
         },
         {
-            "outputFile": "com.example.orbitalflutter.app-merged_res-15:/values-ne_values-ne.arsc.flat",
+            "outputFile": "com.example.hawkerbro.app-merged_res-15:/values-ne_values-ne.arsc.flat",
             "map": [
                 {
                     "source": "C:\\Users\\imana\\.gradle\\caches\\transforms-3\\6d3bbaf4594b8ed85e4722883be764b3\\transformed\\browser-1.4.0\\res\\values-ne\\values-ne.xml",
@@ -998,7 +998,7 @@
             ]
         },
         {
-            "outputFile": "com.example.orbitalflutter.app-merged_res-15:/values-mr_values-mr.arsc.flat",
+            "outputFile": "com.example.hawkerbro.app-merged_res-15:/values-mr_values-mr.arsc.flat",
             "map": [
                 {
                     "source": "C:\\Users\\imana\\.gradle\\caches\\transforms-3\\58aa1384bde170d075503b845cfcf44c\\transformed\\jetified-play-services-basement-18.1.0\\res\\values-mr\\values.xml",
@@ -1071,7 +1071,7 @@
             ]
         },
         {
-            "outputFile": "com.example.orbitalflutter.app-merged_res-15:/values-ml_values-ml.arsc.flat",
+            "outputFile": "com.example.hawkerbro.app-merged_res-15:/values-ml_values-ml.arsc.flat",
             "map": [
                 {
                     "source": "C:\\Users\\imana\\.gradle\\caches\\transforms-3\\6d3bbaf4594b8ed85e4722883be764b3\\transformed\\browser-1.4.0\\res\\values-ml\\values-ml.xml",
@@ -1144,7 +1144,7 @@
             ]
         },
         {
-            "outputFile": "com.example.orbitalflutter.app-merged_res-15:/values-uk_values-uk.arsc.flat",
+            "outputFile": "com.example.hawkerbro.app-merged_res-15:/values-uk_values-uk.arsc.flat",
             "map": [
                 {
                     "source": "C:\\Users\\imana\\.gradle\\caches\\transforms-3\\aba8f806953ea3dd8f794da3aeb78a12\\transformed\\jetified-play-services-base-18.0.1\\res\\values-uk\\values.xml",
@@ -1217,7 +1217,7 @@
             ]
         },
         {
-            "outputFile": "com.example.orbitalflutter.app-merged_res-15:/values-fa_values-fa.arsc.flat",
+            "outputFile": "com.example.hawkerbro.app-merged_res-15:/values-fa_values-fa.arsc.flat",
             "map": [
                 {
                     "source": "C:\\Users\\imana\\.gradle\\caches\\transforms-3\\7e9df2ac2213a6bd3cef0f2f27870d79\\transformed\\core-1.6.0\\res\\values-fa\\values-fa.xml",
@@ -1290,7 +1290,7 @@
             ]
         },
         {
-            "outputFile": "com.example.orbitalflutter.app-merged_res-15:/values-lt_values-lt.arsc.flat",
+            "outputFile": "com.example.hawkerbro.app-merged_res-15:/values-lt_values-lt.arsc.flat",
             "map": [
                 {
                     "source": "C:\\Users\\imana\\.gradle\\caches\\transforms-3\\aba8f806953ea3dd8f794da3aeb78a12\\transformed\\jetified-play-services-base-18.0.1\\res\\values-lt\\values.xml",
@@ -1363,7 +1363,7 @@
             ]
         },
         {
-            "outputFile": "com.example.orbitalflutter.app-merged_res-15:/values-nl_values-nl.arsc.flat",
+            "outputFile": "com.example.hawkerbro.app-merged_res-15:/values-nl_values-nl.arsc.flat",
             "map": [
                 {
                     "source": "C:\\Users\\imana\\.gradle\\caches\\transforms-3\\aba8f806953ea3dd8f794da3aeb78a12\\transformed\\jetified-play-services-base-18.0.1\\res\\values-nl\\values.xml",
@@ -1436,7 +1436,7 @@
             ]
         },
         {
-            "outputFile": "com.example.orbitalflutter.app-merged_res-15:/values-my_values-my.arsc.flat",
+            "outputFile": "com.example.hawkerbro.app-merged_res-15:/values-my_values-my.arsc.flat",
             "map": [
                 {
                     "source": "C:\\Users\\imana\\.gradle\\caches\\transforms-3\\58aa1384bde170d075503b845cfcf44c\\transformed\\jetified-play-services-basement-18.1.0\\res\\values-my\\values.xml",
@@ -1509,7 +1509,7 @@
             ]
         },
         {
-            "outputFile": "com.example.orbitalflutter.app-merged_res-15:/values-en-rIN_values-en-rIN.arsc.flat",
+            "outputFile": "com.example.hawkerbro.app-merged_res-15:/values-en-rIN_values-en-rIN.arsc.flat",
             "map": [
                 {
                     "source": "C:\\Users\\imana\\.gradle\\caches\\transforms-3\\6d3bbaf4594b8ed85e4722883be764b3\\transformed\\browser-1.4.0\\res\\values-en-rIN\\values-en-rIN.xml",
@@ -1541,10 +1541,10 @@
             ]
         },
         {
-            "outputFile": "com.example.orbitalflutter.app-merged_res-15:/values-night-v8_values-night-v8.arsc.flat",
+            "outputFile": "com.example.hawkerbro.app-merged_res-15:/values-night-v8_values-night-v8.arsc.flat",
             "map": [
                 {
-                    "source": "C:\\Users\\imana\\OneDrive\\Documents\\flutter\\orbitalflutter\\android\\app\\src\\main\\res\\values-night\\styles.xml",
+                    "source": "C:\\Users\\imana\\OneDrive\\Documents\\flutter\\hawkerbro\\android\\app\\src\\main\\res\\values-night\\styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",
@@ -1565,7 +1565,7 @@
             ]
         },
         {
-            "outputFile": "com.example.orbitalflutter.app-merged_res-15:/values-gl_values-gl.arsc.flat",
+            "outputFile": "com.example.hawkerbro.app-merged_res-15:/values-gl_values-gl.arsc.flat",
             "map": [
                 {
                     "source": "C:\\Users\\imana\\.gradle\\caches\\transforms-3\\7e9df2ac2213a6bd3cef0f2f27870d79\\transformed\\core-1.6.0\\res\\values-gl\\values-gl.xml",
@@ -1638,7 +1638,7 @@
             ]
         },
         {
-            "outputFile": "com.example.orbitalflutter.app-merged_res-15:/values-ca_values-ca.arsc.flat",
+            "outputFile": "com.example.hawkerbro.app-merged_res-15:/values-ca_values-ca.arsc.flat",
             "map": [
                 {
                     "source": "C:\\Users\\imana\\.gradle\\caches\\transforms-3\\6d3bbaf4594b8ed85e4722883be764b3\\transformed\\browser-1.4.0\\res\\values-ca\\values-ca.xml",
@@ -1711,7 +1711,7 @@
             ]
         },
         {
-            "outputFile": "com.example.orbitalflutter.app-merged_res-15:/values-kn_values-kn.arsc.flat",
+            "outputFile": "com.example.hawkerbro.app-merged_res-15:/values-kn_values-kn.arsc.flat",
             "map": [
                 {
                     "source": "C:\\Users\\imana\\.gradle\\caches\\transforms-3\\58aa1384bde170d075503b845cfcf44c\\transformed\\jetified-play-services-basement-18.1.0\\res\\values-kn\\values.xml",
@@ -1784,7 +1784,7 @@
             ]
         },
         {
-            "outputFile": "com.example.orbitalflutter.app-merged_res-15:/values-lv_values-lv.arsc.flat",
+            "outputFile": "com.example.hawkerbro.app-merged_res-15:/values-lv_values-lv.arsc.flat",
             "map": [
                 {
                     "source": "C:\\Users\\imana\\.gradle\\caches\\transforms-3\\58aa1384bde170d075503b845cfcf44c\\transformed\\jetified-play-services-basement-18.1.0\\res\\values-lv\\values.xml",
@@ -1857,7 +1857,7 @@
             ]
         },
         {
-            "outputFile": "com.example.orbitalflutter.app-merged_res-15:/values-en-rXC_values-en-rXC.arsc.flat",
+            "outputFile": "com.example.hawkerbro.app-merged_res-15:/values-en-rXC_values-en-rXC.arsc.flat",
             "map": [
                 {
                     "source": "C:\\Users\\imana\\.gradle\\caches\\transforms-3\\6d3bbaf4594b8ed85e4722883be764b3\\transformed\\browser-1.4.0\\res\\values-en-rXC\\values-en-rXC.xml",
@@ -1889,7 +1889,7 @@
             ]
         },
         {
-            "outputFile": "com.example.orbitalflutter.app-merged_res-15:/values-en-rGB_values-en-rGB.arsc.flat",
+            "outputFile": "com.example.hawkerbro.app-merged_res-15:/values-en-rGB_values-en-rGB.arsc.flat",
             "map": [
                 {
                     "source": "C:\\Users\\imana\\.gradle\\caches\\transforms-3\\7e9df2ac2213a6bd3cef0f2f27870d79\\transformed\\core-1.6.0\\res\\values-en-rGB\\values-en-rGB.xml",
@@ -1962,7 +1962,7 @@
             ]
         },
         {
-            "outputFile": "com.example.orbitalflutter.app-merged_res-15:/values-af_values-af.arsc.flat",
+            "outputFile": "com.example.hawkerbro.app-merged_res-15:/values-af_values-af.arsc.flat",
             "map": [
                 {
                     "source": "C:\\Users\\imana\\.gradle\\caches\\transforms-3\\aba8f806953ea3dd8f794da3aeb78a12\\transformed\\jetified-play-services-base-18.0.1\\res\\values-af\\values.xml",
@@ -2035,7 +2035,7 @@
             ]
         },
         {
-            "outputFile": "com.example.orbitalflutter.app-merged_res-15:/values-hu_values-hu.arsc.flat",
+            "outputFile": "com.example.hawkerbro.app-merged_res-15:/values-hu_values-hu.arsc.flat",
             "map": [
                 {
                     "source": "C:\\Users\\imana\\.gradle\\caches\\transforms-3\\7e9df2ac2213a6bd3cef0f2f27870d79\\transformed\\core-1.6.0\\res\\values-hu\\values-hu.xml",
@@ -2108,7 +2108,7 @@
             ]
         },
         {
-            "outputFile": "com.example.orbitalflutter.app-merged_res-15:/values-hi_values-hi.arsc.flat",
+            "outputFile": "com.example.hawkerbro.app-merged_res-15:/values-hi_values-hi.arsc.flat",
             "map": [
                 {
                     "source": "C:\\Users\\imana\\.gradle\\caches\\transforms-3\\6d3bbaf4594b8ed85e4722883be764b3\\transformed\\browser-1.4.0\\res\\values-hi\\values-hi.xml",
@@ -2181,7 +2181,7 @@
             ]
         },
         {
-            "outputFile": "com.example.orbitalflutter.app-merged_res-15:/values-fr-rCA_values-fr-rCA.arsc.flat",
+            "outputFile": "com.example.hawkerbro.app-merged_res-15:/values-fr-rCA_values-fr-rCA.arsc.flat",
             "map": [
                 {
                     "source": "C:\\Users\\imana\\.gradle\\caches\\transforms-3\\aba8f806953ea3dd8f794da3aeb78a12\\transformed\\jetified-play-services-base-18.0.1\\res\\values-fr-rCA\\values.xml",
@@ -2254,7 +2254,7 @@
             ]
         },
         {
-            "outputFile": "com.example.orbitalflutter.app-merged_res-15:/values-v16_values-v16.arsc.flat",
+            "outputFile": "com.example.hawkerbro.app-merged_res-15:/values-v16_values-v16.arsc.flat",
             "map": [
                 {
                     "source": "C:\\Users\\imana\\.gradle\\caches\\transforms-3\\7e9df2ac2213a6bd3cef0f2f27870d79\\transformed\\core-1.6.0\\res\\values-v16\\values-v16.xml",
@@ -2269,7 +2269,7 @@
             ]
         },
         {
-            "outputFile": "com.example.orbitalflutter.app-merged_res-15:/values-am_values-am.arsc.flat",
+            "outputFile": "com.example.hawkerbro.app-merged_res-15:/values-am_values-am.arsc.flat",
             "map": [
                 {
                     "source": "C:\\Users\\imana\\.gradle\\caches\\transforms-3\\6d3bbaf4594b8ed85e4722883be764b3\\transformed\\browser-1.4.0\\res\\values-am\\values-am.xml",
@@ -2342,7 +2342,7 @@
             ]
         },
         {
-            "outputFile": "com.example.orbitalflutter.app-merged_res-15:/values-da_values-da.arsc.flat",
+            "outputFile": "com.example.hawkerbro.app-merged_res-15:/values-da_values-da.arsc.flat",
             "map": [
                 {
                     "source": "C:\\Users\\imana\\.gradle\\caches\\transforms-3\\6d3bbaf4594b8ed85e4722883be764b3\\transformed\\browser-1.4.0\\res\\values-da\\values-da.xml",
@@ -2415,7 +2415,7 @@
             ]
         },
         {
-            "outputFile": "com.example.orbitalflutter.app-merged_res-15:/values-si_values-si.arsc.flat",
+            "outputFile": "com.example.hawkerbro.app-merged_res-15:/values-si_values-si.arsc.flat",
             "map": [
                 {
                     "source": "C:\\Users\\imana\\.gradle\\caches\\transforms-3\\aba8f806953ea3dd8f794da3aeb78a12\\transformed\\jetified-play-services-base-18.0.1\\res\\values-si\\values.xml",
@@ -2488,7 +2488,7 @@
             ]
         },
         {
-            "outputFile": "com.example.orbitalflutter.app-merged_res-15:/values-sr_values-sr.arsc.flat",
+            "outputFile": "com.example.hawkerbro.app-merged_res-15:/values-sr_values-sr.arsc.flat",
             "map": [
                 {
                     "source": "C:\\Users\\imana\\.gradle\\caches\\transforms-3\\aba8f806953ea3dd8f794da3aeb78a12\\transformed\\jetified-play-services-base-18.0.1\\res\\values-sr\\values.xml",
@@ -2561,7 +2561,7 @@
             ]
         },
         {
-            "outputFile": "com.example.orbitalflutter.app-merged_res-15:/values-vi_values-vi.arsc.flat",
+            "outputFile": "com.example.hawkerbro.app-merged_res-15:/values-vi_values-vi.arsc.flat",
             "map": [
                 {
                     "source": "C:\\Users\\imana\\.gradle\\caches\\transforms-3\\aba8f806953ea3dd8f794da3aeb78a12\\transformed\\jetified-play-services-base-18.0.1\\res\\values-vi\\values.xml",
@@ -2634,7 +2634,7 @@
             ]
         },
         {
-            "outputFile": "com.example.orbitalflutter.app-merged_res-15:/values-pt_values-pt.arsc.flat",
+            "outputFile": "com.example.hawkerbro.app-merged_res-15:/values-pt_values-pt.arsc.flat",
             "map": [
                 {
                     "source": "C:\\Users\\imana\\.gradle\\caches\\transforms-3\\6d3bbaf4594b8ed85e4722883be764b3\\transformed\\browser-1.4.0\\res\\values-pt\\values-pt.xml",
@@ -2666,7 +2666,7 @@
             ]
         },
         {
-            "outputFile": "com.example.orbitalflutter.app-merged_res-15:/values-uz_values-uz.arsc.flat",
+            "outputFile": "com.example.hawkerbro.app-merged_res-15:/values-uz_values-uz.arsc.flat",
             "map": [
                 {
                     "source": "C:\\Users\\imana\\.gradle\\caches\\transforms-3\\7e9df2ac2213a6bd3cef0f2f27870d79\\transformed\\core-1.6.0\\res\\values-uz\\values-uz.xml",
@@ -2739,7 +2739,7 @@
             ]
         },
         {
-            "outputFile": "com.example.orbitalflutter.app-merged_res-15:/values-is_values-is.arsc.flat",
+            "outputFile": "com.example.hawkerbro.app-merged_res-15:/values-is_values-is.arsc.flat",
             "map": [
                 {
                     "source": "C:\\Users\\imana\\.gradle\\caches\\transforms-3\\58aa1384bde170d075503b845cfcf44c\\transformed\\jetified-play-services-basement-18.1.0\\res\\values-is\\values.xml",
@@ -2812,7 +2812,7 @@
             ]
         },
         {
-            "outputFile": "com.example.orbitalflutter.app-merged_res-15:/values-sw_values-sw.arsc.flat",
+            "outputFile": "com.example.hawkerbro.app-merged_res-15:/values-sw_values-sw.arsc.flat",
             "map": [
                 {
                     "source": "C:\\Users\\imana\\.gradle\\caches\\transforms-3\\aba8f806953ea3dd8f794da3aeb78a12\\transformed\\jetified-play-services-base-18.0.1\\res\\values-sw\\values.xml",
@@ -2885,7 +2885,7 @@
             ]
         },
         {
-            "outputFile": "com.example.orbitalflutter.app-merged_res-15:/values-sk_values-sk.arsc.flat",
+            "outputFile": "com.example.hawkerbro.app-merged_res-15:/values-sk_values-sk.arsc.flat",
             "map": [
                 {
                     "source": "C:\\Users\\imana\\.gradle\\caches\\transforms-3\\6d3bbaf4594b8ed85e4722883be764b3\\transformed\\browser-1.4.0\\res\\values-sk\\values-sk.xml",
@@ -2958,7 +2958,7 @@
             ]
         },
         {
-            "outputFile": "com.example.orbitalflutter.app-merged_res-15:/values-es-rUS_values-es-rUS.arsc.flat",
+            "outputFile": "com.example.hawkerbro.app-merged_res-15:/values-es-rUS_values-es-rUS.arsc.flat",
             "map": [
                 {
                     "source": "C:\\Users\\imana\\.gradle\\caches\\transforms-3\\58aa1384bde170d075503b845cfcf44c\\transformed\\jetified-play-services-basement-18.1.0\\res\\values-es-rUS\\values.xml",
@@ -3031,7 +3031,7 @@
             ]
         },
         {
-            "outputFile": "com.example.orbitalflutter.app-merged_res-15:/values-gu_values-gu.arsc.flat",
+            "outputFile": "com.example.hawkerbro.app-merged_res-15:/values-gu_values-gu.arsc.flat",
             "map": [
                 {
                     "source": "C:\\Users\\imana\\.gradle\\caches\\transforms-3\\58aa1384bde170d075503b845cfcf44c\\transformed\\jetified-play-services-basement-18.1.0\\res\\values-gu\\values.xml",
@@ -3104,7 +3104,7 @@
             ]
         },
         {
-            "outputFile": "com.example.orbitalflutter.app-merged_res-15:/values-pa_values-pa.arsc.flat",
+            "outputFile": "com.example.hawkerbro.app-merged_res-15:/values-pa_values-pa.arsc.flat",
             "map": [
                 {
                     "source": "C:\\Users\\imana\\.gradle\\caches\\transforms-3\\7e9df2ac2213a6bd3cef0f2f27870d79\\transformed\\core-1.6.0\\res\\values-pa\\values-pa.xml",
@@ -3177,7 +3177,7 @@
             ]
         },
         {
-            "outputFile": "com.example.orbitalflutter.app-merged_res-15:/values-pt-rPT_values-pt-rPT.arsc.flat",
+            "outputFile": "com.example.hawkerbro.app-merged_res-15:/values-pt-rPT_values-pt-rPT.arsc.flat",
             "map": [
                 {
                     "source": "C:\\Users\\imana\\.gradle\\caches\\transforms-3\\aba8f806953ea3dd8f794da3aeb78a12\\transformed\\jetified-play-services-base-18.0.1\\res\\values-pt-rPT\\values.xml",
@@ -3250,7 +3250,7 @@
             ]
         },
         {
-            "outputFile": "com.example.orbitalflutter.app-merged_res-15:/values-hy_values-hy.arsc.flat",
+            "outputFile": "com.example.hawkerbro.app-merged_res-15:/values-hy_values-hy.arsc.flat",
             "map": [
                 {
                     "source": "C:\\Users\\imana\\.gradle\\caches\\transforms-3\\aba8f806953ea3dd8f794da3aeb78a12\\transformed\\jetified-play-services-base-18.0.1\\res\\values-hy\\values.xml",
@@ -3323,7 +3323,7 @@
             ]
         },
         {
-            "outputFile": "com.example.orbitalflutter.app-merged_res-15:/values-ta_values-ta.arsc.flat",
+            "outputFile": "com.example.hawkerbro.app-merged_res-15:/values-ta_values-ta.arsc.flat",
             "map": [
                 {
                     "source": "C:\\Users\\imana\\.gradle\\caches\\transforms-3\\aba8f806953ea3dd8f794da3aeb78a12\\transformed\\jetified-play-services-base-18.0.1\\res\\values-ta\\values.xml",
@@ -3396,7 +3396,7 @@
             ]
         },
         {
-            "outputFile": "com.example.orbitalflutter.app-merged_res-15:/values-fi_values-fi.arsc.flat",
+            "outputFile": "com.example.hawkerbro.app-merged_res-15:/values-fi_values-fi.arsc.flat",
             "map": [
                 {
                     "source": "C:\\Users\\imana\\.gradle\\caches\\transforms-3\\6d3bbaf4594b8ed85e4722883be764b3\\transformed\\browser-1.4.0\\res\\values-fi\\values-fi.xml",
@@ -3469,7 +3469,7 @@
             ]
         },
         {
-            "outputFile": "com.example.orbitalflutter.app-merged_res-15:/values-iw_values-iw.arsc.flat",
+            "outputFile": "com.example.hawkerbro.app-merged_res-15:/values-iw_values-iw.arsc.flat",
             "map": [
                 {
                     "source": "C:\\Users\\imana\\.gradle\\caches\\transforms-3\\58aa1384bde170d075503b845cfcf44c\\transformed\\jetified-play-services-basement-18.1.0\\res\\values-iw\\values.xml",
@@ -3542,7 +3542,7 @@
             ]
         },
         {
-            "outputFile": "com.example.orbitalflutter.app-merged_res-15:/values-nb_values-nb.arsc.flat",
+            "outputFile": "com.example.hawkerbro.app-merged_res-15:/values-nb_values-nb.arsc.flat",
             "map": [
                 {
                     "source": "C:\\Users\\imana\\.gradle\\caches\\transforms-3\\58aa1384bde170d075503b845cfcf44c\\transformed\\jetified-play-services-basement-18.1.0\\res\\values-nb\\values.xml",
@@ -3615,7 +3615,7 @@
             ]
         },
         {
-            "outputFile": "com.example.orbitalflutter.app-merged_res-15:/values-ja_values-ja.arsc.flat",
+            "outputFile": "com.example.hawkerbro.app-merged_res-15:/values-ja_values-ja.arsc.flat",
             "map": [
                 {
                     "source": "C:\\Users\\imana\\.gradle\\caches\\transforms-3\\aba8f806953ea3dd8f794da3aeb78a12\\transformed\\jetified-play-services-base-18.0.1\\res\\values-ja\\values.xml",
@@ -3688,7 +3688,7 @@
             ]
         },
         {
-            "outputFile": "com.example.orbitalflutter.app-merged_res-15:/values-in_values-in.arsc.flat",
+            "outputFile": "com.example.hawkerbro.app-merged_res-15:/values-in_values-in.arsc.flat",
             "map": [
                 {
                     "source": "C:\\Users\\imana\\.gradle\\caches\\transforms-3\\7e9df2ac2213a6bd3cef0f2f27870d79\\transformed\\core-1.6.0\\res\\values-in\\values-in.xml",
@@ -3761,7 +3761,7 @@
             ]
         },
         {
-            "outputFile": "com.example.orbitalflutter.app-merged_res-15:/values-fr_values-fr.arsc.flat",
+            "outputFile": "com.example.hawkerbro.app-merged_res-15:/values-fr_values-fr.arsc.flat",
             "map": [
                 {
                     "source": "C:\\Users\\imana\\.gradle\\caches\\transforms-3\\7e9df2ac2213a6bd3cef0f2f27870d79\\transformed\\core-1.6.0\\res\\values-fr\\values-fr.xml",
@@ -3834,7 +3834,7 @@
             ]
         },
         {
-            "outputFile": "com.example.orbitalflutter.app-merged_res-15:/values-lo_values-lo.arsc.flat",
+            "outputFile": "com.example.hawkerbro.app-merged_res-15:/values-lo_values-lo.arsc.flat",
             "map": [
                 {
                     "source": "C:\\Users\\imana\\.gradle\\caches\\transforms-3\\7e9df2ac2213a6bd3cef0f2f27870d79\\transformed\\core-1.6.0\\res\\values-lo\\values-lo.xml",
@@ -3907,7 +3907,7 @@
             ]
         },
         {
-            "outputFile": "com.example.orbitalflutter.app-merged_res-15:/values-as_values-as.arsc.flat",
+            "outputFile": "com.example.hawkerbro.app-merged_res-15:/values-as_values-as.arsc.flat",
             "map": [
                 {
                     "source": "C:\\Users\\imana\\.gradle\\caches\\transforms-3\\aba8f806953ea3dd8f794da3aeb78a12\\transformed\\jetified-play-services-base-18.0.1\\res\\values-as\\values.xml",
@@ -3980,7 +3980,7 @@
             ]
         },
         {
-            "outputFile": "com.example.orbitalflutter.app-merged_res-15:/values-th_values-th.arsc.flat",
+            "outputFile": "com.example.hawkerbro.app-merged_res-15:/values-th_values-th.arsc.flat",
             "map": [
                 {
                     "source": "C:\\Users\\imana\\.gradle\\caches\\transforms-3\\aba8f806953ea3dd8f794da3aeb78a12\\transformed\\jetified-play-services-base-18.0.1\\res\\values-th\\values.xml",
@@ -4053,7 +4053,7 @@
             ]
         },
         {
-            "outputFile": "com.example.orbitalflutter.app-merged_res-15:/values-ka_values-ka.arsc.flat",
+            "outputFile": "com.example.hawkerbro.app-merged_res-15:/values-ka_values-ka.arsc.flat",
             "map": [
                 {
                     "source": "C:\\Users\\imana\\.gradle\\caches\\transforms-3\\58aa1384bde170d075503b845cfcf44c\\transformed\\jetified-play-services-basement-18.1.0\\res\\values-ka\\values.xml",
@@ -4126,7 +4126,7 @@
             ]
         },
         {
-            "outputFile": "com.example.orbitalflutter.app-merged_res-15:/values-sl_values-sl.arsc.flat",
+            "outputFile": "com.example.hawkerbro.app-merged_res-15:/values-sl_values-sl.arsc.flat",
             "map": [
                 {
                     "source": "C:\\Users\\imana\\.gradle\\caches\\transforms-3\\58aa1384bde170d075503b845cfcf44c\\transformed\\jetified-play-services-basement-18.1.0\\res\\values-sl\\values.xml",
@@ -4199,7 +4199,7 @@
             ]
         },
         {
-            "outputFile": "com.example.orbitalflutter.app-merged_res-15:/values-or_values-or.arsc.flat",
+            "outputFile": "com.example.hawkerbro.app-merged_res-15:/values-or_values-or.arsc.flat",
             "map": [
                 {
                     "source": "C:\\Users\\imana\\.gradle\\caches\\transforms-3\\58aa1384bde170d075503b845cfcf44c\\transformed\\jetified-play-services-basement-18.1.0\\res\\values-or\\values.xml",
@@ -4272,7 +4272,7 @@
             ]
         },
         {
-            "outputFile": "com.example.orbitalflutter.app-merged_res-15:/values_values.arsc.flat",
+            "outputFile": "com.example.hawkerbro.app-merged_res-15:/values_values.arsc.flat",
             "map": [
                 {
                     "source": "C:\\Users\\imana\\.gradle\\caches\\transforms-3\\25cee5f028ac2a6b79fd6278ff5b59e2\\transformed\\jetified-window-1.0.0-beta04\\res\\values\\values.xml",
@@ -4330,7 +4330,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\imana\\OneDrive\\Documents\\flutter\\orbitalflutter\\android\\app\\src\\main\\res\\values\\styles.xml",
+                    "source": "C:\\Users\\imana\\OneDrive\\Documents\\flutter\\hawkerbro\\android\\app\\src\\main\\res\\values\\styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",
@@ -4387,7 +4387,7 @@
             ]
         },
         {
-            "outputFile": "com.example.orbitalflutter.app-merged_res-15:/values-hr_values-hr.arsc.flat",
+            "outputFile": "com.example.hawkerbro.app-merged_res-15:/values-hr_values-hr.arsc.flat",
             "map": [
                 {
                     "source": "C:\\Users\\imana\\.gradle\\caches\\transforms-3\\7e9df2ac2213a6bd3cef0f2f27870d79\\transformed\\core-1.6.0\\res\\values-hr\\values-hr.xml",
@@ -4460,7 +4460,7 @@
             ]
         },
         {
-            "outputFile": "com.example.orbitalflutter.app-merged_res-15:/values-ru_values-ru.arsc.flat",
+            "outputFile": "com.example.hawkerbro.app-merged_res-15:/values-ru_values-ru.arsc.flat",
             "map": [
                 {
                     "source": "C:\\Users\\imana\\.gradle\\caches\\transforms-3\\58aa1384bde170d075503b845cfcf44c\\transformed\\jetified-play-services-basement-18.1.0\\res\\values-ru\\values.xml",
@@ -4533,7 +4533,7 @@
             ]
         },
         {
-            "outputFile": "com.example.orbitalflutter.app-merged_res-15:/values-tl_values-tl.arsc.flat",
+            "outputFile": "com.example.hawkerbro.app-merged_res-15:/values-tl_values-tl.arsc.flat",
             "map": [
                 {
                     "source": "C:\\Users\\imana\\.gradle\\caches\\transforms-3\\58aa1384bde170d075503b845cfcf44c\\transformed\\jetified-play-services-basement-18.1.0\\res\\values-tl\\values.xml",
@@ -4606,7 +4606,7 @@
             ]
         },
         {
-            "outputFile": "com.example.orbitalflutter.app-merged_res-15:/values-zh-rCN_values-zh-rCN.arsc.flat",
+            "outputFile": "com.example.hawkerbro.app-merged_res-15:/values-zh-rCN_values-zh-rCN.arsc.flat",
             "map": [
                 {
                     "source": "C:\\Users\\imana\\.gradle\\caches\\transforms-3\\7e9df2ac2213a6bd3cef0f2f27870d79\\transformed\\core-1.6.0\\res\\values-zh-rCN\\values-zh-rCN.xml",
@@ -4679,7 +4679,7 @@
             ]
         },
         {
-            "outputFile": "com.example.orbitalflutter.app-merged_res-15:/values-ko_values-ko.arsc.flat",
+            "outputFile": "com.example.hawkerbro.app-merged_res-15:/values-ko_values-ko.arsc.flat",
             "map": [
                 {
                     "source": "C:\\Users\\imana\\.gradle\\caches\\transforms-3\\7e9df2ac2213a6bd3cef0f2f27870d79\\transformed\\core-1.6.0\\res\\values-ko\\values-ko.xml",
@@ -4752,7 +4752,7 @@
             ]
         },
         {
-            "outputFile": "com.example.orbitalflutter.app-merged_res-15:/values-et_values-et.arsc.flat",
+            "outputFile": "com.example.hawkerbro.app-merged_res-15:/values-et_values-et.arsc.flat",
             "map": [
                 {
                     "source": "C:\\Users\\imana\\.gradle\\caches\\transforms-3\\58aa1384bde170d075503b845cfcf44c\\transformed\\jetified-play-services-basement-18.1.0\\res\\values-et\\values.xml",
@@ -4825,7 +4825,7 @@
             ]
         },
         {
-            "outputFile": "com.example.orbitalflutter.app-merged_res-15:/values-ms_values-ms.arsc.flat",
+            "outputFile": "com.example.hawkerbro.app-merged_res-15:/values-ms_values-ms.arsc.flat",
             "map": [
                 {
                     "source": "C:\\Users\\imana\\.gradle\\caches\\transforms-3\\7e9df2ac2213a6bd3cef0f2f27870d79\\transformed\\core-1.6.0\\res\\values-ms\\values-ms.xml",
@@ -4898,7 +4898,7 @@
             ]
         },
         {
-            "outputFile": "com.example.orbitalflutter.app-merged_res-15:/values-sq_values-sq.arsc.flat",
+            "outputFile": "com.example.hawkerbro.app-merged_res-15:/values-sq_values-sq.arsc.flat",
             "map": [
                 {
                     "source": "C:\\Users\\imana\\.gradle\\caches\\transforms-3\\7e9df2ac2213a6bd3cef0f2f27870d79\\transformed\\core-1.6.0\\res\\values-sq\\values-sq.xml",
@@ -4971,7 +4971,7 @@
             ]
         },
         {
-            "outputFile": "com.example.orbitalflutter.app-merged_res-15:/values-mk_values-mk.arsc.flat",
+            "outputFile": "com.example.hawkerbro.app-merged_res-15:/values-mk_values-mk.arsc.flat",
             "map": [
                 {
                     "source": "C:\\Users\\imana\\.gradle\\caches\\transforms-3\\aba8f806953ea3dd8f794da3aeb78a12\\transformed\\jetified-play-services-base-18.0.1\\res\\values-mk\\values.xml",
@@ -5044,7 +5044,7 @@
             ]
         },
         {
-            "outputFile": "com.example.orbitalflutter.app-merged_res-15:/values-zu_values-zu.arsc.flat",
+            "outputFile": "com.example.hawkerbro.app-merged_res-15:/values-zu_values-zu.arsc.flat",
             "map": [
                 {
                     "source": "C:\\Users\\imana\\.gradle\\caches\\transforms-3\\6d3bbaf4594b8ed85e4722883be764b3\\transformed\\browser-1.4.0\\res\\values-zu\\values-zu.xml",
@@ -5117,7 +5117,7 @@
             ]
         },
         {
-            "outputFile": "com.example.orbitalflutter.app-merged_res-15:/values-pl_values-pl.arsc.flat",
+            "outputFile": "com.example.hawkerbro.app-merged_res-15:/values-pl_values-pl.arsc.flat",
             "map": [
                 {
                     "source": "C:\\Users\\imana\\.gradle\\caches\\transforms-3\\6d3bbaf4594b8ed85e4722883be764b3\\transformed\\browser-1.4.0\\res\\values-pl\\values-pl.xml",
@@ -5190,7 +5190,7 @@
             ]
         },
         {
-            "outputFile": "com.example.orbitalflutter.app-merged_res-15:/values-en-rAU_values-en-rAU.arsc.flat",
+            "outputFile": "com.example.hawkerbro.app-merged_res-15:/values-en-rAU_values-en-rAU.arsc.flat",
             "map": [
                 {
                     "source": "C:\\Users\\imana\\.gradle\\caches\\transforms-3\\6d3bbaf4594b8ed85e4722883be764b3\\transformed\\browser-1.4.0\\res\\values-en-rAU\\values-en-rAU.xml",
@@ -5222,7 +5222,7 @@
             ]
         },
         {
-            "outputFile": "com.example.orbitalflutter.app-merged_res-15:/values-ky_values-ky.arsc.flat",
+            "outputFile": "com.example.hawkerbro.app-merged_res-15:/values-ky_values-ky.arsc.flat",
             "map": [
                 {
                     "source": "C:\\Users\\imana\\.gradle\\caches\\transforms-3\\aba8f806953ea3dd8f794da3aeb78a12\\transformed\\jetified-play-services-base-18.0.1\\res\\values-ky\\values.xml",
@@ -5295,7 +5295,7 @@
             ]
         },
         {
-            "outputFile": "com.example.orbitalflutter.app-merged_res-15:/values-te_values-te.arsc.flat",
+            "outputFile": "com.example.hawkerbro.app-merged_res-15:/values-te_values-te.arsc.flat",
             "map": [
                 {
                     "source": "C:\\Users\\imana\\.gradle\\caches\\transforms-3\\58aa1384bde170d075503b845cfcf44c\\transformed\\jetified-play-services-basement-18.1.0\\res\\values-te\\values.xml",
@@ -5368,7 +5368,7 @@
             ]
         },
         {
-            "outputFile": "com.example.orbitalflutter.app-merged_res-15:/values-km_values-km.arsc.flat",
+            "outputFile": "com.example.hawkerbro.app-merged_res-15:/values-km_values-km.arsc.flat",
             "map": [
                 {
                     "source": "C:\\Users\\imana\\.gradle\\caches\\transforms-3\\7e9df2ac2213a6bd3cef0f2f27870d79\\transformed\\core-1.6.0\\res\\values-km\\values-km.xml",
@@ -5441,7 +5441,7 @@
             ]
         },
         {
-            "outputFile": "com.example.orbitalflutter.app-merged_res-15:/values-kk_values-kk.arsc.flat",
+            "outputFile": "com.example.hawkerbro.app-merged_res-15:/values-kk_values-kk.arsc.flat",
             "map": [
                 {
                     "source": "C:\\Users\\imana\\.gradle\\caches\\transforms-3\\aba8f806953ea3dd8f794da3aeb78a12\\transformed\\jetified-play-services-base-18.0.1\\res\\values-kk\\values.xml",
@@ -5514,7 +5514,7 @@
             ]
         },
         {
-            "outputFile": "com.example.orbitalflutter.app-merged_res-15:/values-it_values-it.arsc.flat",
+            "outputFile": "com.example.hawkerbro.app-merged_res-15:/values-it_values-it.arsc.flat",
             "map": [
                 {
                     "source": "C:\\Users\\imana\\.gradle\\caches\\transforms-3\\7e9df2ac2213a6bd3cef0f2f27870d79\\transformed\\core-1.6.0\\res\\values-it\\values-it.xml",
@@ -5587,7 +5587,7 @@
             ]
         },
         {
-            "outputFile": "com.example.orbitalflutter.app-merged_res-15:/values-pt-rBR_values-pt-rBR.arsc.flat",
+            "outputFile": "com.example.hawkerbro.app-merged_res-15:/values-pt-rBR_values-pt-rBR.arsc.flat",
             "map": [
                 {
                     "source": "C:\\Users\\imana\\.gradle\\caches\\transforms-3\\7e9df2ac2213a6bd3cef0f2f27870d79\\transformed\\core-1.6.0\\res\\values-pt-rBR\\values-pt-rBR.xml",
@@ -5660,7 +5660,7 @@
             ]
         },
         {
-            "outputFile": "com.example.orbitalflutter.app-merged_res-15:/values-de_values-de.arsc.flat",
+            "outputFile": "com.example.hawkerbro.app-merged_res-15:/values-de_values-de.arsc.flat",
             "map": [
                 {
                     "source": "C:\\Users\\imana\\.gradle\\caches\\transforms-3\\58aa1384bde170d075503b845cfcf44c\\transformed\\jetified-play-services-basement-18.1.0\\res\\values-de\\values.xml",
@@ -5733,7 +5733,7 @@
             ]
         },
         {
-            "outputFile": "com.example.orbitalflutter.app-merged_res-15:/values-cs_values-cs.arsc.flat",
+            "outputFile": "com.example.hawkerbro.app-merged_res-15:/values-cs_values-cs.arsc.flat",
             "map": [
                 {
                     "source": "C:\\Users\\imana\\.gradle\\caches\\transforms-3\\6d3bbaf4594b8ed85e4722883be764b3\\transformed\\browser-1.4.0\\res\\values-cs\\values-cs.xml",
@@ -5806,7 +5806,7 @@
             ]
         },
         {
-            "outputFile": "com.example.orbitalflutter.app-merged_res-15:/values-bn_values-bn.arsc.flat",
+            "outputFile": "com.example.hawkerbro.app-merged_res-15:/values-bn_values-bn.arsc.flat",
             "map": [
                 {
                     "source": "C:\\Users\\imana\\.gradle\\caches\\transforms-3\\aba8f806953ea3dd8f794da3aeb78a12\\transformed\\jetified-play-services-base-18.0.1\\res\\values-bn\\values.xml",
@@ -5879,7 +5879,7 @@
             ]
         },
         {
-            "outputFile": "com.example.orbitalflutter.app-merged_res-15:/values-bs_values-bs.arsc.flat",
+            "outputFile": "com.example.hawkerbro.app-merged_res-15:/values-bs_values-bs.arsc.flat",
             "map": [
                 {
                     "source": "C:\\Users\\imana\\.gradle\\caches\\transforms-3\\58aa1384bde170d075503b845cfcf44c\\transformed\\jetified-play-services-basement-18.1.0\\res\\values-bs\\values.xml",
@@ -5952,7 +5952,7 @@
             ]
         },
         {
-            "outputFile": "com.example.orbitalflutter.app-merged_res-15:/values-az_values-az.arsc.flat",
+            "outputFile": "com.example.hawkerbro.app-merged_res-15:/values-az_values-az.arsc.flat",
             "map": [
                 {
                     "source": "C:\\Users\\imana\\.gradle\\caches\\transforms-3\\58aa1384bde170d075503b845cfcf44c\\transformed\\jetified-play-services-basement-18.1.0\\res\\values-az\\values.xml",
@@ -6025,7 +6025,7 @@
             ]
         },
         {
-            "outputFile": "com.example.orbitalflutter.app-merged_res-15:/values-bg_values-bg.arsc.flat",
+            "outputFile": "com.example.hawkerbro.app-merged_res-15:/values-bg_values-bg.arsc.flat",
             "map": [
                 {
                     "source": "C:\\Users\\imana\\.gradle\\caches\\transforms-3\\aba8f806953ea3dd8f794da3aeb78a12\\transformed\\jetified-play-services-base-18.0.1\\res\\values-bg\\values.xml",
@@ -6098,7 +6098,7 @@
             ]
         },
         {
-            "outputFile": "com.example.orbitalflutter.app-merged_res-15:/values-b+sr+Latn_values-b+sr+Latn.arsc.flat",
+            "outputFile": "com.example.hawkerbro.app-merged_res-15:/values-b+sr+Latn_values-b+sr+Latn.arsc.flat",
             "map": [
                 {
                     "source": "C:\\Users\\imana\\.gradle\\caches\\transforms-3\\6d3bbaf4594b8ed85e4722883be764b3\\transformed\\browser-1.4.0\\res\\values-b+sr+Latn\\values-b+sr+Latn.xml",

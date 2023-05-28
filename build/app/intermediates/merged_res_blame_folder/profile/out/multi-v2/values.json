@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.orbitalflutter.app-mergeProfileResources-13:/values/values.xml",
+            "outputFile": "com.example.hawkerbro.app-mergeProfileResources-13:/values/values.xml",
             "map": [
                 {
                     "source": "C:\\Users\\imana\\.gradle\\caches\\transforms-3\\25cee5f028ac2a6b79fd6278ff5b59e2\\transformed\\jetified-window-1.0.0-beta04\\res\\values\\values.xml",
@@ -59,7 +59,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\imana\\OneDrive\\Documents\\flutter\\orbitalflutter\\android\\app\\src\\main\\res\\values\\styles.xml",
+                    "source": "C:\\Users\\imana\\OneDrive\\Documents\\flutter\\hawkerbro\\android\\app\\src\\main\\res\\values\\styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",

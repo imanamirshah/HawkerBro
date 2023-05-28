@@ -1,13 +1,13 @@
 <variant
     name="release"
-    package="com.example.orbitalflutter"
+    package="com.example.hawkerbro"
     minSdkVersion="21"
     targetSdkVersion="33"
     shrinking="true"
-    mergedManifest="C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\app\intermediates\merged_manifest\release\AndroidManifest.xml"
-    manifestMergeReport="C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\app\outputs\logs\manifest-merger-release-report.txt"
-    proguardFiles="C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\app\intermediates\default_proguard_files\global\proguard-android.txt-7.3.0;C:\src\flutter\flutter\packages\flutter_tools\gradle\flutter_proguard_rules.pro;proguard-rules.pro"
-    partialResultsDir="C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\app\intermediates\lint_vital_partial_results\release\out">
+    mergedManifest="C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\app\intermediates\merged_manifest\release\AndroidManifest.xml"
+    manifestMergeReport="C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\app\outputs\logs\manifest-merger-release-report.txt"
+    proguardFiles="C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\app\intermediates\default_proguard_files\global\proguard-android.txt-7.3.0;C:\src\flutter\flutter\packages\flutter_tools\gradle\flutter_proguard_rules.pro;proguard-rules.pro"
+    partialResultsDir="C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\app\intermediates\lint_vital_partial_results\release\out">
   <buildFeatures
       namespacing="REQUIRED"/>
   <sourceProviders>
@@ -32,9 +32,9 @@
         value="io.flutter.app.FlutterMultiDexApplication" />
   </manifestPlaceholders>
   <mainArtifact
-      classOutputs="C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\app\intermediates\javac\release\classes;C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\app\tmp\kotlin-classes\release;C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\app\kotlinToolingMetadata;C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\app\intermediates\compile_and_runtime_not_namespaced_r_class_jar\release\R.jar"
-      applicationId="com.example.orbitalflutter"
-      generatedSourceFolders="C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\app\generated\ap_generated_sources\release\out;C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\app\generated\aidl_source_output_dir\release\out;C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\app\generated\source\buildConfig\release;C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\app\generated\renderscript_source_output_dir\release\out"
-      generatedResourceFolders="C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\app\generated\res\rs\release;C:\Users\imana\OneDrive\Documents\flutter\orbitalflutter\build\app\generated\res\resValues\release">
+      classOutputs="C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\app\intermediates\javac\release\classes;C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\app\tmp\kotlin-classes\release;C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\app\kotlinToolingMetadata;C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\app\intermediates\compile_and_runtime_not_namespaced_r_class_jar\release\R.jar"
+      applicationId="com.example.hawkerbro"
+      generatedSourceFolders="C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\app\generated\ap_generated_sources\release\out;C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\app\generated\aidl_source_output_dir\release\out;C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\app\generated\source\buildConfig\release;C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\app\generated\renderscript_source_output_dir\release\out"
+      generatedResourceFolders="C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\app\generated\res\rs\release;C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\app\generated\res\resValues\release">
   </mainArtifact>
 </variant>

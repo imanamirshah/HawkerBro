@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:orbitalflutter/provider/auth_provider.dart';
-import 'package:orbitalflutter/screens/welcome_screen.dart';
+import 'package:hawkerbro/provider/auth_provider.dart';
+import 'package:hawkerbro/screens/welcome_screen.dart';
 import 'package:provider/provider.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';

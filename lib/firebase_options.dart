@@ -67,9 +67,11 @@ class DefaultFirebaseOptions {
     messagingSenderId: '484751014681',
     projectId: 'orbitalflutterhawkerbro',
     storageBucket: 'orbitalflutterhawkerbro.appspot.com',
-    androidClientId: '484751014681-mkk29kmdqtepcfkq6k7pqk535es54d33.apps.googleusercontent.com',
-    iosClientId: '484751014681-lcjstofulfpk7eaqijr27vvnlra28utm.apps.googleusercontent.com',
-    iosBundleId: 'com.example.orbitalflutter',
+    androidClientId:
+        '484751014681-mkk29kmdqtepcfkq6k7pqk535es54d33.apps.googleusercontent.com',
+    iosClientId:
+        '484751014681-lcjstofulfpk7eaqijr27vvnlra28utm.apps.googleusercontent.com',
+    iosBundleId: 'com.example.hawkerbro',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
@@ -78,8 +80,10 @@ class DefaultFirebaseOptions {
     messagingSenderId: '484751014681',
     projectId: 'orbitalflutterhawkerbro',
     storageBucket: 'orbitalflutterhawkerbro.appspot.com',
-    androidClientId: '484751014681-mkk29kmdqtepcfkq6k7pqk535es54d33.apps.googleusercontent.com',
-    iosClientId: '484751014681-2usrrom8hqa0kqjqle5qarqs9c4bov4o.apps.googleusercontent.com',
-    iosBundleId: 'com.example.orbitalflutter.RunnerTests',
+    androidClientId:
+        '484751014681-mkk29kmdqtepcfkq6k7pqk535es54d33.apps.googleusercontent.com',
+    iosClientId:
+        '484751014681-2usrrom8hqa0kqjqle5qarqs9c4bov4o.apps.googleusercontent.com',
+    iosBundleId: 'com.example.hawkerbro.RunnerTests',
   );
 }
