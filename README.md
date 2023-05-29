@@ -5,9 +5,11 @@ Orbital (Independent Software Development Project) is NUS School of Computing se
 ## Introducing HawkerBro
 An innovative app that seamlessly connects hawker stall owners with both locals and tourists, offering a delightful experience to explore and indulge in Singapore's rich and diverse hawker food culture.
 
-**Project poster**: Link
+**Project poster**: [Link](https://drive.google.com/file/d/14vHV0Vl82uYMaQ9ET9EB3rWIsIQssWos/view?usp=share_link)
 
-**Project video**: Link 
+**Project video**: [Link](https://drive.google.com/file/d/1X0ejjz98kEvR3nC1feLYiT9gXDLodrCd/view?usp=share_link) 
+
+*For technical proof of concept and user testing instructions, please scroll all the way to the bottom.*
 
 ## Motivation 
 
@@ -109,7 +111,7 @@ N.A. for milestone 1
 ### Vendor Listing
 
 **[Proposed]**
-​​
+
 The app facilitates hawker stall owners in creating comprehensive profiles where they can list their menu items, prices, opening hours, and location, while also recognizing that some hawkers may not be tech-savvy. Additionally, consumers have the opportunity to create profiles for their favourite hawker stalls, empowering them to promote hidden gems and underrated food stalls they discover, thereby showcasing their support and appreciation through the app.
 
 **[Current Progress]**
@@ -159,6 +161,8 @@ N.A. for milestone 1
 
 
 ## Technical Proof-of-Concept
+
+**Milestone 1 TPOC video:** [Link](https://drive.google.com/drive/folders/1k5BdOcm1UjkrzOHTlKox6w5yBBzsghEl)
 
 For Milestone 1, we mainly created the following: 
 - Welcome page
