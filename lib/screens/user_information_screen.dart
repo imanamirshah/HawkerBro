@@ -39,6 +39,7 @@ class _UserInformationScreenState extends State<UserInformationScreen> {
     final isLoading =
         Provider.of<AuthProvider>(context, listen: true).isLoading;
     return Scaffold(
+      backgroundColor: Colors.white,
       body: SafeArea(
         child: isLoading == true
             ? const Center(
@@ -47,8 +48,10 @@ class _UserInformationScreenState extends State<UserInformationScreen> {
                 ),
               )
             : SingleChildScrollView(
-                padding:
-                    const EdgeInsets.symmetric(vertical: 25.0, horizontal: 5.0),
+                padding: const EdgeInsets.symmetric(
+                  vertical: 100.0,
+                  horizontal: 5.0,
+                ),
                 child: Center(
                   child: Column(
                     children: [
@@ -72,7 +75,9 @@ class _UserInformationScreenState extends State<UserInformationScreen> {
                       Container(
                         width: MediaQuery.of(context).size.width,
                         padding: const EdgeInsets.symmetric(
-                            vertical: 5, horizontal: 15),
+                          vertical: 5,
+                          horizontal: 15,
+                        ),
                         margin: const EdgeInsets.only(top: 20),
                         child: Column(
                           children: [
@@ -187,11 +192,12 @@ class _UserInformationScreenState extends State<UserInformationScreen> {
           ap.saveUserDataToSP().then(
                 (value) => ap.setSignIn().then(
                       (value) => Navigator.pushAndRemoveUntil(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const HomeScreen(),
-                          ),
-                          (route) => false),
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const HomeScreen(),
+                        ),
+                        (route) => false,
+                      ),
                     ),
               );
         },

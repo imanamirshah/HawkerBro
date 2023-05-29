@@ -4,6 +4,7 @@ import 'package:hawkerbro/screens/welcome_screen.dart';
 import 'package:provider/provider.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -20,9 +21,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [ChangeNotifierProvider(create: (_) => AuthProvider())],
-      child: const MaterialApp(
+      child: MaterialApp(
+        theme: ThemeData(
+          textTheme: GoogleFonts.montserratTextTheme(),
+        ),
         debugShowCheckedModeBanner: false,
-        home: WelcomeScreen(),
+        home: const WelcomeScreen(),
         title: 'HawkerBro',
       ),
     );

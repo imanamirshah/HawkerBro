@@ -16,20 +16,23 @@ class _RegisterScreenState extends State<RegisterScreen> {
   final TextEditingController _phoneNumberController = TextEditingController();
 
   Country selectedCountry = Country(
-      phoneCode: "65",
-      countryCode: "SG",
-      e164Sc: 0,
-      geographic: true,
-      level: 1,
-      name: "Singapore",
-      example: "Singapore",
-      displayName: "Singapore",
-      displayNameNoCountryCode: "SG",
-      e164Key: "");
+    phoneCode: "65",
+    countryCode: "SG",
+    e164Sc: 0,
+    geographic: true,
+    level: 1,
+    name: "Singapore",
+    example: "Singapore",
+    displayName: "Singapore",
+    displayNameNoCountryCode: "SG",
+    e164Key: "",
+  );
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
+      backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.white,
         foregroundColor: Colors.black,
@@ -43,11 +46,14 @@ class _RegisterScreenState extends State<RegisterScreen> {
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(30.0),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            const SizedBox(height: 16.0),
+            Image.asset(
+              "assets/register.jpg",
+              height: 200,
+            ),
             const Text(
               'Hi There!',
               style: TextStyle(
@@ -56,6 +62,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 color: Colors.black,
               ),
             ),
+            const SizedBox(height: 5.0),
             const Text(
               'Please enter your phone number',
               style: TextStyle(
@@ -76,33 +83,36 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 hintText: "Phone Number",
                 hintStyle: TextStyle(
                   fontWeight: FontWeight.w500,
-                  fontSize: 15,
+                  fontSize: 18,
                   color: Colors.grey.shade600,
                 ),
                 enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10),
-                    borderSide: const BorderSide(
-                      color: Colors.black12,
-                    )),
+                  borderRadius: BorderRadius.circular(10),
+                  borderSide: const BorderSide(
+                    color: Colors.black12,
+                  ),
+                ),
                 focusedBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(10),
-                    borderSide: const BorderSide(
-                      color: Colors.black12,
-                    )),
+                  borderRadius: BorderRadius.circular(10),
+                  borderSide: const BorderSide(
+                    color: Colors.black12,
+                  ),
+                ),
                 prefixIcon: Container(
                   padding: const EdgeInsets.fromLTRB(15.0, 13.0, 8.0, 15.0),
                   child: InkWell(
                     onTap: () {
                       showCountryPicker(
-                          context: context,
-                          countryListTheme: const CountryListThemeData(
-                            bottomSheetHeight: 480,
-                          ),
-                          onSelect: (value) {
-                            setState(() {
-                              selectedCountry = value;
-                            });
+                        context: context,
+                        countryListTheme: const CountryListThemeData(
+                          bottomSheetHeight: 480,
+                        ),
+                        onSelect: (value) {
+                          setState(() {
+                            selectedCountry = value;
                           });
+                        },
+                      );
                     },
                     child: Text(
                       "${selectedCountry.flagEmoji}  +${selectedCountry.phoneCode}",

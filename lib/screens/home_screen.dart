@@ -17,9 +17,15 @@ class _HomeScreenState extends State<HomeScreen> {
 
     return Scaffold(
       appBar: AppBar(
+        toolbarHeight: 70,
         backgroundColor: Colors.yellow,
         foregroundColor: Colors.black,
-        title: const Text("HawkerBro"),
+        title: const Text(
+          "Home Page",
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+          ),
+        ),
         actions: [
           IconButton(
             onPressed: () {
@@ -37,25 +43,29 @@ class _HomeScreenState extends State<HomeScreen> {
         ],
       ),
       body: Center(
-          child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          CircleAvatar(
-            backgroundColor: Colors.black,
-            backgroundImage: NetworkImage(ap.userModel.profilePic),
-            radius: 50,
-          ),
-          const SizedBox(height: 20),
-          Text(
-            ap.userModel.name,
-            style: const TextStyle(fontWeight: FontWeight.bold),
-          ),
-          Text(ap.userModel.phoneNumber),
-          Text(ap.userModel.email),
-          Text(ap.userModel.bio),
-        ],
-      )),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            const Text("This page is still under development."),
+            const SizedBox(height: 30),
+            CircleAvatar(
+              backgroundColor: Colors.black,
+              backgroundImage: NetworkImage(ap.userModel.profilePic),
+              radius: 50,
+            ),
+            const SizedBox(height: 20),
+            Text(
+              ap.userModel.name,
+              style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 15),
+            Text(ap.userModel.phoneNumber),
+            Text(ap.userModel.email),
+            Text(ap.userModel.bio),
+          ],
+        ),
+      ),
     );
   }
 }

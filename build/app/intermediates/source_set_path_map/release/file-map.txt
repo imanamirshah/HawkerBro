@@ -33,5 +33,6 @@ com.example.hawkerbro.app-packaged_res-31 C:\Users\imana\OneDrive\Documents\flut
 com.example.hawkerbro.app-packaged_res-32 C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\firebase_storage\intermediates\packaged_res\release
 com.example.hawkerbro.app-packaged_res-33 C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\flutter_plugin_android_lifecycle\intermediates\packaged_res\release
 com.example.hawkerbro.app-packaged_res-34 C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\image_picker_android\intermediates\packaged_res\release
-com.example.hawkerbro.app-packaged_res-35 C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\shared_preferences_android\intermediates\packaged_res\release
-com.example.hawkerbro.app-packaged_res-36 C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\smart_auth\intermediates\packaged_res\release
+com.example.hawkerbro.app-packaged_res-35 C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\path_provider_android\intermediates\packaged_res\release
+com.example.hawkerbro.app-packaged_res-36 C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\shared_preferences_android\intermediates\packaged_res\release
+com.example.hawkerbro.app-packaged_res-37 C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\smart_auth\intermediates\packaged_res\release
