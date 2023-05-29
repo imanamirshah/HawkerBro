@@ -30,6 +30,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         backgroundColor: Colors.white,
         foregroundColor: Colors.black,
@@ -43,11 +44,14 @@ class _RegisterScreenState extends State<RegisterScreen> {
         ),
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(30.0),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            const SizedBox(height: 16.0),
+            Image.asset(
+              "assets/register.jpg",
+              height: 200,
+            ),
             const Text(
               'Hi There!',
               style: TextStyle(
@@ -56,6 +60,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 color: Colors.black,
               ),
             ),
+            const SizedBox(height: 5.0),
             const Text(
               'Please enter your phone number',
               style: TextStyle(

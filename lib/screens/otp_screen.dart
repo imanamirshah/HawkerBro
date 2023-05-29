@@ -23,6 +23,7 @@ class _OtpScreenState extends State<OtpScreen> {
     final isLoading =
         Provider.of<AuthProvider>(context, listen: true).isLoading;
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         backgroundColor: Colors.white,
         foregroundColor: Colors.black,
@@ -47,6 +48,10 @@ class _OtpScreenState extends State<OtpScreen> {
                 child: Center(
                   child: Column(
                     children: [
+                      Image.asset(
+                        "assets/otp.jpg",
+                        height: 200,
+                      ),
                       const SizedBox(height: 16.0),
                       const Text(
                         'Verification',
@@ -64,7 +69,7 @@ class _OtpScreenState extends State<OtpScreen> {
                           fontSize: 14.0,
                         ),
                       ),
-                      const SizedBox(height: 20.0),
+                      const SizedBox(height: 12.0),
                       Pinput(
                         length: 6,
                         showCursor: true,

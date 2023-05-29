@@ -18,62 +18,63 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
     final ap = Provider.of<AuthProvider>(context, listen: false);
 
     return Scaffold(
+        backgroundColor: Colors.white,
         body: SafeArea(
             child: Center(
-      child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 25, horizontal: 35),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Image.asset(
-              "assets/hawkerbro.PNG",
-              height: 300,
-            ),
-            const SizedBox(height: 20),
-            const Text(
-              "Welcome!",
-              style: TextStyle(
-                fontSize: 22,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            const SizedBox(height: 20),
-            const Text(
-              "Some slogan for hawkerbro",
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.normal,
-              ),
-            ),
-            const SizedBox(height: 20),
-            SizedBox(
-                width: double.infinity,
-                height: 50,
-                child: CustomButton(
-                  onPressed: () async {
-                    if (ap.isSignedIn == true) {
-                      await ap.getDataFromSP().whenComplete(
-                            () => Navigator.pushReplacement(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => const HomeScreen(),
-                              ),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(vertical: 25, horizontal: 35),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset(
+                  "assets/hawkerbro.png",
+                  height: 300,
+                ),
+                const SizedBox(height: 20),
+                const Text(
+                  "Welcome!",
+                  style: TextStyle(
+                    fontSize: 35,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                const SizedBox(height: 30),
+                const Text(
+                  "Refuel your tastbuds.",
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.normal,
+                  ),
+                ),
+                const SizedBox(height: 20),
+                SizedBox(
+                    width: double.infinity,
+                    height: 50,
+                    child: CustomButton(
+                      onPressed: () async {
+                        if (ap.isSignedIn == true) {
+                          await ap.getDataFromSP().whenComplete(
+                                () => Navigator.pushReplacement(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => const HomeScreen(),
+                                  ),
+                                ),
+                              );
+                        } else {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => const RegisterScreen(),
                             ),
                           );
-                    } else {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const RegisterScreen(),
-                        ),
-                      );
-                    }
-                  },
-                  text: "Login",
-                ))
-          ],
-        ),
-      ),
-    )));
+                        }
+                      },
+                      text: "Login",
+                    ))
+              ],
+            ),
+          ),
+        )));
   }
 }
