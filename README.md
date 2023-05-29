@@ -191,6 +191,11 @@ Phone Numbers         (6-Digit OTP)
 
 +65 99999999             (999999)
 
+## Phone Authentication Flow Diagram
+
+![phoneauthdiagram](https://github.com/imanamirshah/hawkerbro/assets/110608505/a92d4cec-fa0f-4b2e-a9a7-5072af963c1e)
+
+
 
 ## User Instructions for Testing
 
