@@ -171,14 +171,23 @@ For now, dummy numbers and OTPs are registered into Firebase that one can use to
 The following are the dummy numbers and OTPs that can be used for our login as of this stage:
 
 Phone Numbers         OTPs (6 digit PIN)
+
 +65 11111111             111111
+
 +65 22222222             222222
+
 +65 33333333             333333
+
 +65 44444444             444444
+
 +65 55555555             555555
+
 +65 66666666             666666
+
 +65 77777777             777777
+
 +65 88888888             888888
+
 +65 99999999             999999
 
 
