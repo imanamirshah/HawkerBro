@@ -45,7 +45,7 @@
 26        android:icon="@mipmap/ic_launcher"
 26-->C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\android\app\src\main\AndroidManifest.xml:5:9-43
 27        android:label="hawkerbro" >
-27-->C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\android\app\src\main\AndroidManifest.xml:3:9-39
+27-->C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\android\app\src\main\AndroidManifest.xml:3:9-34
 28        <activity
 28-->C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\android\app\src\main\AndroidManifest.xml:6:9-26:20
 29            android:name="com.example.hawkerbro.MainActivity"
