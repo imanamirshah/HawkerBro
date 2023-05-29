@@ -55,6 +55,22 @@ As a consumer, I want to be able to review my food to let other consumers know a
 [Proposed] - features for Minimum Viable Product (MVP) by Splashdown
 [Current Progress] - elaboration on current progress of specific feature
 
+
+### Login/Sign-up page
+
+**[Proposed]**
+
+Our app offers a visually appealing login/signup page to warmly welcome users. We understand the importance of creating a positive first impression, and our goal is to provide a seamless and secure authentication experience.
+
+**[Current Progress]**
+
+We have implemented a robust OTP (One-Time Password) function as our two-factor authentication (2FA) mechanism. We made use of Firebase as our backend and database due to the ease of implementation and management of user credentials.
+
+To prevent automated bot attacks and maintain the integrity of our user base, we are exploring the implementation of Captcha. This added security measure verifies that the users interacting with our login/signup page are genuine individuals, further mitigating the risk of fraudulent activities.
+
+Currently the phone authentication only accepts dummy numbers as we have yet to set up actual SMS OTP. These dummy numbers have their own OTPs where users can key in to create their own profiles with these dummy numbers. Our next step is to include the SMS service for OTP authentication to allow users to create their profile using their respective mobile numbers.
+
+
 ### Explore page
 
 **[Proposed]**
@@ -68,7 +84,7 @@ By combining location-based suggestions with customizable filters, the app offer
 Furthermore, the app's Explore page serves as a hub for all the app's main features, consolidating key functionalities into a single, intuitive interface. This design approach ensures that users can easily navigate through the app, access relevant information about each hawker stall, view ratings and reviews, and make well-informed dining choices—all in one centralised location.
 
 **[Current Progress]**
-Currently, the Explore page showcases interactive widgets in the form of placeholders. 
+Currently, the Explore page only displays the account details as well as a logout button that will bring users back to the welcome screen. 
 
 
 ### Ratings and Review 
@@ -141,19 +157,30 @@ N.A. for milestone 1
 - Link to Google Maps 
 
 
-//insert image of UML and figma here//
-
-
 ## Technical Proof-of-Concept
 
 For Milestone 1, we mainly created the following: 
-Welcome page
-Registration page
-OTP page
-Profile creation page
-A simple home screen that only displays the account details for now
+- Welcome page
+- Registration page
+- OTP page
+- Profile creation page
+- A simple home screen that only displays the account details for now
 
 For now, dummy numbers and OTPs are registered into Firebase that one can use to test the login. The next step is to set up the actual OTP service to be sent to actual phone numbers. After keying in the phone numbers, users will be brought into an OTP page that prompts users for an OTP (dummy OTPs are linked to dummy numbers). Keying in the right OTP will log users into the home page. For new phone numbers, the users will be brought to a profile creation screen whereas existing phone numbers will bring users straight to the home page. On the home page, there is a logout button that will bring users to the welcome page.
+
+The following are the dummy numbers and OTPs that can be used for our login as of this stage:
+
+Phone Numbers         OTPs (6 digit PIN)
++65 11111111             111111
++65 22222222             222222
++65 33333333             333333
++65 44444444             444444
++65 55555555             555555
++65 66666666             666666
++65 77777777             777777
++65 88888888             888888
++65 99999999             999999
+
 
 ## User Instructions for Testing
 
