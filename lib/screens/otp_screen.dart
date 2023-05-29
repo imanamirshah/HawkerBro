@@ -23,6 +23,7 @@ class _OtpScreenState extends State<OtpScreen> {
     final isLoading =
         Provider.of<AuthProvider>(context, listen: true).isLoading;
     return Scaffold(
+      backgroundColor: Colors.white,
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
         backgroundColor: Colors.white,
@@ -65,7 +66,7 @@ class _OtpScreenState extends State<OtpScreen> {
                       const Text(
                         'Enter the OTP sent to your phone number',
                         style: TextStyle(
-                          color: Colors.grey,
+                          color: Colors.black54,
                           fontSize: 14.0,
                         ),
                       ),

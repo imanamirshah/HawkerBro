@@ -72,7 +72,9 @@ class _UserInformationScreenState extends State<UserInformationScreen> {
                       Container(
                         width: MediaQuery.of(context).size.width,
                         padding: const EdgeInsets.symmetric(
-                            vertical: 5, horizontal: 15),
+                          vertical: 5,
+                          horizontal: 15,
+                        ),
                         margin: const EdgeInsets.only(top: 20),
                         child: Column(
                           children: [
@@ -187,11 +189,12 @@ class _UserInformationScreenState extends State<UserInformationScreen> {
           ap.saveUserDataToSP().then(
                 (value) => ap.setSignIn().then(
                       (value) => Navigator.pushAndRemoveUntil(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const HomeScreen(),
-                          ),
-                          (route) => false),
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const HomeScreen(),
+                        ),
+                        (route) => false,
+                      ),
                     ),
               );
         },
