@@ -39,6 +39,7 @@ class _UserInformationScreenState extends State<UserInformationScreen> {
     final isLoading =
         Provider.of<AuthProvider>(context, listen: true).isLoading;
     return Scaffold(
+      backgroundColor: Colors.white,
       body: SafeArea(
         child: isLoading == true
             ? const Center(
@@ -47,8 +48,10 @@ class _UserInformationScreenState extends State<UserInformationScreen> {
                 ),
               )
             : SingleChildScrollView(
-                padding:
-                    const EdgeInsets.symmetric(vertical: 25.0, horizontal: 5.0),
+                padding: const EdgeInsets.symmetric(
+                  vertical: 100.0,
+                  horizontal: 5.0,
+                ),
                 child: Center(
                   child: Column(
                     children: [
