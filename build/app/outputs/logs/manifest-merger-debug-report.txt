@@ -85,6 +85,7 @@ MERGED from [:cloud_firestore] C:\Users\imana\OneDrive\Documents\flutter\hawkerb
 MERGED from [:firebase_core] C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\firebase_core\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-17:12
 MERGED from [:image_picker_android] C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-21:12
 MERGED from [:flutter_plugin_android_lifecycle] C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\flutter_plugin_android_lifecycle\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
+MERGED from [:path_provider_android] C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\path_provider_android\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
 MERGED from [:smart_auth] C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\smart_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.android.gms:play-services-auth:20.4.0] C:\Users\imana\.gradle\caches\transforms-3\9fbd8b6fada67877222f712826ad1a35\transformed\jetified-play-services-auth-20.4.0\AndroidManifest.xml:17:1-40:12
 MERGED from [com.google.firebase:firebase-auth:22.0.0] C:\Users\imana\.gradle\caches\transforms-3\addd1e7d7380e6c086f46a0c78155c8a\transformed\jetified-firebase-auth-22.0.0\AndroidManifest.xml:17:1-75:12
@@ -183,6 +184,8 @@ MERGED from [:image_picker_android] C:\Users\imana\OneDrive\Documents\flutter\ha
 MERGED from [:image_picker_android] C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\image_picker_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:flutter_plugin_android_lifecycle] C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\flutter_plugin_android_lifecycle\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:flutter_plugin_android_lifecycle] C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\flutter_plugin_android_lifecycle\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:path_provider_android] C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\path_provider_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:path_provider_android] C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\path_provider_android\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:smart_auth] C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\smart_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:smart_auth] C:\Users\imana\OneDrive\Documents\flutter\hawkerbro\build\smart_auth\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [com.google.android.gms:play-services-auth:20.4.0] C:\Users\imana\.gradle\caches\transforms-3\9fbd8b6fada67877222f712826ad1a35\transformed\jetified-play-services-auth-20.4.0\AndroidManifest.xml:20:5-44
