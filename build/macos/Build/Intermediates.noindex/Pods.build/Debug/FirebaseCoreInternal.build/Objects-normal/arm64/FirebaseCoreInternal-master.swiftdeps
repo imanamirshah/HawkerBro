@@ -1,0 +1,19 @@
+version: "Apple Swift version 5.8 (swiftlang-5.8.0.124.2 clang-1403.0.22.11.100)"
+options: "747b49f5c9fc7dd1bf943d647ec0c28f1947fcadd25a10bc98a2660134ef39ad"
+build_start_time: [1685453959, 796868000]
+build_end_time: [1685453984, 441206000]
+inputs:
+  "/Users/rangiho/hawkerbro/macos/Pods/FirebaseCoreInternal/FirebaseCore/Internal/Sources/HeartbeatLogging/Heartbeat.swift": [1685453940, 224157543]
+  ? "/Users/rangiho/hawkerbro/macos/Pods/FirebaseCoreInternal/FirebaseCore/Internal/Sources/HeartbeatLogging/HeartbeatController.swift"
+  : [1685453940, 225156583]
+  "/Users/rangiho/hawkerbro/macos/Pods/FirebaseCoreInternal/FirebaseCore/Internal/Sources/HeartbeatLogging/HeartbeatStorage.swift": [1685453940, 225617291]
+  "/Users/rangiho/hawkerbro/macos/Pods/FirebaseCoreInternal/FirebaseCore/Internal/Sources/HeartbeatLogging/HeartbeatsBundle.swift": [1685453940, 226045582]
+  "/Users/rangiho/hawkerbro/macos/Pods/FirebaseCoreInternal/FirebaseCore/Internal/Sources/HeartbeatLogging/HeartbeatsPayload.swift": [1685453940, 226364790]
+  "/Users/rangiho/hawkerbro/macos/Pods/FirebaseCoreInternal/FirebaseCore/Internal/Sources/HeartbeatLogging/RingBuffer.swift": [1685453940, 224417418]
+  "/Users/rangiho/hawkerbro/macos/Pods/FirebaseCoreInternal/FirebaseCore/Internal/Sources/HeartbeatLogging/Storage.swift": [1685453940, 223908460]
+  "/Users/rangiho/hawkerbro/macos/Pods/FirebaseCoreInternal/FirebaseCore/Internal/Sources/HeartbeatLogging/StorageFactory.swift": [1685453940, 226504623]
+  "/Users/rangiho/hawkerbro/macos/Pods/FirebaseCoreInternal/FirebaseCore/Internal/Sources/HeartbeatLogging/WeakContainer.swift": [1685453940, 226185832]
+  ? "/Users/rangiho/hawkerbro/macos/Pods/FirebaseCoreInternal/FirebaseCore/Internal/Sources/HeartbeatLogging/_ObjC_HeartbeatController.swift"
+  : [1685453940, 224860959]
+  ? "/Users/rangiho/hawkerbro/macos/Pods/FirebaseCoreInternal/FirebaseCore/Internal/Sources/HeartbeatLogging/_ObjC_HeartbeatsPayload.swift"
+  : [1685453940, 225299250]
