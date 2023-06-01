@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hawkerbro/provider/auth_provider.dart';
+import 'package:hawkerbro/screens/hawker_screen.dart';
 import 'package:hawkerbro/screens/welcome_screen.dart';
+import 'package:hawkerbro/widgets/custom_button.dart';
 import 'package:provider/provider.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -63,6 +65,27 @@ class _HomeScreenState extends State<HomeScreen> {
             Text(ap.userModel.phoneNumber),
             Text(ap.userModel.email),
             Text(ap.userModel.bio),
+            const SizedBox(height: 15),
+            SizedBox(
+              width: double.infinity,
+              child: CustomButton(
+                onPressed: () {
+                  /*
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => HawkerStallScreen(
+                        stallName: 'Stall name',
+                        stallAddress: 'Stall address',
+                        stallDescription: 'Stall description',
+                      ),
+                    ),
+                  );
+                */
+                },
+                text: "Go to hawker stall screen",
+              ),
+            )
           ],
         ),
       ),
