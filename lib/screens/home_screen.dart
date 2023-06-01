@@ -70,18 +70,16 @@ class _HomeScreenState extends State<HomeScreen> {
               width: double.infinity,
               child: CustomButton(
                 onPressed: () {
-                  /*
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => HawkerStallScreen(
+                      builder: (context) => const HawkerStallScreen(
                         stallName: 'Stall name',
                         stallAddress: 'Stall address',
                         stallDescription: 'Stall description',
                       ),
                     ),
                   );
-                */
                 },
                 text: "Go to hawker stall screen",
               ),
