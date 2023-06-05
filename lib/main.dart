@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
       providers: [ChangeNotifierProvider(create: (_) => AuthProvider())],
       child: MaterialApp(
         theme: ThemeData(
-          textTheme: GoogleFonts.montserratTextTheme(),
+          textTheme: GoogleFonts.openSansTextTheme(),
         ),
         debugShowCheckedModeBanner: false,
         home: const WelcomeScreen(),

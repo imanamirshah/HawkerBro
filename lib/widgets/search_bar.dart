@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_nav_bar/google_nav_bar.dart';
-import 'package:line_icons/line_icons.dart';
 import 'package:material_floating_search_bar_2/material_floating_search_bar_2.dart';
 
 class FloatingSearchBarWidget extends StatelessWidget {
@@ -26,13 +24,6 @@ class FloatingSearchBarWidget extends StatelessWidget {
       },
       transition: CircularFloatingSearchBarTransition(),
       actions: [
-        FloatingSearchBarAction(
-          showIfOpened: false,
-          child: CircularButton(
-            icon: const Icon(Icons.place),
-            onPressed: () {},
-          ),
-        ),
         FloatingSearchBarAction.searchToClear(
           showIfClosed: false,
         ),
@@ -52,42 +43,6 @@ class FloatingSearchBarWidget extends StatelessWidget {
           ),
         );
       },
-    );
-  }
-}
-
-class GNavWidget extends StatelessWidget {
-  const GNavWidget({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      color: Colors.yellow[600],
-      child: const Padding(
-        padding: EdgeInsets.symmetric(horizontal: 35.0, vertical: 16),
-        child: GNav(
-          gap: 8,
-          color: Colors.black,
-          activeColor: Colors.white,
-          iconSize: 30,
-          tabBackgroundColor: Colors.black,
-          padding: EdgeInsets.all(10),
-          tabs: [
-            GButton(
-              icon: LineIcons.bell,
-              text: 'Notifications',
-            ),
-            GButton(
-              icon: LineIcons.compass,
-              text: 'Explore',
-            ),
-            GButton(
-              icon: LineIcons.user,
-              text: 'Profile',
-            ),
-          ],
-        ),
-      ),
     );
   }
 }
