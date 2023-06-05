@@ -1,0 +1,17 @@
+--- !tapi-tbd
+tbd-version:     4
+targets:         [ arm64-macos ]
+flags:           [ not_app_extension_safe ]
+install-name:    '@rpath/smart_auth.framework/Versions/A/smart_auth'
+swift-abi-version: 7
+exports:
+  - targets:         [ arm64-macos ]
+    symbols:         [ '_$s10smart_auth15SmartAuthPluginC6handle_6resultySo17FlutterMethodCallC_yypSgctF', 
+                       '_$s10smart_auth15SmartAuthPluginC6handle_6resultySo17FlutterMethodCallC_yypSgctFTq', 
+                       '_$s10smart_auth15SmartAuthPluginC8register4withySo07FlutterE9Registrar_p_tFZ', 
+                       '_$s10smart_auth15SmartAuthPluginCACycfC', '_$s10smart_auth15SmartAuthPluginCACycfc', 
+                       '_$s10smart_auth15SmartAuthPluginCMa', '_$s10smart_auth15SmartAuthPluginCMn', 
+                       '_$s10smart_auth15SmartAuthPluginCN', '_$s10smart_auth15SmartAuthPluginCfD', 
+                       _smart_authVersionNumber, _smart_authVersionString ]
+    objc-classes:    [ PodsDummy_smart_auth, _TtC10smart_auth15SmartAuthPlugin ]
+...

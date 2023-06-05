@@ -1,0 +1,53 @@
+dependencies: \
+  /Users/rangiho/hawkerbro/build/macos/Build/Intermediates.noindex/Pods.build/Debug/FirebaseInstallations.build/module.modulemap \
+  /Users/rangiho/hawkerbro/macos/Pods/FirebaseInstallations/FirebaseInstallations/Source/Library/FIRInstallations.m \
+  /Users/rangiho/hawkerbro/macos/Pods/FirebaseInstallations/FirebaseInstallations/Source/Library/Public/FirebaseInstallations/FIRInstallations.h \
+  /Users/rangiho/hawkerbro/macos/Pods/PromisesObjC/Sources/FBLPromises/include/FBLPromises.h \
+  /Users/rangiho/hawkerbro/build/macos/Build/Intermediates.noindex/Pods.build/Debug/PromisesObjC.build/module.modulemap \
+  /Users/rangiho/hawkerbro/macos/Pods/Target\ Support\ Files/PromisesObjC/PromisesObjC-umbrella.h \
+  /Users/rangiho/hawkerbro/macos/Pods/PromisesObjC/Sources/FBLPromises/include/FBLPromise+All.h \
+  /Users/rangiho/hawkerbro/macos/Pods/PromisesObjC/Sources/FBLPromises/include/FBLPromise.h \
+  /Users/rangiho/hawkerbro/macos/Pods/PromisesObjC/Sources/FBLPromises/include/FBLPromiseError.h \
+  /Users/rangiho/hawkerbro/macos/Pods/PromisesObjC/Sources/FBLPromises/include/FBLPromise+Always.h \
+  /Users/rangiho/hawkerbro/macos/Pods/PromisesObjC/Sources/FBLPromises/include/FBLPromise+Any.h \
+  /Users/rangiho/hawkerbro/macos/Pods/PromisesObjC/Sources/FBLPromises/include/FBLPromise+Async.h \
+  /Users/rangiho/hawkerbro/macos/Pods/PromisesObjC/Sources/FBLPromises/include/FBLPromise+Await.h \
+  /Users/rangiho/hawkerbro/macos/Pods/PromisesObjC/Sources/FBLPromises/include/FBLPromise+Catch.h \
+  /Users/rangiho/hawkerbro/macos/Pods/PromisesObjC/Sources/FBLPromises/include/FBLPromise+Delay.h \
+  /Users/rangiho/hawkerbro/macos/Pods/PromisesObjC/Sources/FBLPromises/include/FBLPromise+Do.h \
+  /Users/rangiho/hawkerbro/macos/Pods/PromisesObjC/Sources/FBLPromises/include/FBLPromise+Race.h \
+  /Users/rangiho/hawkerbro/macos/Pods/PromisesObjC/Sources/FBLPromises/include/FBLPromise+Recover.h \
+  /Users/rangiho/hawkerbro/macos/Pods/PromisesObjC/Sources/FBLPromises/include/FBLPromise+Reduce.h \
+  /Users/rangiho/hawkerbro/macos/Pods/PromisesObjC/Sources/FBLPromises/include/FBLPromise+Retry.h \
+  /Users/rangiho/hawkerbro/macos/Pods/PromisesObjC/Sources/FBLPromises/include/FBLPromise+Testing.h \
+  /Users/rangiho/hawkerbro/macos/Pods/PromisesObjC/Sources/FBLPromises/include/FBLPromise+Then.h \
+  /Users/rangiho/hawkerbro/macos/Pods/PromisesObjC/Sources/FBLPromises/include/FBLPromise+Timeout.h \
+  /Users/rangiho/hawkerbro/macos/Pods/PromisesObjC/Sources/FBLPromises/include/FBLPromise+Validate.h \
+  /Users/rangiho/hawkerbro/macos/Pods/PromisesObjC/Sources/FBLPromises/include/FBLPromise+Wrap.h \
+  /Users/rangiho/hawkerbro/macos/Pods/FirebaseInstallations/FirebaseCore/Extension/FirebaseCoreInternal.h \
+  /Users/rangiho/hawkerbro/build/macos/Build/Intermediates.noindex/Pods.build/Debug/FirebaseCore.build/module.modulemap \
+  /Users/rangiho/hawkerbro/macos/Pods/Target\ Support\ Files/FirebaseCore/FirebaseCore-umbrella.h \
+  /Users/rangiho/hawkerbro/macos/Pods/FirebaseCore/FirebaseCore/Sources/Public/FirebaseCore/FIRApp.h \
+  /Users/rangiho/hawkerbro/macos/Pods/FirebaseCore/FirebaseCore/Sources/Public/FirebaseCore/FIRConfiguration.h \
+  /Users/rangiho/hawkerbro/macos/Pods/FirebaseCore/FirebaseCore/Sources/Public/FirebaseCore/FIRLoggerLevel.h \
+  /Users/rangiho/hawkerbro/macos/Pods/FirebaseCore/FirebaseCore/Sources/Public/FirebaseCore/FirebaseCore.h \
+  /Users/rangiho/hawkerbro/macos/Pods/FirebaseCore/FirebaseCore/Sources/Public/FirebaseCore/FIROptions.h \
+  /Users/rangiho/hawkerbro/macos/Pods/FirebaseCore/FirebaseCore/Sources/Public/FirebaseCore/FIRVersion.h \
+  /Users/rangiho/hawkerbro/macos/Pods/FirebaseInstallations/FirebaseCore/Extension/FIRAppInternal.h \
+  /Users/rangiho/hawkerbro/macos/Pods/FirebaseInstallations/FirebaseCore/Extension/FIRComponent.h \
+  /Users/rangiho/hawkerbro/macos/Pods/FirebaseInstallations/FirebaseCore/Extension/FIRComponentContainer.h \
+  /Users/rangiho/hawkerbro/macos/Pods/FirebaseInstallations/FirebaseCore/Extension/FIRComponentType.h \
+  /Users/rangiho/hawkerbro/macos/Pods/FirebaseInstallations/FirebaseCore/Extension/FIRDependency.h \
+  /Users/rangiho/hawkerbro/macos/Pods/FirebaseInstallations/FirebaseCore/Extension/FIRHeartbeatLogger.h \
+  /Users/rangiho/hawkerbro/macos/Pods/FirebaseInstallations/FirebaseCore/Extension/FIRLibrary.h \
+  /Users/rangiho/hawkerbro/macos/Pods/FirebaseInstallations/FirebaseCore/Extension/FIRLogger.h \
+  /Users/rangiho/hawkerbro/macos/Pods/FirebaseInstallations/FirebaseCore/Extension/FIROptionsInternal.h \
+  /Users/rangiho/hawkerbro/macos/Pods/FirebaseInstallations/FirebaseInstallations/Source/Library/FIRInstallationsAuthTokenResultInternal.h \
+  /Users/rangiho/hawkerbro/macos/Pods/FirebaseInstallations/FirebaseInstallations/Source/Library/Public/FirebaseInstallations/FIRInstallationsAuthTokenResult.h \
+  /Users/rangiho/hawkerbro/macos/Pods/FirebaseInstallations/FirebaseInstallations/Source/Library/Errors/FIRInstallationsErrorUtil.h \
+  /Users/rangiho/hawkerbro/macos/Pods/FirebaseInstallations/FirebaseInstallations/Source/Library/Public/FirebaseInstallations/FIRInstallationsErrors.h \
+  /Users/rangiho/hawkerbro/macos/Pods/FirebaseInstallations/FirebaseInstallations/Source/Library/FIRInstallationsItem.h \
+  /Users/rangiho/hawkerbro/macos/Pods/FirebaseInstallations/FirebaseInstallations/Source/Library/InstallationsIDController/FIRInstallationsStatus.h \
+  /Users/rangiho/hawkerbro/macos/Pods/FirebaseInstallations/FirebaseInstallations/Source/Library/FIRInstallationsLogger.h \
+  /Users/rangiho/hawkerbro/macos/Pods/FirebaseInstallations/FirebaseInstallations/Source/Library/InstallationsIDController/FIRInstallationsIDController.h \
+  /Users/rangiho/hawkerbro/macos/Pods/FirebaseInstallations/FirebaseInstallations/Source/Library/InstallationsStore/FIRInstallationsStoredAuthToken.h

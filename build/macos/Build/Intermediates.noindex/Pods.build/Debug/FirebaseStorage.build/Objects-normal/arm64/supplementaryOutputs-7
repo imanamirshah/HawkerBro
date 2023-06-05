@@ -1,0 +1,15 @@
+"/Users/rangiho/hawkerbro/macos/Pods/FirebaseStorage/FirebaseStorage/Sources/Internal/StorageUpdateMetadataTask.swift":
+  diagnostics: "/Users/rangiho/hawkerbro/build/macos/Build/Intermediates.noindex/Pods.build/Debug/FirebaseStorage.build/Objects-normal/arm64/StorageUpdateMetadataTask.dia"
+  dependencies: "/Users/rangiho/hawkerbro/build/macos/Build/Intermediates.noindex/Pods.build/Debug/FirebaseStorage.build/Objects-normal/arm64/StorageUpdateMetadataTask.d"
+  swift-dependencies: "/Users/rangiho/hawkerbro/build/macos/Build/Intermediates.noindex/Pods.build/Debug/FirebaseStorage.build/Objects-normal/arm64/StorageUpdateMetadataTask.swiftdeps"
+  object: "/Users/rangiho/hawkerbro/build/macos/Build/Intermediates.noindex/Pods.build/Debug/FirebaseStorage.build/Objects-normal/arm64/StorageUpdateMetadataTask.o"
+"/Users/rangiho/hawkerbro/macos/Pods/FirebaseStorage/FirebaseStorage/Sources/Internal/StorageTaskState.swift":
+  dependencies: "/Users/rangiho/hawkerbro/build/macos/Build/Intermediates.noindex/Pods.build/Debug/FirebaseStorage.build/Objects-normal/arm64/StorageTaskState.d"
+  swift-dependencies: "/Users/rangiho/hawkerbro/build/macos/Build/Intermediates.noindex/Pods.build/Debug/FirebaseStorage.build/Objects-normal/arm64/StorageTaskState.swiftdeps"
+  object: "/Users/rangiho/hawkerbro/build/macos/Build/Intermediates.noindex/Pods.build/Debug/FirebaseStorage.build/Objects-normal/arm64/StorageTaskState.o"
+  diagnostics: "/Users/rangiho/hawkerbro/build/macos/Build/Intermediates.noindex/Pods.build/Debug/FirebaseStorage.build/Objects-normal/arm64/StorageTaskState.dia"
+"/Users/rangiho/hawkerbro/macos/Pods/FirebaseStorage/FirebaseStorage/Sources/Internal/StorageTokenAuthorizer.swift":
+  dependencies: "/Users/rangiho/hawkerbro/build/macos/Build/Intermediates.noindex/Pods.build/Debug/FirebaseStorage.build/Objects-normal/arm64/StorageTokenAuthorizer.d"
+  diagnostics: "/Users/rangiho/hawkerbro/build/macos/Build/Intermediates.noindex/Pods.build/Debug/FirebaseStorage.build/Objects-normal/arm64/StorageTokenAuthorizer.dia"
+  swift-dependencies: "/Users/rangiho/hawkerbro/build/macos/Build/Intermediates.noindex/Pods.build/Debug/FirebaseStorage.build/Objects-normal/arm64/StorageTokenAuthorizer.swiftdeps"
+  object: "/Users/rangiho/hawkerbro/build/macos/Build/Intermediates.noindex/Pods.build/Debug/FirebaseStorage.build/Objects-normal/arm64/StorageTokenAuthorizer.o"
