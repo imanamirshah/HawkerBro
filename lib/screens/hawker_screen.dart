@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:hawkerbro/screens/consmer_leave_review.dart';
 import 'package:hawkerbro/screens/search_screen.dart';
+import 'package:hawkerbro/widgets/custom_button.dart';
 
 class HawkerStallScreen extends StatefulWidget {
   final String stallName;
@@ -160,45 +162,101 @@ class _HawkerStallScreenState extends State<HawkerStallScreen> {
           ),
           const SizedBox(height: 8.0),
           SizedBox(
-            height: 100.0,
+            height: 120,
             child: ListView(
               scrollDirection: Axis.horizontal,
               children: const [
-                Card(
-                  child: SizedBox(
-                    width: 120.0,
-                    child: Center(
-                      child: Text('Food Item 1'),
+                Column(
+                  children: [
+                    Card(
+                      child: Column(
+                        children: [
+                          SizedBox(
+                            width: 120.0,
+                            height: 80.0,
+                            child: Center(
+                              child: Text('Food Item 1'),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
+                    Text("Chicken Rice")
+                  ],
                 ),
-                Card(
-                  child: SizedBox(
-                    width: 120.0,
-                    child: Center(
-                      child: Text('Food Item 2'),
+                Column(
+                  children: [
+                    Card(
+                      child: Column(
+                        children: [
+                          SizedBox(
+                            width: 120.0,
+                            height: 80.0,
+                            child: Center(
+                              child: Text('Food Item 2'),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
+                    Text("Wanton Mee")
+                  ],
                 ),
-                Card(
-                  child: SizedBox(
-                    width: 120.0,
-                    child: Center(
-                      child: Text('Food Item 3'),
+                Column(
+                  children: [
+                    Card(
+                      child: Column(
+                        children: [
+                          SizedBox(
+                            width: 120.0,
+                            height: 80.0,
+                            child: Center(
+                              child: Text('Food Item 3'),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
+                    Text("Maggi Goreng")
+                  ],
                 ),
-                Card(
-                  child: SizedBox(
-                    width: 120.0,
-                    child: Center(
-                      child: Text('Food Item 4'),
+                Column(
+                  children: [
+                    Card(
+                      child: Column(
+                        children: [
+                          SizedBox(
+                            width: 120.0,
+                            height: 80.0,
+                            child: Center(
+                              child: Text('Food Item 4'),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
+                    Text("Bee Hoon")
+                  ],
                 ),
               ],
             ),
           ),
+          const SizedBox(
+            height: 16,
+          ),
+          SizedBox(
+            child: CustomButton(
+              text: "Leave A Review",
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (contex) => const LeaveReviewScreen(),
+                  ),
+                );
+              },
+            ),
+          )
         ],
       ),
     );

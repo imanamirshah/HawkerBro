@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hawkerbro/provider/auth_provider.dart';
-import 'package:hawkerbro/screens/hawker_screen.dart';
+import 'package:hawkerbro/screens/add_stall_screen.dart';
 import 'package:hawkerbro/screens/welcome_screen.dart';
-import 'package:hawkerbro/widgets/custom_button.dart';
 import 'package:provider/provider.dart';
 
 class AccountScreen extends StatefulWidget {
@@ -18,12 +17,14 @@ class _AccountScreenState extends State<AccountScreen> {
     final ap = Provider.of<AuthProvider>(context, listen: false);
 
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         toolbarHeight: 70,
-        backgroundColor: Colors.yellow,
+        elevation: 1,
+        backgroundColor: Colors.white,
         foregroundColor: Colors.black,
         title: const Text(
-          "Home Page",
+          "My Account",
           style: TextStyle(
             fontWeight: FontWeight.bold,
           ),
@@ -66,24 +67,24 @@ class _AccountScreenState extends State<AccountScreen> {
             Text(ap.userModel.bio),
             const SizedBox(height: 15),
             SizedBox(
-              width: double.infinity,
-              child: CustomButton(
+              width: 250,
+              child: ElevatedButton.icon(
                 onPressed: () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const HawkerStallScreen(
-                        stallName: 'Stall name',
-                        stallAddress: 'Stall address',
-                        stallDescription: 'Stall description',
-                      ),
+                      builder: (context) => const AddStallScreen(),
                     ),
                   );
                 },
-                text: "Go to hawker stall screen",
+                icon: const Icon(Icons.add),
+                label: const Text("Add a new hawker stall"),
+                style: ElevatedButton.styleFrom(
+                  foregroundColor: Colors.black,
+                  backgroundColor: Colors.yellow[600],
+                ),
               ),
             ),
-            const SizedBox(height: 15),
           ],
         ),
       ),

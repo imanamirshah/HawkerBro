@@ -24,7 +24,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
           children: [
             Positioned.fill(
               child: Opacity(
-                opacity: 0.4,
+                opacity: 0.5,
                 child: Image.asset(
                   'assets/wokbackground.jpg',
                   fit: BoxFit.cover,

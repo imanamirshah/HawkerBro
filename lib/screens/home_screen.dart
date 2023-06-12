@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
-import 'package:hawkerbro/screens/account_screen.dart';
+import 'package:hawkerbro/screens/explore_screen.dart';
+import 'package:hawkerbro/screens/likes_screen.dart';
 import 'package:hawkerbro/screens/notfications.dart';
-import 'package:hawkerbro/screens/search_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -13,6 +13,8 @@ class HomeScreen extends StatelessWidget {
         backgroundColor: CupertinoColors.systemYellow,
         activeColor: CupertinoColors.black,
         inactiveColor: CupertinoColors.black.withOpacity(0.5),
+        iconSize: 22,
+        height: 45,
         onTap: (index) {},
         items: const [
           BottomNavigationBarItem(
@@ -24,8 +26,8 @@ class HomeScreen extends StatelessWidget {
             icon: Icon(CupertinoIcons.compass),
           ),
           BottomNavigationBarItem(
-            label: 'Account',
-            icon: Icon(CupertinoIcons.person),
+            label: 'Favourites',
+            icon: Icon(CupertinoIcons.heart),
           ),
         ],
       ),
@@ -37,12 +39,12 @@ class HomeScreen extends StatelessWidget {
             );
           case 1:
             return CupertinoTabView(
-              builder: (context) => const SearchPage(),
+              builder: (context) => const ExploreScreen(),
             );
           case 2:
           default:
             return CupertinoTabView(
-              builder: (context) => const AccountScreen(),
+              builder: (context) => const LikesScreen(),
             );
         }
       },
