@@ -144,19 +144,26 @@ class _OtpScreenState extends State<OtpScreen> {
       onSuccess: () {
         ap.checkExistingUser().then((value) async {
           if (value == true) {
-            ap.getDataFromFirestore().then((value) =>
-                ap.saveUserDataToSP().then((value) => ap.setSignIn().then(
-                      (value) => Navigator.pushAndRemoveUntil(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const HomeScreen()),
-                          (route) => false),
-                    )));
+            ap.getDataFromFirestore().then(
+                  (value) => ap.saveUserDataToSP().then(
+                        (value) => ap.setSignIn().then(
+                              (value) => Navigator.pushAndRemoveUntil(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => const HomeScreen(),
+                                ),
+                                (route) => false,
+                              ),
+                            ),
+                      ),
+                );
           } else {
             Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => const UserInformationScreen()));
+              context,
+              MaterialPageRoute(
+                builder: (context) => const UserInformationScreen(),
+              ),
+            );
           }
         });
       },

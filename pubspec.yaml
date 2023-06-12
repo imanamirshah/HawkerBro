@@ -46,6 +46,10 @@ dependencies:
   pinput: ^2.2.31
   image_picker: ^0.8.7+5
   google_fonts: ^4.0.4
+  material_floating_search_bar_2: ^0.5.0
+  google_nav_bar: ^5.0.6
+  line_icons: ^2.0.1
+  english_words: ^4.0.0
 
 dev_dependencies:
   flutter_test:

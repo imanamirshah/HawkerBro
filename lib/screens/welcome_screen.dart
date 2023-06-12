@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hawkerbro/provider/auth_provider.dart';
-import 'package:hawkerbro/screens/home_screen.dart';
 import 'package:hawkerbro/screens/register_screen.dart';
+import 'package:hawkerbro/screens/home_screen.dart';
 import 'package:hawkerbro/widgets/custom_button.dart';
 import 'package:provider/provider.dart';
 
@@ -24,7 +24,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
           children: [
             Positioned.fill(
               child: Opacity(
-                opacity: 0.4,
+                opacity: 0.5,
                 child: Image.asset(
                   'assets/wokbackground.jpg',
                   fit: BoxFit.cover,
