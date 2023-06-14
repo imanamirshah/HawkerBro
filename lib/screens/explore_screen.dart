@@ -72,8 +72,8 @@ class _ExploreScreenState extends State<ExploreScreen> {
           children: [
             Padding(
               padding: const EdgeInsets.all(16),
-              child: IconButton(
-                onPressed: () {
+              child: InkWell(
+                onTap: () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
@@ -81,7 +81,22 @@ class _ExploreScreenState extends State<ExploreScreen> {
                     ),
                   );
                 },
-                icon: const Icon(Icons.search),
+                child: Container(
+                  height: 40,
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                    color: Colors.grey[200],
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  child: const Row(
+                    children: [
+                      Icon(Icons.search),
+                      SizedBox(width: 10),
+                      Text('Search...'),
+                    ],
+                  ),
+                ),
               ),
             ),
             Padding(
@@ -102,7 +117,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
                       ],
                     ),
                   ),
-                  const SizedBox(height: 16),
+                  const SizedBox(height: 25),
                   const Text(
                     'Near You',
                     style: TextStyle(
@@ -110,7 +125,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  const SizedBox(height: 8),
+                  const SizedBox(height: 10),
                   SizedBox(
                     height: 220,
                     child: InkWell(
@@ -161,19 +176,24 @@ class _ExploreScreenState extends State<ExploreScreen> {
   Widget _buildContainer(String text, String label) {
     return Column(
       children: [
-        Container(
-          height: 150,
-          width: 150,
-          decoration: BoxDecoration(
-            color: Colors.grey[300],
-            borderRadius: BorderRadius.circular(8),
-          ),
-          child: Center(
-            child: Text(
-              text,
-              style: const TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.bold,
+        InkWell(
+          onTap: () {
+            // Handle container tap
+          },
+          child: Container(
+            height: 150,
+            width: 150,
+            decoration: BoxDecoration(
+              color: Colors.grey[300],
+              borderRadius: BorderRadius.circular(8),
+            ),
+            child: Center(
+              child: Text(
+                text,
+                style: const TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
           ),

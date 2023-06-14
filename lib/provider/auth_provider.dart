@@ -103,10 +103,8 @@ class AuthProvider extends ChangeNotifier {
     DocumentSnapshot snapshot =
         await _firebaseFirestore.collection("users").doc(_uid).get();
     if (snapshot.exists) {
-      print("USER EXISTS");
       return true;
     } else {
-      print("NEW USER");
       return false;
     }
   }
@@ -136,7 +134,7 @@ class AuthProvider extends ChangeNotifier {
       await _firebaseFirestore
           .collection("users")
           .doc(_uid)
-          .set(userModel.toMap())
+          .set(userModel.toJSON())
           .then((value) {
         onSuccess();
         _isLoading = false;
@@ -178,13 +176,13 @@ class AuthProvider extends ChangeNotifier {
   // STORING DATA LOCALLY
   Future saveUserDataToSP() async {
     SharedPreferences s = await SharedPreferences.getInstance();
-    await s.setString("user_model", jsonEncode(userModel.toMap()));
+    await s.setString("user_model", jsonEncode(userModel.toJSON()));
   }
 
   Future getDataFromSP() async {
     SharedPreferences s = await SharedPreferences.getInstance();
     String data = s.getString("user_model") ?? '';
-    _userModel = UserModel.fromMap(jsonDecode(data));
+    _userModel = UserModel.fromJSON(jsonDecode(data));
     _uid = _userModel!.uid;
     notifyListeners();
   }
