@@ -18,7 +18,7 @@ class UserModel {
   });
 
   // from map
-  factory UserModel.fromMap(Map<String, dynamic> map) {
+  factory UserModel.fromJSON(Map<String, dynamic> map) {
     return UserModel(
       name: map['name'] ?? '',
       email: map['email'] ?? '',
@@ -31,7 +31,7 @@ class UserModel {
   }
 
   // to map
-  Map<String, dynamic> toMap() {
+  Map<String, dynamic> toJSON() {
     return {
       "name": name,
       "email": email,
