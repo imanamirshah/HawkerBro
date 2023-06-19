@@ -134,9 +134,8 @@ class _ExploreScreenState extends State<ExploreScreen> {
                           context,
                           MaterialPageRoute(
                             builder: (context) => const HawkerStallScreen(
-                              stallName: 'Stall name',
-                              stallAddress: 'Stall address',
-                              stallDescription: 'Stall description',
+                              postalCode: 'Postal Code',
+                              unitNumber: 'unit number',
                             ),
                           ),
                         );
@@ -211,7 +210,11 @@ class _ExploreScreenState extends State<ExploreScreen> {
   }
 
   Widget _buildPageItem(
-      String imagePath, String title, String stars, String reviews) {
+    String imagePath,
+    String title,
+    String stars,
+    String reviews,
+  ) {
     return Stack(
       children: [
         Container(

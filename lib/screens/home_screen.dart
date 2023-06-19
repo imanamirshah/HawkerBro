@@ -33,11 +33,11 @@ class HomeScreen extends StatelessWidget {
       ),
       tabBuilder: (context, index) {
         switch (index) {
-          case 0:
+          case 1:
             return CupertinoTabView(
               builder: (context) => const NotificationsScreen(),
             );
-          case 1:
+          case 0:
             return CupertinoTabView(
               builder: (context) => const ExploreScreen(),
             );

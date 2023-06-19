@@ -1,5 +1,8 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:hawkerbro/screens/hawker_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SearchPage extends StatefulWidget {
@@ -18,6 +21,12 @@ class _SearchPageState extends State<SearchPage> {
   final TextEditingController _searchController = TextEditingController();
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
   late SharedPreferences _preferences;
+
+  @override
+  void dispose() {
+    _searchController.dispose();
+    super.dispose();
+  }
 
   @override
   void initState() {
@@ -56,7 +65,7 @@ class _SearchPageState extends State<SearchPage> {
 
     try {
       final QuerySnapshot snapshot =
-          await _firestore.collection('stalls').get();
+          await _firestore.collectionGroup('stalls').get();
 
       setState(() {
         filteredStalls = snapshot.docs
@@ -77,11 +86,11 @@ class _SearchPageState extends State<SearchPage> {
         );
       });
     } catch (e) {
-      print('Error fetching stalls: $e');
+      debugPrint('Error fetching stalls: $e');
     }
   }
 
-  void navigateToStallDetailsPage(String stallName) {
+  void navigateToHawkerPage(String stallName) async {
     setState(() {
       _searchController.text = stallName;
 
@@ -93,9 +102,36 @@ class _SearchPageState extends State<SearchPage> {
       _saveSearchHistory();
     });
 
-    // Implement the navigation logic to the stall details page
-    // using the provided stall name
-    print('Navigating to stall details: $stallName');
+    try {
+      final QuerySnapshot snapshot = await _firestore
+          .collectionGroup('stalls')
+          .where('name', isEqualTo: stallName)
+          .get();
+
+      if (snapshot.docs.isNotEmpty) {
+        final stallData = snapshot.docs.first.data() as Map<String, dynamic>;
+        final postalCode = stallData['postalCode'] as String?;
+        final unitNumber = stallData['unitNumber'] as String?;
+
+        if (postalCode != null && unitNumber != null) {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => HawkerStallScreen(
+                postalCode: postalCode,
+                unitNumber: unitNumber,
+              ),
+            ),
+          );
+        } else {
+          debugPrint('Postal code or unit number is null');
+        }
+      } else {
+        debugPrint('Stall not found');
+      }
+    } catch (e) {
+      throw Exception('Error navigating to stall details: $e');
+    }
   }
 
   void _clearSearchHistory() {
@@ -221,7 +257,7 @@ class _SearchPageState extends State<SearchPage> {
                         ],
                       ),
                       onTap: () {
-                        navigateToStallDetailsPage(stallName);
+                        navigateToHawkerPage(stallName);
                       },
                     );
                   },
