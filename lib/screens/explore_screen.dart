@@ -14,6 +14,7 @@ class ExploreScreen extends StatefulWidget {
 
 class _ExploreScreenState extends State<ExploreScreen> {
   PageController pageController = PageController(viewportFraction: 0.85);
+  bool isHawkerCentre1Selected = true;
 
   @override
   Widget build(BuildContext context) {
@@ -53,7 +54,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (contex) => const AccountScreen(),
+                    builder: (context) => const AccountScreen(),
                   ),
                 );
               },
@@ -77,7 +78,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (contex) => const SearchPage(),
+                      builder: (context) => const SearchPage(),
                     ),
                   );
                 },
@@ -104,19 +105,6 @@ class _ExploreScreenState extends State<ExploreScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const SizedBox(height: 16),
-                  SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: Row(
-                      children: [
-                        _buildContainer('Widget 1', 'Recommendations'),
-                        const SizedBox(width: 16),
-                        _buildContainer('Widget 2', 'For You'),
-                        const SizedBox(width: 16),
-                        _buildContainer('Widget 3', 'Trending'),
-                      ],
-                    ),
-                  ),
                   const SizedBox(height: 25),
                   const Text(
                     'Near You',
@@ -126,6 +114,67 @@ class _ExploreScreenState extends State<ExploreScreen> {
                     ),
                   ),
                   const SizedBox(height: 10),
+                  Row(
+                    children: [
+                      Expanded(
+                        child: InkWell(
+                          onTap: () {
+                            setState(() {
+                              isHawkerCentre1Selected = true;
+                            });
+                          },
+                          child: Container(
+                            height: 60,
+                            margin: const EdgeInsets.only(right: 10),
+                            decoration: BoxDecoration(
+                              color: isHawkerCentre1Selected
+                                  ? Colors.yellow
+                                  : Colors.grey[300],
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                            child: const Center(
+                              child: Text(
+                                'Hawker Centre 1',
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                      Expanded(
+                        child: InkWell(
+                          onTap: () {
+                            setState(() {
+                              isHawkerCentre1Selected = false;
+                            });
+                          },
+                          child: Container(
+                            height: 60,
+                            margin: const EdgeInsets.only(left: 10),
+                            decoration: BoxDecoration(
+                              color: isHawkerCentre1Selected
+                                  ? Colors.grey[300]
+                                  : Colors.yellow,
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                            child: const Center(
+                              child: Text(
+                                'Hawker Centre 2',
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 20),
                   SizedBox(
                     height: 220,
                     child: InkWell(
@@ -134,31 +183,47 @@ class _ExploreScreenState extends State<ExploreScreen> {
                           context,
                           MaterialPageRoute(
                             builder: (context) => const HawkerStallScreen(
-                              stallName: 'Stall name',
-                              stallAddress: 'Stall address',
-                              stallDescription: 'Stall description',
+                              unitNumber: 'Old Nonya',
+                              postalCode: 'Stall address',
                             ),
                           ),
                         );
                       },
                       child: PageView.builder(
-                        itemCount:
-                            2, // Update the item count to 2 for 2 hawker stalls
+                        itemCount: isHawkerCentre1Selected ? 2 : 2,
                         itemBuilder: (context, position) {
-                          if (position == 0) {
-                            return _buildPageItem(
-                              'assets/laksa.jpeg', // Provide the image path for Old Nonya
-                              'Old Nonya',
-                              '5.0',
-                              '369',
-                            );
+                          if (isHawkerCentre1Selected) {
+                            if (position == 0) {
+                              return _buildPageItem(
+                                'assets/laksa.jpeg',
+                                'Old Nonya',
+                                '5.0',
+                                '369',
+                              );
+                            } else {
+                              return _buildPageItem(
+                                'assets/tiantian.jpeg',
+                                'Tian Tian Hainanese Chicken Rice',
+                                '5.0',
+                                '1234',
+                              );
+                            }
                           } else {
-                            return _buildPageItem(
-                              'assets/tiantian.jpeg',
-                              'Tian Tian Hainanese Chicken Rice',
-                              '5.0',
-                              '1234',
-                            );
+                            if (position == 0) {
+                              return _buildPageItem(
+                                'assets/hawker3.jpeg',
+                                'Hawker Stall 3',
+                                '4.5',
+                                '256',
+                              );
+                            } else {
+                              return _buildPageItem(
+                                'assets/hawker4.jpeg',
+                                'Hawker Stall 4',
+                                '4.2',
+                                '789',
+                              );
+                            }
                           }
                         },
                       ),
@@ -173,45 +238,12 @@ class _ExploreScreenState extends State<ExploreScreen> {
     );
   }
 
-  Widget _buildContainer(String text, String label) {
-    return Column(
-      children: [
-        InkWell(
-          onTap: () {
-            // Handle container tap
-          },
-          child: Container(
-            height: 150,
-            width: 150,
-            decoration: BoxDecoration(
-              color: Colors.grey[300],
-              borderRadius: BorderRadius.circular(8),
-            ),
-            child: Center(
-              child: Text(
-                text,
-                style: const TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ),
-          ),
-        ),
-        const SizedBox(height: 8),
-        Text(
-          label,
-          style: const TextStyle(
-            fontSize: 16,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-      ],
-    );
-  }
-
   Widget _buildPageItem(
-      String imagePath, String title, String stars, String reviews) {
+    String imagePath,
+    String title,
+    String stars,
+    String reviews,
+  ) {
     return Stack(
       children: [
         Container(
@@ -250,21 +282,27 @@ class _ExploreScreenState extends State<ExploreScreen> {
                   const SizedBox(height: 10),
                   Row(
                     children: [
-                      Wrap(
-                        children: List.generate(
-                          5,
-                          (index) => const Icon(
-                            Icons.star,
-                            color: Colors.yellow,
-                            size: 15,
-                          ),
+                      const Icon(
+                        Icons.star,
+                        color: Colors.amber,
+                        size: 18,
+                      ),
+                      const SizedBox(width: 5),
+                      Text(
+                        stars,
+                        style: const TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
-                      const SizedBox(width: 10),
-                      Text(stars),
-                      const SizedBox(width: 10),
-                      Text(reviews +
-                          ' reviews'), // Add ' reviews' after the number of reviews
+                      const SizedBox(width: 5),
+                      Text(
+                        '(${reviews})',
+                        style: const TextStyle(
+                          fontSize: 14,
+                          color: Colors.grey,
+                        ),
+                      ),
                     ],
                   ),
                 ],

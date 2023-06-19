@@ -1,29 +1,32 @@
 class StallModel {
-  String name;
-  String address;
-  String openingHours;
-  String profilePic;
-  String phoneNumber;
-  String stallId;
+  final String name;
+  final String unitNumber;
+  final String postalCode;
+  final String openingHours;
+  final String phoneNumber;
+  final String bio;
+  final List<String> stallImages;
 
   StallModel({
     required this.name,
-    required this.address,
+    required this.unitNumber,
+    required this.postalCode,
     required this.openingHours,
-    required this.profilePic,
     required this.phoneNumber,
-    required this.stallId,
+    required this.bio,
+    required this.stallImages,
   });
 
   // from map
   factory StallModel.fromJSON(Map<String, dynamic> map) {
     return StallModel(
       name: map['name'] ?? '',
-      address: map['address'] ?? '',
+      unitNumber: map['unitNumber'] ?? '',
+      postalCode: map['postalCode'] ?? '',
       openingHours: map['openingHours'] ?? '',
-      stallId: map['stallId'] ?? '',
+      bio: map['bio'] ?? '',
       phoneNumber: map['phoneNumber'] ?? '',
-      profilePic: map['profilePic'] ?? '',
+      stallImages: List<String>.from(map['stall images'] ?? []),
     );
   }
 
@@ -31,11 +34,12 @@ class StallModel {
   Map<String, dynamic> toJSON() {
     return {
       "name": name,
-      "address": address,
-      "stallId": stallId,
+      "unitNumber": unitNumber,
+      "postalCode": postalCode,
       "openingHours": openingHours,
-      "profilePic": profilePic,
+      "bio": bio,
       "phoneNumber": phoneNumber,
+      "stall images": stallImages,
     };
   }
 }

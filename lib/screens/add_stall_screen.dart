@@ -3,11 +3,8 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:hawkerbro/utils/utils.dart';
-import 'package:hawkerbro/widgets/custom_button.dart';
+import 'package:hawkerbro/provider/stall_provider.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_storage/firebase_storage.dart';
 
 class AddStallScreen extends StatefulWidget {
   const AddStallScreen({Key? key}) : super(key: key);
@@ -22,8 +19,8 @@ class _AddStallScreenState extends State<AddStallScreen> {
   final _unitNumberController = TextEditingController();
   final _postalCodeController = TextEditingController();
   final _openingHoursController = TextEditingController();
-  final _bioController = TextEditingController();
   final _phoneNumberController = TextEditingController();
+  final _bioController = TextEditingController();
   final ImagePicker picker = ImagePicker();
   List<File> _imageFileList = [];
 
@@ -52,7 +49,9 @@ class _AddStallScreenState extends State<AddStallScreen> {
       }
       setState(() {});
     } else {
-      showSnackBar(context, 'Nothing is selected');
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(content: Text('Nothing is selected')),
+      );
     }
   }
 
@@ -65,102 +64,54 @@ class _AddStallScreenState extends State<AddStallScreen> {
       String phoneNumber = _phoneNumberController.text;
       String bio = _bioController.text;
 
-      String stallId = unitNumber;
-
-      // Check if the stall already exists in the same postal code
-      bool isStallExists = await checkStallExists(stallId, postalCode);
-      if (isStallExists) {
-        showSnackBar(context, 'Stall already exists in the same postal code');
-        return;
-      }
-
-      // Upload images to Firebase Storage and get the download URLs
-      List<String> imageUrls = await _uploadImages(stallId);
-
-      // Store the data in Firestore along with the image URLs
-      FirebaseFirestore firestore = FirebaseFirestore.instance;
-      await firestore
-          .collection('hawkerCentres')
-          .doc(postalCode)
-          .collection('stalls')
-          .doc(stallId)
-          .set({
-        'name': name,
-        'unitNumber': unitNumber,
-        'postalCode': postalCode,
-        'openingHours': openingHours,
-        'phoneNumber': phoneNumber,
-        'bio': bio,
-        'stall images': imageUrls,
-      });
-
-      _formKey.currentState!.reset();
-      _nameController.clear();
-      _unitNumberController.clear();
-      _postalCodeController.clear();
-      _openingHoursController.clear();
-      _phoneNumberController.clear();
-      _bioController.clear();
-      setState(() {
-        _imageFileList = [];
-      });
-
-      showDialog(
-        context: context,
-        builder: (BuildContext context) {
-          return AlertDialog(
-            title: const Text('Success'),
-            content: const Text('Restaurant added successfully.'),
-            actions: [
-              TextButton(
-                onPressed: () {
-                  Navigator.of(context).pop();
-                },
-                child: const Text('OK'),
-              ),
-            ],
-          );
-        },
-      );
-    }
-  }
-
-  Future<bool> checkStallExists(String stallId, String postalCode) async {
-    FirebaseFirestore firestore = FirebaseFirestore.instance;
-    DocumentSnapshot snapshot = await firestore
-        .collection('hawkerCentres')
-        .doc(postalCode)
-        .collection('stalls')
-        .doc(stallId)
-        .get();
-
-    return snapshot.exists;
-  }
-
-  Future<List<String>> _uploadImages(String stallId) async {
-    List<String> imageUrls = [];
-
-    FirebaseStorage storage = FirebaseStorage.instance;
-    for (var i = 0; i < _imageFileList.length; i++) {
-      File imageFile = _imageFileList[i];
-      String imageName = '$stallId-image-$i.jpg';
-
       try {
-        TaskSnapshot snapshot = await storage
-            .ref()
-            .child('stall images')
-            .child(stallId)
-            .child(imageName)
-            .putFile(imageFile);
+        StallProvider stallProvider = StallProvider();
+        await stallProvider.addStall(
+          name,
+          unitNumber,
+          postalCode,
+          openingHours,
+          phoneNumber,
+          bio,
+          _imageFileList,
+        );
 
-        String imageUrl = await snapshot.ref.getDownloadURL();
-        imageUrls.add(imageUrl);
+        _formKey.currentState!.reset();
+        _nameController.clear();
+        _unitNumberController.clear();
+        _postalCodeController.clear();
+        _openingHoursController.clear();
+        _phoneNumberController.clear();
+        _bioController.clear();
+        setState(() {
+          _imageFileList = [];
+        });
+
+        Navigator.pop(context);
+
+        showDialog(
+          context: context,
+          builder: (BuildContext context) {
+            return AlertDialog(
+              title: const Text('Success'),
+              content: const Text('Restaurant added successfully.'),
+              actions: [
+                TextButton(
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                  child: const Text('OK'),
+                ),
+              ],
+            );
+          },
+        );
       } catch (e) {
-        showSnackBar(context, 'Error uploading image: $e');
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Error: $e')),
+        );
       }
     }
-
-    return imageUrls;
   }
 
   Widget _buildImagesSection() {
@@ -255,6 +206,7 @@ class _AddStallScreenState extends State<AddStallScreen> {
               const SizedBox(height: 5.0),
               TextFormField(
                 controller: _unitNumberController,
+                keyboardType: TextInputType.number,
                 decoration: InputDecoration(
                   border: OutlineInputBorder(
                     borderSide: BorderSide.none,
@@ -319,6 +271,11 @@ class _AddStallScreenState extends State<AddStallScreen> {
               const SizedBox(height: 5.0),
               TextFormField(
                 controller: _phoneNumberController,
+                keyboardType: TextInputType.phone,
+                inputFormatters: <TextInputFormatter>[
+                  FilteringTextInputFormatter.digitsOnly,
+                  LengthLimitingTextInputFormatter(8),
+                ],
                 decoration: InputDecoration(
                   border: OutlineInputBorder(
                     borderSide: BorderSide.none,
@@ -331,6 +288,8 @@ class _AddStallScreenState extends State<AddStallScreen> {
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return 'Please enter a phone number';
+                  } else if (value.length != 8) {
+                    return 'Please enter a valid 8-digit phone number';
                   }
                   return null;
                 },
@@ -338,27 +297,36 @@ class _AddStallScreenState extends State<AddStallScreen> {
               const SizedBox(height: 5.0),
               TextFormField(
                 controller: _bioController,
+                maxLines: 3,
                 decoration: InputDecoration(
                   border: OutlineInputBorder(
                     borderSide: BorderSide.none,
                     borderRadius: BorderRadius.circular(10),
                   ),
-                  fillColor: Colors.grey[200],
                   filled: true,
-                  hintText: 'About the Stall',
+                  fillColor: Colors.grey[200],
+                  hintText: 'Business Information',
                 ),
-                maxLines: 3,
                 validator: (value) {
-                  if (value!.isEmpty) {
-                    return 'Please enter some information about the stall';
+                  if (value == null || value.isEmpty) {
+                    return 'Please enter a bio';
                   }
                   return null;
                 },
               ),
-              const SizedBox(height: 5.0),
-              CustomButton(
-                text: 'Add Stall',
+              const SizedBox(height: 16.0),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.yellow[600],
+                  foregroundColor: Colors.black,
+                ),
                 onPressed: _submitForm,
+                child: const Text(
+                  'Add Stall',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
               ),
             ],
           ),

@@ -84,7 +84,7 @@ class AuthProvider extends ChangeNotifier {
       User? user = (await _firebaseAuth.signInWithCredential(creds)).user;
 
       if (user != null) {
-        // carry our logic
+        // carry out logic
         _uid = user.uid;
         onSuccess();
       }
@@ -161,7 +161,7 @@ class AuthProvider extends ChangeNotifier {
         .get()
         .then((DocumentSnapshot snapshot) {
       _userModel = UserModel(
-        name: snapshot['name'],
+        name: snapshot['Stall Name'],
         email: snapshot['email'],
         createdAt: snapshot['createdAt'],
         bio: snapshot['bio'],
