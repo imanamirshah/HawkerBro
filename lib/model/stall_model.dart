@@ -1,4 +1,4 @@
-class AddStallModel {
+class StallModel {
   final String name;
   final String unitNumber;
   final String postalCode;
@@ -7,7 +7,7 @@ class AddStallModel {
   final String bio;
   final List<String> stallImages;
 
-  AddStallModel({
+  StallModel({
     required this.name,
     required this.unitNumber,
     required this.postalCode,
@@ -18,8 +18,8 @@ class AddStallModel {
   });
 
   // from map
-  factory AddStallModel.fromJSON(Map<String, dynamic> map) {
-    return AddStallModel(
+  factory StallModel.fromJSON(Map<String, dynamic> map) {
+    return StallModel(
       name: map['name'] ?? '',
       unitNumber: map['unitNumber'] ?? '',
       postalCode: map['postalCode'] ?? '',
