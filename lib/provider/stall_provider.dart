@@ -7,8 +7,8 @@ import 'package:hawkerbro/model/stall_model.dart';
 import 'package:hawkerbro/utils/globals.dart';
 
 class StallProvider extends ChangeNotifier {
-  AddStallModel? _stallModel;
-  AddStallModel get stallModel => _stallModel!;
+  StallModel? _stallModel;
+  StallModel get stallModel => _stallModel!;
   FirebaseFirestore firestore = FirebaseFirestore.instance;
 
   Future<void> addStall(
@@ -63,75 +63,6 @@ class StallProvider extends ChangeNotifier {
         .get();
 
     return snapshot.exists;
-  }
-
-  Future<void> updateUnitNumber(
-    String currentUnitNumber,
-    String newUnitNumber,
-    String postalCode,
-  ) async {
-    // Check if the new unitNumber already exists in Firebase
-    QuerySnapshot newUnitNumberSnapshot = await firestore
-        .collection('stalls')
-        .where('unitNumber', isEqualTo: newUnitNumber)
-        .get();
-    if (newUnitNumberSnapshot.size > 0) {
-      // Show a snackbar informing the user that the new unit number already exists
-      // Implement snackbar logic here
-      return;
-    }
-
-    // Get the stall document with the current unitNumber
-    QuerySnapshot currentUnitNumberSnapshot = await firestore
-        .collection('stalls')
-        .where('unitNumber', isEqualTo: currentUnitNumber)
-        .get();
-
-    if (currentUnitNumberSnapshot.size == 1) {
-      // Get the existing stall document
-      QueryDocumentSnapshot existingDocument =
-          currentUnitNumberSnapshot.docs[0];
-      String existingDocumentId = existingDocument.id;
-
-      // Create a new document with the new unitNumber and copy the data
-      Map<String, dynamic> newData = {
-        'unitNumber': newUnitNumber,
-        'postalCode': postalCode,
-        // Copy other fields from existingDocument as needed
-      };
-      await firestore.collection('stalls').doc(newUnitNumber).set(newData);
-
-      // Delete the existing document
-      await firestore.collection('stalls').doc(existingDocumentId).delete();
-    }
-  }
-
-  Future<void> updateStall(
-    String name,
-    String unitNumber,
-    String postalCode,
-    String openingHours,
-    String phoneNumber,
-    String bio,
-    List<File> imageFiles,
-  ) async {
-    // Upload images to Firebase Storage and get the download URLs
-    // List<String> imageUrls = await _uploadImages(unitNumber, imageFiles);
-
-    // Update the data in Firestore along with the image URLs
-    await firestore
-        .collection('hawkerCentres')
-        .doc(postalCode)
-        .collection('stalls')
-        .doc(unitNumber)
-        .update({
-      'name': name,
-      'unitNumber': unitNumber,
-      'openingHours': openingHours,
-      'phoneNumber': phoneNumber,
-      'bio': bio,
-      //  'stall images': imageUrls,
-    });
   }
 
   Future<List<String>> _uploadImages(

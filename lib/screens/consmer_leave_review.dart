@@ -2,7 +2,7 @@
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:hawkerbro/model/fetch_stall_model.dart';
+import 'package:hawkerbro/model/stall_model.dart';
 import 'package:hawkerbro/screens/hawker_screen.dart';
 import 'package:hawkerbro/widgets/loading_screen.dart';
 
@@ -21,8 +21,8 @@ class LeaveReviewScreen extends StatefulWidget {
 }
 
 class _LeaveReviewScreenState extends State<LeaveReviewScreen> {
-  late Future<FetchStallModel?> _stallDataFuture;
-  FetchStallModel? stall;
+  late Future<StallModel?> _stallDataFuture;
+  StallModel? stall;
   final TextEditingController _reviewController = TextEditingController();
   int _rating = 0;
 
@@ -32,7 +32,7 @@ class _LeaveReviewScreenState extends State<LeaveReviewScreen> {
     _stallDataFuture = _fetchStallData();
   }
 
-  Future<FetchStallModel?> _fetchStallData() async {
+  Future<StallModel?> _fetchStallData() async {
     try {
       final DocumentSnapshot stallSnapshot = await FirebaseFirestore.instance
           .collection('hawkerCentres')
@@ -43,7 +43,7 @@ class _LeaveReviewScreenState extends State<LeaveReviewScreen> {
 
       final stallData = stallSnapshot.data() as Map<String, dynamic>;
 
-      return FetchStallModel.fromJSON(stallData);
+      return StallModel.fromJSON(stallData);
     } catch (e) {
       throw Exception('Error fetching stall data: $e');
     }
@@ -116,7 +116,7 @@ class _LeaveReviewScreenState extends State<LeaveReviewScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder<FetchStallModel?>(
+    return FutureBuilder<StallModel?>(
       future: _stallDataFuture,
       builder: (context, stallSnapshot) {
         if (stallSnapshot.connectionState == ConnectionState.waiting) {
