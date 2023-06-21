@@ -74,7 +74,7 @@ class _LeaveReviewScreenState extends State<LeaveReviewScreen> {
           'ratings': ratings,
         });
 
-        Navigator.pop(context);
+        Navigator.pop(context, stall);
 
         _reviewController.clear();
         setState(() {
