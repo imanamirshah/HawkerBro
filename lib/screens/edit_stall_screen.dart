@@ -139,8 +139,10 @@ class _EditStallScreenState extends State<EditStallScreen> {
           .get();
 
       return stallSnapshot.docs
-          .map((doc) =>
-              FetchStallModel.fromJSON(doc.data() as Map<String, dynamic>))
+          .map(
+            (doc) =>
+                FetchStallModel.fromJSON(doc.data() as Map<String, dynamic>),
+          )
           .toList();
     } catch (e) {
       throw Exception('Error fetching stalls: $e');
@@ -216,7 +218,7 @@ class _EditStallScreenState extends State<EditStallScreen> {
 
         _progressDialog!.hide();
 
-        Navigator.pop(context);
+        Navigator.pop(context, stall);
 
         showDialog(
           context: context,
