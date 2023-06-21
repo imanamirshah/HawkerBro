@@ -183,8 +183,8 @@ class _ExploreScreenState extends State<ExploreScreen> {
                           context,
                           MaterialPageRoute(
                             builder: (context) => const HawkerStallScreen(
-                              unitNumber: 'Old Nonya',
-                              postalCode: 'Stall address',
+                              unitNumber: '',
+                              postalCode: '',
                             ),
                           ),
                         );

@@ -1,10 +1,11 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:hawkerbro/model/stall_model.dart';
+import 'package:hawkerbro/model/fetch_stall_model.dart';
 import 'package:hawkerbro/screens/consmer_leave_review.dart';
-import 'package:hawkerbro/screens/search_screen.dart';
+import 'package:hawkerbro/screens/edit_stall_screen.dart';
 import 'package:hawkerbro/widgets/custom_button.dart';
 import 'package:hawkerbro/widgets/loading_screen.dart';
+import 'package:hawkerbro/widgets/review_row.dart';
 
 class HawkerStallScreen extends StatelessWidget {
   final String unitNumber;
@@ -16,7 +17,7 @@ class HawkerStallScreen extends StatelessWidget {
     required this.postalCode,
   }) : super(key: key);
 
-  Future<StallModel?> _fetchStallData() async {
+  Future<FetchStallModel?> _fetchStallData() async {
     try {
       final DocumentSnapshot stallSnapshot = await FirebaseFirestore.instance
           .collection('hawkerCentres')
@@ -32,7 +33,7 @@ class HawkerStallScreen extends StatelessWidget {
 
         debugPrint('stallData: $stallData');
 
-        return StallModel.fromJSON(stallData);
+        return FetchStallModel.fromJSON(stallData);
       }
     } catch (e) {
       throw Exception('Error fetching stall data: $e');
@@ -42,7 +43,7 @@ class HawkerStallScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder<StallModel?>(
+    return FutureBuilder<FetchStallModel?>(
       future: _fetchStallData(),
       builder: (context, stallSnapshot) {
         if (stallSnapshot.connectionState == ConnectionState.waiting) {
@@ -80,12 +81,15 @@ class HawkerStallScreen extends StatelessWidget {
             actions: [
               IconButton(
                 padding: const EdgeInsets.only(right: 12),
-                icon: const Icon(Icons.search),
+                icon: const Icon(Icons.edit),
                 onPressed: () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => const SearchPage(),
+                      builder: (context) => EditStallScreen(
+                        unitNumber: stall.unitNumber,
+                        postalCode: stall.postalCode,
+                      ),
                     ),
                   );
                 },
@@ -171,9 +175,35 @@ class HawkerStallScreen extends StatelessWidget {
                   children: _buildMenuItems(),
                 ),
               ),
-              const SizedBox(
-                height: 16,
+              const SizedBox(height: 8.0),
+              const Text(
+                'Ratings and Reviews',
+                style: TextStyle(
+                  fontSize: 18.0,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
+              const SizedBox(height: 8.0),
+              // Review Rows
+
+              SizedBox(
+                height: 200, // Set a specific height that fits your layout
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: stall.reviews
+                        .map(
+                          (review) => ReviewRow(
+                            username: 'User',
+                            reviewText: review,
+                            rating: '',
+                          ),
+                        )
+                        .toList(),
+                  ),
+                ),
+              ),
+
+              const SizedBox(height: 16),
               SizedBox(
                 child: CustomButton(
                   text: "Leave A Review",

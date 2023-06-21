@@ -52,6 +52,9 @@ dependencies:
   uuid: ^3.0.7
   firebase_app_check: ^0.1.4+3
   firebase_database: ^10.2.3
+  progress_dialog_null_safe: ^1.0.7
+  path_provider: ^2.0.15
+  readmore: ^2.2.0
 
 dev_dependencies:
   flutter_test:
