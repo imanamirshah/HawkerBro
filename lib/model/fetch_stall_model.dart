@@ -1,5 +1,6 @@
 class FetchStallModel {
   final String name;
+  final String address;
   final String unitNumber;
   final String postalCode;
   final String openingHours;
@@ -11,6 +12,7 @@ class FetchStallModel {
 
   FetchStallModel({
     required this.name,
+    required this.address,
     required this.unitNumber,
     required this.postalCode,
     required this.openingHours,
@@ -25,6 +27,7 @@ class FetchStallModel {
   factory FetchStallModel.fromJSON(Map<String, dynamic> map) {
     return FetchStallModel(
       name: map['name'] ?? '',
+      address: map['address'] ?? '',
       unitNumber: map['unitNumber'] ?? '',
       postalCode: map['postalCode'] ?? '',
       openingHours: map['openingHours'] ?? '',
@@ -40,6 +43,7 @@ class FetchStallModel {
   Map<String, dynamic> toJSON() {
     return {
       "name": name,
+      "address": address,
       "unitNumber": unitNumber,
       "postalCode": postalCode,
       "openingHours": openingHours,

@@ -1,5 +1,6 @@
 class AddStallModel {
   final String name;
+  final String address;
   final String unitNumber;
   final String postalCode;
   final String openingHours;
@@ -9,6 +10,7 @@ class AddStallModel {
 
   AddStallModel({
     required this.name,
+    required this.address,
     required this.unitNumber,
     required this.postalCode,
     required this.openingHours,
@@ -21,6 +23,7 @@ class AddStallModel {
   factory AddStallModel.fromJSON(Map<String, dynamic> map) {
     return AddStallModel(
       name: map['name'] ?? '',
+      address: map['address'] ?? '',
       unitNumber: map['unitNumber'] ?? '',
       postalCode: map['postalCode'] ?? '',
       openingHours: map['openingHours'] ?? '',
@@ -34,6 +37,7 @@ class AddStallModel {
   Map<String, dynamic> toJSON() {
     return {
       "name": name,
+      "address": address,
       "unitNumber": unitNumber,
       "postalCode": postalCode,
       "openingHours": openingHours,

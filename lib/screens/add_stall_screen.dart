@@ -16,6 +16,7 @@ class AddStallScreen extends StatefulWidget {
 class _AddStallScreenState extends State<AddStallScreen> {
   final _formKey = GlobalKey<FormState>();
   final _nameController = TextEditingController();
+  final _addressController = TextEditingController();
   final _unitNumberController = TextEditingController();
   final _postalCodeController = TextEditingController();
   final _openingHoursController = TextEditingController();
@@ -27,6 +28,7 @@ class _AddStallScreenState extends State<AddStallScreen> {
   @override
   void dispose() {
     _nameController.dispose();
+    _addressController.dispose();
     _unitNumberController.dispose();
     _postalCodeController.dispose();
     _openingHoursController.dispose();
@@ -58,6 +60,7 @@ class _AddStallScreenState extends State<AddStallScreen> {
   Future<void> _submitForm() async {
     if (_formKey.currentState!.validate()) {
       String name = _nameController.text;
+      String address = _addressController.text;
       String unitNumber = _unitNumberController.text.trim();
       String postalCode = _postalCodeController.text.trim();
       String openingHours = _openingHoursController.text;
@@ -68,6 +71,7 @@ class _AddStallScreenState extends State<AddStallScreen> {
         StallProvider stallProvider = StallProvider();
         await stallProvider.addStall(
           name,
+          address,
           unitNumber,
           postalCode,
           openingHours,
@@ -78,6 +82,7 @@ class _AddStallScreenState extends State<AddStallScreen> {
 
         _formKey.currentState!.reset();
         _nameController.clear();
+        _addressController.clear();
         _unitNumberController.clear();
         _postalCodeController.clear();
         _openingHoursController.clear();
@@ -199,6 +204,25 @@ class _AddStallScreenState extends State<AddStallScreen> {
                 validator: (value) {
                   if (value == null || value.isEmpty) {
                     return 'Please enter a stall name';
+                  }
+                  return null;
+                },
+              ),
+              const SizedBox(height: 5.0),
+              TextFormField(
+                controller: _addressController,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(
+                    borderSide: BorderSide.none,
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  filled: true,
+                  fillColor: Colors.grey[200],
+                  hintText: 'Address',
+                ),
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please enter an address';
                   }
                   return null;
                 },

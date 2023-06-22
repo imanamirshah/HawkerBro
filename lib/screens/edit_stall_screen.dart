@@ -27,6 +27,7 @@ class EditStallScreen extends StatefulWidget {
 class _EditStallScreenState extends State<EditStallScreen> {
   final _formKey = GlobalKey<FormState>();
   final _nameController = TextEditingController();
+  final _addressController = TextEditingController();
   final _unitNumberController = TextEditingController();
   final _postalCodeController = TextEditingController();
   final _openingHoursController = TextEditingController();
@@ -48,6 +49,7 @@ class _EditStallScreenState extends State<EditStallScreen> {
       if (stallData != null) {
         setState(() {
           _nameController.text = stallData.name;
+          _addressController.text = stallData.address;
           _unitNumberController.text = stallData.unitNumber;
           _postalCodeController.text = stallData.postalCode;
           _openingHoursController.text = stallData.openingHours;
@@ -102,6 +104,7 @@ class _EditStallScreenState extends State<EditStallScreen> {
   @override
   void dispose() {
     _nameController.dispose();
+    _addressController.dispose();
     _unitNumberController.dispose();
     _postalCodeController.dispose();
     _openingHoursController.dispose();
@@ -152,6 +155,7 @@ class _EditStallScreenState extends State<EditStallScreen> {
   Future<void> _submitForm() async {
     if (_formKey.currentState!.validate()) {
       String name = _nameController.text;
+      String address = _addressController.text;
       String unitNumber = _unitNumberController.text;
       String postalCode = _postalCodeController.text;
       String openingHours = _openingHoursController.text;
@@ -208,6 +212,7 @@ class _EditStallScreenState extends State<EditStallScreen> {
         // Update the other stall information
         await stallProvider.updateStall(
           name,
+          address,
           unitNumber,
           postalCode,
           openingHours,
@@ -333,6 +338,25 @@ class _EditStallScreenState extends State<EditStallScreen> {
                     validator: (value) {
                       if (value == null || value.isEmpty) {
                         return 'Please enter a stall name';
+                      }
+                      return null;
+                    },
+                  ),
+                  const SizedBox(height: 5.0),
+                  TextFormField(
+                    controller: _addressController,
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(
+                        borderSide: BorderSide.none,
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      filled: true,
+                      fillColor: Colors.grey[200],
+                      hintText: 'Address',
+                    ),
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Please enter an address';
                       }
                       return null;
                     },
