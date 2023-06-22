@@ -67,6 +67,21 @@ class _HawkerStallScreenState extends State<HawkerStallScreen> {
     return null;
   }
 
+  String calculateAverageRating(FetchStallModel stall) {
+    final List<int> ratings = stall.ratings;
+
+    if (ratings.isEmpty) {
+      return '0.0'; // or any other default value you prefer
+    } else {
+      double sum = 0;
+      for (int rating in ratings) {
+        sum += rating;
+      }
+      double average = sum / ratings.length;
+      return average.toStringAsFixed(1);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return RefreshIndicator(
@@ -99,6 +114,7 @@ class _HawkerStallScreenState extends State<HawkerStallScreen> {
           }
 
           var stall = stallSnapshot.data!;
+
           debugPrint('there are ${stall.stallImages.length} images');
           debugPrint('Stall Images: ${stall.stallImages}');
 
@@ -161,15 +177,16 @@ class _HawkerStallScreenState extends State<HawkerStallScreen> {
                   ),
                 ),
                 const SizedBox(height: 8.0),
-                const Row(
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    Icon(Icons.star, color: Colors.yellow),
-                    Icon(Icons.star, color: Colors.yellow),
-                    Icon(Icons.star, color: Colors.yellow),
-                    Icon(Icons.star_half, color: Colors.yellow),
-                    Icon(Icons.star_border, color: Colors.yellow),
-                    SizedBox(width: 4.0),
-                    Text('3.5'),
+                    Text(
+                      calculateAverageRating(stall),
+                      style: const TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    const Icon(Icons.star, color: Colors.yellow),
                   ],
                 ),
                 const SizedBox(height: 16.0),
@@ -181,7 +198,9 @@ class _HawkerStallScreenState extends State<HawkerStallScreen> {
                   ),
                 ),
                 const SizedBox(height: 8.0),
-                Text('Address: ${stall.unitNumber} ${stall.postalCode}'),
+                Text(
+                  'Address: ${stall.address}, #${stall.unitNumber}, S${stall.postalCode}',
+                ),
                 Text('Opening Hours: ${stall.openingHours}'),
                 const SizedBox(height: 16.0),
                 const Text(
@@ -194,21 +213,21 @@ class _HawkerStallScreenState extends State<HawkerStallScreen> {
                 const SizedBox(height: 8.0),
                 Text(stall.bio),
                 const SizedBox(height: 16.0),
-                const Text(
-                  'Menu',
-                  style: TextStyle(
-                    fontSize: 18.0,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                const SizedBox(height: 8.0),
-                SizedBox(
-                  height: 120,
-                  child: ListView(
-                    scrollDirection: Axis.horizontal,
-                    children: _buildMenuItems(),
-                  ),
-                ),
+                // const Text(
+                //   'Menu',
+                //   style: TextStyle(
+                //     fontSize: 18.0,
+                //     fontWeight: FontWeight.bold,
+                //   ),
+                // ),
+                // const SizedBox(height: 8.0),
+                // SizedBox(
+                //   height: 120,
+                //   child: ListView(
+                //     scrollDirection: Axis.horizontal,
+                //     children: _buildMenuItems(),
+                //   ),
+                // ),
                 const SizedBox(height: 8.0),
                 const Text(
                   'Ratings and Reviews',
@@ -220,24 +239,29 @@ class _HawkerStallScreenState extends State<HawkerStallScreen> {
                 const SizedBox(height: 8.0),
                 // Review Rows
 
-                SizedBox(
-                  height: 200, // Set a specific height that fits your layout
-                  child: SingleChildScrollView(
-                    child: Column(
-                      children: stall.reviews
-                          .asMap()
-                          .entries
-                          .map(
-                            (entry) => ReviewRow(
-                              username: 'User',
-                              reviewText: entry.value,
-                              rating: stall.ratings[entry.key].toString(),
-                            ),
-                          )
-                          .toList(),
+                if (stall.reviews.isEmpty)
+                  const Text(
+                    'This stall has no reviews.',
+                  ) // Display when there are no reviews
+                else
+                  SizedBox(
+                    height: 200, // Set a specific height that fits your layout
+                    child: SingleChildScrollView(
+                      child: Column(
+                        children: stall.reviews
+                            .asMap()
+                            .entries
+                            .map(
+                              (entry) => ReviewRow(
+                                username: 'User',
+                                reviewText: entry.value,
+                                rating: stall.ratings[entry.key].toString(),
+                              ),
+                            )
+                            .toList(),
+                      ),
                     ),
                   ),
-                ),
 
                 const SizedBox(height: 16),
                 SizedBox(
@@ -269,31 +293,31 @@ class _HawkerStallScreenState extends State<HawkerStallScreen> {
     );
   }
 
-  List<Widget> _buildMenuItems() {
-    // Replace this with your logic to generate menu items
-    List<Widget> menuItems = [];
-    for (int i = 0; i < 4; i++) {
-      menuItems.add(
-        Column(
-          children: [
-            Card(
-              child: Column(
-                children: [
-                  SizedBox(
-                    width: 120.0,
-                    height: 80.0,
-                    child: Center(
-                      child: Text('Food Item ${i + 1}'),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Text("Food ${i + 1}")
-          ],
-        ),
-      );
-    }
-    return menuItems;
-  }
+  // List<Widget> _buildMenuItems() {
+  //   // Replace this with your logic to generate menu items
+  //   List<Widget> menuItems = [];
+  //   for (int i = 0; i < 4; i++) {
+  //     menuItems.add(
+  //       Column(
+  //         children: [
+  //           Card(
+  //             child: Column(
+  //               children: [
+  //                 SizedBox(
+  //                   width: 120.0,
+  //                   height: 80.0,
+  //                   child: Center(
+  //                     child: Text('Food Item ${i + 1}'),
+  //                   ),
+  //                 ),
+  //               ],
+  //             ),
+  //           ),
+  //           Text("Food ${i + 1}")
+  //         ],
+  //       ),
+  //     );
+  //   }
+  //   return menuItems;
+  // }
 }

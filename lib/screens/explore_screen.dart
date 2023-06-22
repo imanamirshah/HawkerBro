@@ -229,6 +229,58 @@ class _ExploreScreenState extends State<ExploreScreen> {
                       ),
                     ),
                   ),
+                  const SizedBox(height: 20),
+                  const Text(
+                    'RECOMMENDATIONS',
+                    style: TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  const SizedBox(height: 10),
+                  SizedBox(
+                    height: 150,
+                    child: ListView(
+                      scrollDirection: Axis.horizontal,
+                      children: [
+                        _buildRecommendedPageItem(
+                          'assets/hawker5.jpeg',
+                          '115 Tang Shui',
+                          'assets/hawker5_profile.jpeg',
+                          'Stall address',
+                          'Stall description',
+                        ),
+                        _buildRecommendedPageItem(
+                          'assets/hawker6.jpeg',
+                          '545 Whampoa Prawn Noodles',
+                          'assets/hawker6_profile.jpeg',
+                          'Stall address',
+                          'Stall description',
+                        ),
+                        _buildRecommendedPageItem(
+                          'assets/hawker7.jpeg',
+                          '75 China Street Peanut Soup',
+                          'assets/hawker7_profile.jpeg',
+                          'Stall address',
+                          'Stall description',
+                        ),
+                        _buildRecommendedPageItem(
+                          'assets/hawker8.jpeg',
+                          'Ah Hwee BBQ',
+                          'assets/hawker8_profile.jpeg',
+                          'Stall address',
+                          'Stall description',
+                        ),
+                        _buildRecommendedPageItem(
+                          'assets/hawker9.jpeg',
+                          'Ah Xiao Teochew Braised Duck',
+                          'assets/hawker9_profile.jpeg',
+                          'Stall address',
+                          'Stall description',
+                        ),
+                      ],
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -311,6 +363,70 @@ class _ExploreScreenState extends State<ExploreScreen> {
           ),
         ),
       ],
+    );
+  }
+
+  Widget _buildRecommendedPageItem(
+    String imagePath,
+    String title,
+    String profilePic,
+    String stallAddress,
+    String stallDescription,
+  ) {
+    return InkWell(
+      onTap: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => HawkerStallScreen(
+              unitNumber: '',
+              postalCode: '',
+            ),
+          ),
+        );
+      },
+      child: Container(
+        width: 200,
+        margin: const EdgeInsets.only(left: 20),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(30),
+          color: Colors.grey[300],
+          image: DecorationImage(
+            fit: BoxFit.cover,
+            image: AssetImage(imagePath),
+          ),
+        ),
+        child: Stack(
+          children: [
+            Align(
+              alignment: Alignment.bottomCenter,
+              child: Container(
+                height: 70,
+                margin: const EdgeInsets.only(left: 20, right: 20, bottom: 10),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(30),
+                  color: Colors.white,
+                ),
+                child: Container(
+                  padding: const EdgeInsets.only(top: 10, left: 15, right: 15),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        title,
+                        style: const TextStyle(
+                          fontSize: 14,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

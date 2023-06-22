@@ -1,9 +1,12 @@
+// ignore_for_file: avoid_print
+
 import 'package:flutter/material.dart';
 import 'package:hawkerbro/provider/auth_provider.dart';
 import 'package:hawkerbro/screens/register_screen.dart';
 import 'package:hawkerbro/screens/home_screen.dart';
 import 'package:hawkerbro/widgets/custom_button.dart';
 import 'package:provider/provider.dart';
+import 'package:geolocator/geolocator.dart';
 
 class WelcomeScreen extends StatefulWidget {
   const WelcomeScreen({super.key});
@@ -13,6 +16,15 @@ class WelcomeScreen extends StatefulWidget {
 }
 
 class _WelcomeScreenState extends State<WelcomeScreen> {
+  void getLocation() async {
+    await Geolocator.checkPermission();
+    await Geolocator.requestPermission();
+    Position position = await Geolocator.getCurrentPosition(
+      desiredAccuracy: LocationAccuracy.high,
+    );
+    print(position);
+  }
+
   @override
   Widget build(BuildContext context) {
     final ap = Provider.of<AuthProvider>(context, listen: false);
@@ -64,6 +76,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                       height: 50,
                       child: CustomButton(
                         onPressed: () async {
+                          getLocation();
                           if (ap.isSignedIn == true) {
                             await ap.getDataFromSP().whenComplete(
                                   () => Navigator.pushReplacement(

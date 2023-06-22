@@ -15,7 +15,6 @@ class SearchPage extends StatefulWidget {
 class _SearchPageState extends State<SearchPage> {
   List<String> searchHistory = [];
   List<String> filteredStalls = [];
-  Map<String, String> stallAddresses = {};
 
   String searchText = '';
   final TextEditingController _searchController = TextEditingController();
@@ -64,11 +63,11 @@ class _SearchPageState extends State<SearchPage> {
     }
 
     try {
-      final QuerySnapshot snapshot =
+      final QuerySnapshot stallSnapshot =
           await _firestore.collectionGroup('stalls').get();
 
       setState(() {
-        filteredStalls = snapshot.docs
+        filteredStalls = stallSnapshot.docs
             .map((doc) => doc['name'] as String)
             .where(
               (name) => name.toLowerCase().contains(
@@ -76,36 +75,28 @@ class _SearchPageState extends State<SearchPage> {
                   ),
             )
             .toList();
-
-        stallAddresses = Map.fromEntries(
-          snapshot.docs.map((doc) {
-            final stallName = doc['name'] as String;
-            final stallAddress = doc['address'] as String;
-            return MapEntry(stallName, stallAddress);
-          }),
-        );
       });
     } catch (e) {
       debugPrint('Error fetching stalls: $e');
     }
   }
 
-  void navigateToHawkerPage(String stallName) async {
+  void navigateToHawkerPage(String name) async {
     setState(() {
-      _searchController.text = stallName;
+      _searchController.text = name;
 
-      if (searchHistory.contains(stallName)) {
-        searchHistory.remove(stallName);
+      if (searchHistory.contains(name)) {
+        searchHistory.remove(name);
       }
 
-      searchHistory.insert(0, stallName);
+      searchHistory.insert(0, name);
       _saveSearchHistory();
     });
 
     try {
       final QuerySnapshot snapshot = await _firestore
           .collectionGroup('stalls')
-          .where('name', isEqualTo: stallName)
+          .where('name', isEqualTo: name)
           .get();
 
       if (snapshot.docs.isNotEmpty) {
@@ -232,9 +223,7 @@ class _SearchPageState extends State<SearchPage> {
                 child: ListView.builder(
                   itemCount: filteredStalls.length,
                   itemBuilder: (context, index) {
-                    final stallName = filteredStalls[index];
-                    final stallAddress =
-                        stallAddresses[stallName] ?? 'Address not available';
+                    final name = filteredStalls[index];
 
                     return ListTile(
                       leading: const Icon(
@@ -245,19 +234,13 @@ class _SearchPageState extends State<SearchPage> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            stallName,
+                            name,
                             style: const TextStyle(fontWeight: FontWeight.bold),
-                          ),
-                          Text(
-                            stallAddress,
-                            style: const TextStyle(
-                              color: Colors.grey,
-                            ),
                           ),
                         ],
                       ),
                       onTap: () {
-                        navigateToHawkerPage(stallName);
+                        navigateToHawkerPage(name);
                       },
                     );
                   },

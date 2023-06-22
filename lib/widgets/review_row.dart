@@ -39,7 +39,7 @@ class _ReviewRowState extends State<ReviewRow> {
                   widget.username,
                   style: const TextStyle(
                     fontWeight: FontWeight.bold,
-                    fontSize: 18.0, // Increase font size for username
+                    fontSize: 18.0,
                   ),
                 ),
               ),

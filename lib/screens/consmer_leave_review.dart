@@ -80,6 +80,23 @@ class _LeaveReviewScreenState extends State<LeaveReviewScreen> {
         setState(() {
           _rating = 0;
         });
+
+        showDialog(
+          context: context,
+          builder: (BuildContext context) {
+            return AlertDialog(
+              content: const Text('Thank you for your review!.'),
+              actions: [
+                TextButton(
+                  onPressed: () {
+                    Navigator.of(context).pop();
+                  },
+                  child: const Text('OK'),
+                ),
+              ],
+            );
+          },
+        );
       } catch (e) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
@@ -95,23 +112,6 @@ class _LeaveReviewScreenState extends State<LeaveReviewScreen> {
         ),
       );
     }
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return AlertDialog(
-          content: const Text('Thank you for your review!.'),
-          actions: [
-            TextButton(
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-              child: const Text('OK'),
-            ),
-          ],
-        );
-      },
-    );
-    // Navigator.pop(context);
   }
 
   @override

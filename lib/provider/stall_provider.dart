@@ -4,7 +4,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:hawkerbro/model/stall_model.dart';
-import 'package:hawkerbro/utils/globals.dart';
 
 class StallProvider extends ChangeNotifier {
   AddStallModel? _stallModel;
@@ -13,6 +12,7 @@ class StallProvider extends ChangeNotifier {
 
   Future<void> addStall(
     String name,
+    String address,
     String unitNumber,
     String postalCode,
     String openingHours,
@@ -20,17 +20,11 @@ class StallProvider extends ChangeNotifier {
     String bio,
     List<File> imageFiles,
   ) async {
-    bool isStallExists = await checkStallExists(unitNumber, postalCode);
-    bool snackBarShown = false;
-    while (isStallExists) {
-      if (!snackBarShown) {
-        const SnackBar snackBar = SnackBar(
-          content: Text('Stall already exists in the same postal code'),
-        );
-        snackBarKey.currentState?.showSnackBar(snackBar);
-        snackBarShown = true;
-      }
-      isStallExists = await checkStallExists(unitNumber, postalCode);
+    // Check if the hawker centre (ancestor document) exists
+    bool isHawkerCentreExists = await checkHawkerCentreExists(postalCode);
+    if (!isHawkerCentreExists) {
+      // Create the hawker centre document if it doesn't exist
+      await createHawkerCentreDocument(postalCode);
     }
 
     // Upload images to Firebase Storage and get the download URLs
@@ -45,6 +39,7 @@ class StallProvider extends ChangeNotifier {
         .doc(unitNumber)
         .set({
       'name': name,
+      'address': address,
       'unitNumber': unitNumber,
       'postalCode': postalCode,
       'openingHours': openingHours,
@@ -52,6 +47,17 @@ class StallProvider extends ChangeNotifier {
       'bio': bio,
       'stall images': imageUrls,
     });
+  }
+
+  Future<bool> checkHawkerCentreExists(String postalCode) async {
+    DocumentSnapshot snapshot =
+        await firestore.collection('hawkerCentres').doc(postalCode).get();
+
+    return snapshot.exists;
+  }
+
+  Future<void> createHawkerCentreDocument(String postalCode) async {
+    await firestore.collection('hawkerCentres').doc(postalCode).set({});
   }
 
   Future<bool> checkStallExists(String unitNumber, String postalCode) async {
@@ -108,6 +114,7 @@ class StallProvider extends ChangeNotifier {
 
   Future<void> updateStall(
     String name,
+    String address,
     String unitNumber,
     String postalCode,
     String openingHours,
@@ -126,6 +133,7 @@ class StallProvider extends ChangeNotifier {
         .doc(unitNumber)
         .update({
       'name': name,
+      'address': address,
       'unitNumber': unitNumber,
       'openingHours': openingHours,
       'phoneNumber': phoneNumber,
