@@ -7,7 +7,6 @@ import '../components/my_button.dart';
 import '../components/my_textfield.dart';
 import '../components/square_tile.dart';
 import 'home_screen.dart';
-import 'login_page.dart';
 
 class RegisterPage extends StatefulWidget {
   final VoidCallback onTap;
