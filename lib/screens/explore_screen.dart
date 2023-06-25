@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:hawkerbro/provider/auth_provider.dart';
+// import 'package:hawkerbro/provider/auth_provider.dart';
 import 'package:hawkerbro/screens/account_screen.dart';
 import 'package:hawkerbro/screens/hawker_screen.dart';
 import 'package:hawkerbro/screens/search_screen.dart';
-import 'package:provider/provider.dart';
+// import 'package:provider/provider.dart';
 
 class ExploreScreen extends StatefulWidget {
   const ExploreScreen({Key? key}) : super(key: key);
@@ -18,7 +18,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final ap = Provider.of<AuthProvider>(context, listen: false);
+    // final ap = Provider.of<AuthProvider>(context, listen: false);
 
     return Scaffold(
       appBar: AppBar(
@@ -29,12 +29,12 @@ class _ExploreScreenState extends State<ExploreScreen> {
         title: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              'Hi, ${ap.userModel.name} ',
-              style: const TextStyle(
-                fontWeight: FontWeight.bold,
-              ),
-            ),
+            // Text(
+            //   'Hi, ${ap.userModel.name} ',
+            //   style: const TextStyle(
+            //     fontWeight: FontWeight.bold,
+            //   ),
+            // ),
             const SizedBox(height: 4),
             const Text(
               'Find Delicious Hawker Food',
@@ -58,9 +58,9 @@ class _ExploreScreenState extends State<ExploreScreen> {
                   ),
                 );
               },
-              icon: CircleAvatar(
+              icon: const CircleAvatar(
                 backgroundColor: Colors.black,
-                backgroundImage: NetworkImage(ap.userModel.profilePic),
+                // backgroundImage: NetworkImage(ap.userModel.profilePic),
                 radius: 50,
               ),
             ),
@@ -90,11 +90,11 @@ class _ExploreScreenState extends State<ExploreScreen> {
                     borderRadius: BorderRadius.circular(8),
                   ),
                   padding: const EdgeInsets.symmetric(horizontal: 16),
-                  child: const Row(
+                  child: Row(
                     children: [
-                      Icon(Icons.search),
-                      SizedBox(width: 10),
-                      Text('Search...'),
+                      const Icon(Icons.search),
+                      const SizedBox(width: 10),
+                      const Text('Search...'),
                     ],
                   ),
                 ),
@@ -183,8 +183,9 @@ class _ExploreScreenState extends State<ExploreScreen> {
                           context,
                           MaterialPageRoute(
                             builder: (context) => const HawkerStallScreen(
-                              unitNumber: '',
-                              postalCode: '',
+                              stallName: 'Old Nonya',
+                              stallAddress: 'Stall address',
+                              stallDescription: 'Stall description',
                             ),
                           ),
                         );
@@ -379,8 +380,9 @@ class _ExploreScreenState extends State<ExploreScreen> {
           context,
           MaterialPageRoute(
             builder: (context) => HawkerStallScreen(
-              unitNumber: '',
-              postalCode: '',
+              stallName: title,
+              stallAddress: stallAddress,
+              stallDescription: stallDescription,
             ),
           ),
         );
@@ -421,6 +423,17 @@ class _ExploreScreenState extends State<ExploreScreen> {
                       ),
                     ],
                   ),
+                ),
+              ),
+            ),
+            Align(
+              alignment: Alignment.topRight,
+              child: Container(
+                margin: const EdgeInsets.all(10),
+                child: CircleAvatar(
+                  backgroundColor: Colors.black,
+                  // backgroundImage: NetworkImage(profilePic),
+                  radius: 15,
                 ),
               ),
             ),

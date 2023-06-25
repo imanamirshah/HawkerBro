@@ -1,26 +1,32 @@
+import 'dart:math';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:hawkerbro/screens/register_screen.dart';
 import '../components/my_button.dart';
 import '../components/my_textfield.dart';
 import '../components/square_tile.dart';
-import 'forgot_password_page.dart';
 import 'home_screen.dart';
-import 'register_page.dart';
+import 'login_page.dart';
 
-class LoginPage extends StatefulWidget {
-  final void Function() onTap;
+class RegisterPage extends StatefulWidget {
+  final VoidCallback onTap;
+  final VoidCallback onTapLogin;
 
-  LoginPage({Key? key, required this.onTap}) : super(key: key);
+  RegisterPage({Key? key, required this.onTap, required this.onTapLogin})
+      : super(key: key);
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<RegisterPage> createState() => _RegisterPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _RegisterPageState extends State<RegisterPage> {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
+  final confirmPasswordController = TextEditingController();
 
-  Future<void> signUserIn() async {
+  // Sign user up method
+  Future<void> signUserUp() async {
     showDialog(
       context: context,
       builder: (context) {
@@ -30,70 +36,66 @@ class _LoginPageState extends State<LoginPage> {
       },
     );
 
+    // Try creating the user
     try {
-      await FirebaseAuth.instance.signInWithEmailAndPassword(
-        email: emailController.text,
-        password: passwordController.text,
-      );
-      Navigator.pop(context); // Pop the loading circle dialog
-      // ignore: use_build_context_synchronously
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => const HomeScreen()),
-      );
+      // check if password is confirmed
+      if (passwordController.text == confirmPasswordController.text) {
+        await FirebaseAuth.instance.createUserWithEmailAndPassword(
+          email: emailController.text,
+          password: passwordController.text,
+        );
+        Navigator.pop(context); // Pop the loading circle dialog
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => const HomeScreen()),
+        );
+      } else {
+        Navigator.pop(context); // Pop the loading circle dialog
+        showErrorMessage("Passwords don't match");
+      }
     } on FirebaseAuthException catch (e) {
       Navigator.pop(context); // Pop the loading circle dialog
-      if (e.code == 'user-not-found') {
-        wrongEmailMessage();
-      } else if (e.code == 'wrong-password') {
-        wrongPasswordMessage();
+      if (e.code == 'weak-password') {
+        showErrorMessage('Weak Password', 'Please choose a stronger password.');
+      } else if (e.code == 'email-already-in-use') {
+        showErrorMessage(
+            'Email Already in Use', 'The email is already registered.');
+      } else {
+        showErrorMessage(
+            'Sign Up Failed', 'An error occurred while signing up.');
       }
     }
   }
 
-  void wrongEmailMessage() {
+  void showErrorMessage(String title, [String message = '']) {
     showDialog(
       context: context,
       builder: (context) {
-        return const AlertDialog(
+        return AlertDialog(
           backgroundColor: Colors.deepPurple,
           title: Center(
             child: Text(
-              'Incorrect Email/Password',
-              style: TextStyle(color: Colors.white),
+              title,
+              style: const TextStyle(color: Colors.white),
             ),
           ),
-        );
-      },
-    );
-  }
-
-  void wrongPasswordMessage() {
-    showDialog(
-      context: context,
-      builder: (context) {
-        return const AlertDialog(
-          backgroundColor: Colors.deepPurple,
-          title: Center(
-            child: Text(
-              'Incorrect Password',
-              style: TextStyle(color: Colors.white),
-            ),
+          content: Text(
+            message,
+            style: const TextStyle(color: Colors.white),
           ),
+          actions: <Widget>[
+            TextButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              child: const Text(
+                'OK',
+                style: TextStyle(color: Colors.white),
+              ),
+            ),
+          ],
         );
       },
-    );
-  }
-
-  void goToRegisterPage() {
-    Navigator.push(
-      context,
-      MaterialPageRoute(
-        builder: (context) => RegisterPage(
-          onTap: () {},
-          onTapLogin: () {},
-        ),
-      ),
     );
   }
 
@@ -103,20 +105,20 @@ class _LoginPageState extends State<LoginPage> {
       backgroundColor: Colors.grey[300],
       body: SafeArea(
         child: SingleChildScrollView(
-          child: SizedBox(
-            height: MediaQuery.of(context).size.height - kToolbarHeight,
+          child: Container(
+            height: MediaQuery.of(context).size.height,
             child: Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const SizedBox(height: 50),
-                  const Icon(
+                  SizedBox(height: 20),
+                  Icon(
                     Icons.lock,
-                    size: 100,
+                    size: 80,
                   ),
-                  const SizedBox(height: 50),
+                  const SizedBox(height: 10),
                   Text(
-                    'Welcome back you\'ve been missed!',
+                    'Create an account!',
                     style: TextStyle(
                       color: Colors.grey[700],
                       fontSize: 16,
@@ -135,32 +137,15 @@ class _LoginPageState extends State<LoginPage> {
                     obscureText: true,
                   ),
                   const SizedBox(height: 10),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        GestureDetector(
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => ForgotPasswordPage(),
-                              ),
-                            );
-                          },
-                          child: Text(
-                            'Forgot Password?',
-                            style: TextStyle(color: Colors.grey[600]),
-                          ),
-                        ),
-                      ],
-                    ),
+                  MyTextField(
+                    controller: confirmPasswordController,
+                    hintText: 'Confirm Password',
+                    obscureText: true,
                   ),
                   const SizedBox(height: 15),
                   MyButton(
-                    onTap: signUserIn,
-                    text: 'Sign In',
+                    onTap: signUserUp,
+                    text: 'Sign Up',
                   ),
                   const SizedBox(height: 20),
                   Padding(
@@ -210,26 +195,34 @@ class _LoginPageState extends State<LoginPage> {
                     ],
                   ),
                   const SizedBox(height: 20),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        'Not a member?',
-                        style: TextStyle(color: Colors.grey[700]),
-                      ),
-                      const SizedBox(width: 4),
-                      GestureDetector(
-                        onTap: goToRegisterPage,
-                        child: Text(
-                          'Register now',
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => LoginPage(
+                                  onTap: () {},
+                                )),
+                      );
+                    },
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          'Already have an account?',
+                          style: TextStyle(color: Colors.grey[700]),
+                        ),
+                        const SizedBox(width: 4),
+                        Text(
+                          'Login now',
                           style: TextStyle(
                             color: Colors.blue,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
-                      ),
-                    ],
-                  )
+                      ],
+                    ),
+                  ),
                 ],
               ),
             ),

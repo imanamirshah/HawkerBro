@@ -49,41 +49,41 @@ class DefaultFirebaseOptions {
     messagingSenderId: '484751014681',
     projectId: 'orbitalflutterhawkerbro',
     authDomain: 'orbitalflutterhawkerbro.firebaseapp.com',
+    databaseURL: 'https://orbitalflutterhawkerbro-default-rtdb.asia-southeast1.firebasedatabase.app',
     storageBucket: 'orbitalflutterhawkerbro.appspot.com',
     measurementId: 'G-LQWEH52ZD9',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyCx3KbABiG19bpfUtvEQqZJBFNSdDrvoD0',
-    appId: '1:484751014681:android:8a6c2e55414ec3080ca388',
+    appId: '1:484751014681:android:9fdd74d542b9ef3d0ca388',
     messagingSenderId: '484751014681',
     projectId: 'orbitalflutterhawkerbro',
+    databaseURL: 'https://orbitalflutterhawkerbro-default-rtdb.asia-southeast1.firebasedatabase.app',
     storageBucket: 'orbitalflutterhawkerbro.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyDxVOet3ECtpkVK46VIg1BWP-nXhqerTiw',
-    appId: '1:484751014681:ios:0249493a6a91f8400ca388',
+    appId: '1:484751014681:ios:f998b423edab73e70ca388',
     messagingSenderId: '484751014681',
     projectId: 'orbitalflutterhawkerbro',
+    databaseURL: 'https://orbitalflutterhawkerbro-default-rtdb.asia-southeast1.firebasedatabase.app',
     storageBucket: 'orbitalflutterhawkerbro.appspot.com',
-    androidClientId:
-        '484751014681-mkk29kmdqtepcfkq6k7pqk535es54d33.apps.googleusercontent.com',
-    iosClientId:
-        '484751014681-lcjstofulfpk7eaqijr27vvnlra28utm.apps.googleusercontent.com',
+    androidClientId: '484751014681-8arepdght5fvgikq950h0gs6daid77fu.apps.googleusercontent.com',
+    iosClientId: '484751014681-77815ql63m9vb35qj5o0eu29bsfbha3e.apps.googleusercontent.com',
     iosBundleId: 'com.example.hawkerbro',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
     apiKey: 'AIzaSyDxVOet3ECtpkVK46VIg1BWP-nXhqerTiw',
-    appId: '1:484751014681:ios:9243234c023ce8000ca388',
+    appId: '1:484751014681:ios:d5c22844d5bd64f90ca388',
     messagingSenderId: '484751014681',
     projectId: 'orbitalflutterhawkerbro',
+    databaseURL: 'https://orbitalflutterhawkerbro-default-rtdb.asia-southeast1.firebasedatabase.app',
     storageBucket: 'orbitalflutterhawkerbro.appspot.com',
-    androidClientId:
-        '484751014681-mkk29kmdqtepcfkq6k7pqk535es54d33.apps.googleusercontent.com',
-    iosClientId:
-        '484751014681-2usrrom8hqa0kqjqle5qarqs9c4bov4o.apps.googleusercontent.com',
+    androidClientId: '484751014681-8arepdght5fvgikq950h0gs6daid77fu.apps.googleusercontent.com',
+    iosClientId: '484751014681-dm7m49iv6ih12effj86aq4jpapk2h885.apps.googleusercontent.com',
     iosBundleId: 'com.example.hawkerbro.RunnerTests',
   );
 }

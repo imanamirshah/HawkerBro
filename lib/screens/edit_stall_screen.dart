@@ -18,6 +18,9 @@ class EditStallScreen extends StatefulWidget {
     Key? key,
     required this.unitNumber,
     required this.postalCode,
+    String? stallName,
+    String? stallAddress,
+    String? stallDescription,
   }) : super(key: key);
 
   @override

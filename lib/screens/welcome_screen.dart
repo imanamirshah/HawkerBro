@@ -90,12 +90,14 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => const RegisterScreen(),
+                                builder: (context) => LoginPage(
+                                  onTap: () {},
+                                ),
                               ),
                             );
                           }
                         },
-                        text: "Login",
+                        text: "Get Started",
                       ),
                     ),
                   ],

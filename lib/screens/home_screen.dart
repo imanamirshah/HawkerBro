@@ -35,7 +35,7 @@ class HomeScreen extends StatelessWidget {
         switch (index) {
           case 0:
             return CupertinoTabView(
-              builder: (context) => const NotificationsScreen(),
+              builder: (context) => NotificationsScreen(),
             );
           case 1:
             return CupertinoTabView(

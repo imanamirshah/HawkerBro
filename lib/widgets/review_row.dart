@@ -7,11 +7,11 @@ class ReviewRow extends StatefulWidget {
   final String rating;
 
   const ReviewRow({
-    super.key,
+    Key? key,
     required this.username,
     required this.reviewText,
     required this.rating,
-  });
+  }) : super(key: key);
 
   @override
   State<ReviewRow> createState() => _ReviewRowState();
