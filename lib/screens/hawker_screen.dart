@@ -8,19 +8,13 @@ import 'package:hawkerbro/widgets/loading_screen.dart';
 import 'package:hawkerbro/widgets/review_row.dart';
 
 class HawkerStallScreen extends StatefulWidget {
-  final String? unitNumber;
-  final String? postalCode;
-  final String? stallAddress;
-  final String? stallName;
-  final String? stallDescription;
+  final String unitNumber;
+  final String postalCode;
 
   const HawkerStallScreen({
     Key? key,
-    this.unitNumber,
-    this.postalCode,
-    this.stallAddress,
-    this.stallName,
-    this.stallDescription,
+    required this.unitNumber,
+    required this.postalCode,
   }) : super(key: key);
 
   @override
@@ -90,19 +84,6 @@ class _HawkerStallScreenState extends State<HawkerStallScreen> {
 
   @override
   Widget build(BuildContext context) {
-    if (widget.unitNumber == null ||
-        widget.postalCode == null ||
-        widget.stallAddress == null ||
-        widget.stallName == null ||
-        widget.stallDescription == null) {
-      return Scaffold(
-        appBar: AppBar(),
-        body: const Center(
-          child: Text('Incomplete stall data'),
-        ),
-      );
-    }
-
     return RefreshIndicator(
       key: _refreshIndicatorKey,
       onRefresh: _refreshData,
@@ -123,116 +104,186 @@ class _HawkerStallScreenState extends State<HawkerStallScreen> {
             );
           }
 
-          if (!stallSnapshot.hasData || stallSnapshot.data == null) {
+          if (!stallSnapshot.hasData) {
             return Scaffold(
               appBar: AppBar(),
               body: const Center(
-                child: Text('No stall data available'),
+                child: Text('Error loading stall data - no data'),
               ),
             );
           }
 
-          stall = stallSnapshot.data!;
+          var stall = stallSnapshot.data!;
 
-          var reviewText;
-          var username;
+          debugPrint('there are ${stall.stallImages.length} images');
+          debugPrint('Stall Images: ${stall.stallImages}');
+
           return Scaffold(
             appBar: AppBar(
-              title: const Text('Hawker Stall Details'),
-              actions: <Widget>[
+              elevation: 1,
+              backgroundColor: Colors.white,
+              foregroundColor: Colors.black,
+              actions: [
                 IconButton(
+                  padding: const EdgeInsets.only(right: 12),
                   icon: const Icon(Icons.edit),
-                  onPressed: () {
-                    Navigator.push(
+                  onPressed: () async {
+                    final result = await Navigator.push(
                       context,
                       MaterialPageRoute(
                         builder: (context) => EditStallScreen(
-                          unitNumber: widget.unitNumber ?? '',
-                          postalCode: widget.postalCode ?? '',
-                          stallAddress: widget.stallAddress,
-                          stallName: widget.stallName,
-                          stallDescription: widget.stallDescription,
+                          unitNumber: stall.unitNumber,
+                          postalCode: stall.postalCode,
                         ),
                       ),
                     );
+                    if (result != null) {
+                      setState(() {
+                        stall = result;
+                      });
+                    }
                   },
                 ),
               ],
             ),
             body: ListView(
-              padding: const EdgeInsets.all(16),
-              children: <Widget>[
+              padding: const EdgeInsets.all(16.0),
+              children: [
+                SizedBox(
+                  height: 280.0,
+                  child: ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                    itemCount: stall.stallImages.length,
+                    itemBuilder: (context, index) {
+                      return ClipRRect(
+                        borderRadius: BorderRadius.circular(20.0),
+                        child: Card(
+                          child: Image.network(
+                            stall.stallImages[index],
+                            fit: BoxFit.cover,
+                            width: 350,
+                          ),
+                        ),
+                      );
+                    },
+                  ),
+                ),
+                const SizedBox(height: 8.0),
                 Text(
-                  widget.stallName!,
+                  stall.name,
                   style: const TextStyle(
-                    fontSize: 20,
+                    fontSize: 30,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                const SizedBox(height: 8),
-                Text(
-                  widget.stallAddress!,
-                  style: const TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
-                const SizedBox(height: 8),
-                Text(
-                  widget.stallDescription!,
-                  style: const TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
-                const SizedBox(height: 16),
+                const SizedBox(height: 8.0),
                 Row(
-                  children: <Widget>[
-                    const Text(
-                      'Average Rating:',
-                      style: TextStyle(
-                        fontSize: 16,
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    Text(
+                      calculateAverageRating(stall),
+                      style: const TextStyle(
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    const SizedBox(width: 8),
-                    Text(
-                      calculateAverageRating(stall!),
-                      style: const TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
+                    const Icon(Icons.star, color: Colors.yellow),
                   ],
                 ),
-                const SizedBox(height: 16),
+                const SizedBox(height: 16.0),
                 const Text(
-                  'Reviews:',
+                  'Business Information',
                   style: TextStyle(
-                    fontSize: 16,
+                    fontSize: 18.0,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                // const SizedBox(height: 8),
-                // ...stall!.reviews.map((review) => ReviewRow(
-                //       username: review.username,
-                //       reviewText: review.reviewText,
-                //       rating: review.rating,
-                //     )),
-                const SizedBox(height: 16),
-                CustomButton(
-                  text: 'Leave Review',
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => LeaveReviewScreen(
-                          unitNumber: widget.unitNumber ?? '',
-                          postalCode: widget.postalCode ?? '',
-                        ),
+                const SizedBox(height: 8.0),
+                Text(
+                  'Address: ${stall.address}, #${stall.unitNumber}, S${stall.postalCode}',
+                ),
+                Text('Opening Hours: ${stall.openingHours}'),
+                const SizedBox(height: 16.0),
+                const Text(
+                  'Description',
+                  style: TextStyle(
+                    fontSize: 18.0,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                const SizedBox(height: 8.0),
+                Text(stall.bio),
+                const SizedBox(height: 16.0),
+                // const Text(
+                //   'Menu',
+                //   style: TextStyle(
+                //     fontSize: 18.0,
+                //     fontWeight: FontWeight.bold,
+                //   ),
+                // ),
+                // const SizedBox(height: 8.0),
+                // SizedBox(
+                //   height: 120,
+                //   child: ListView(
+                //     scrollDirection: Axis.horizontal,
+                //     children: _buildMenuItems(),
+                //   ),
+                // ),
+                const SizedBox(height: 8.0),
+                const Text(
+                  'Ratings and Reviews',
+                  style: TextStyle(
+                    fontSize: 18.0,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                const SizedBox(height: 8.0),
+                // Review Rows
+
+                if (stall.reviews.isEmpty)
+                  const Text(
+                    'This stall has no reviews.',
+                  ) // Display when there are no reviews
+                else
+                  SizedBox(
+                    height: 200, // Set a specific height that fits your layout
+                    child: SingleChildScrollView(
+                      child: Column(
+                        children: stall.reviews
+                            .asMap()
+                            .entries
+                            .map(
+                              (entry) => ReviewRow(
+                                username: 'User',
+                                reviewText: entry.value,
+                                rating: stall.ratings[entry.key].toString(),
+                              ),
+                            )
+                            .toList(),
                       ),
-                    );
-                  },
+                    ),
+                  ),
+
+                const SizedBox(height: 16),
+                SizedBox(
+                  child: CustomButton(
+                    text: "Leave A Review",
+                    onPressed: () async {
+                      final result = await Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => LeaveReviewScreen(
+                            unitNumber: stall.unitNumber,
+                            postalCode: stall.postalCode,
+                          ),
+                        ),
+                      );
+                      if (result != null) {
+                        setState(() {
+                          stall = result;
+                        });
+                      }
+                    },
+                  ),
                 ),
               ],
             ),
@@ -241,4 +292,32 @@ class _HawkerStallScreenState extends State<HawkerStallScreen> {
       ),
     );
   }
+
+  // List<Widget> _buildMenuItems() {
+  //   // Replace this with your logic to generate menu items
+  //   List<Widget> menuItems = [];
+  //   for (int i = 0; i < 4; i++) {
+  //     menuItems.add(
+  //       Column(
+  //         children: [
+  //           Card(
+  //             child: Column(
+  //               children: [
+  //                 SizedBox(
+  //                   width: 120.0,
+  //                   height: 80.0,
+  //                   child: Center(
+  //                     child: Text('Food Item ${i + 1}'),
+  //                   ),
+  //                 ),
+  //               ],
+  //             ),
+  //           ),
+  //           Text("Food ${i + 1}")
+  //         ],
+  //       ),
+  //     );
+  //   }
+  //   return menuItems;
+  // }
 }

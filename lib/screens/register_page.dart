@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:hawkerbro/screens/register_screen.dart';
+import 'package:provider/provider.dart';
 import '../components/my_button.dart';
 import '../components/my_textfield.dart';
 import '../components/square_tile.dart';
@@ -23,6 +24,16 @@ class _RegisterPageState extends State<RegisterPage> {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
   final confirmPasswordController = TextEditingController();
+  final usernameController = TextEditingController();
+
+  @override
+  void dispose() {
+    emailController.dispose();
+    passwordController.dispose();
+    confirmPasswordController.dispose();
+    usernameController.dispose();
+    super.dispose();
+  }
 
   // Sign user up method
   Future<void> signUserUp() async {
@@ -123,6 +134,15 @@ class _RegisterPageState extends State<RegisterPage> {
                       fontSize: 16,
                     ),
                   ),
+
+                  // name input
+                  const SizedBox(height: 25),
+                  MyTextField(
+                    controller: usernameController,
+                    hintText: 'Username',
+                    obscureText: false,
+                  ),
+
                   const SizedBox(height: 25),
                   MyTextField(
                     controller: emailController,

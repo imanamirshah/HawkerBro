@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 // import 'package:hawkerbro/provider/auth_provider.dart';
 import 'package:hawkerbro/screens/add_stall_screen.dart';
@@ -12,6 +13,11 @@ class AccountScreen extends StatefulWidget {
 }
 
 class _AccountScreenState extends State<AccountScreen> {
+  final user = FirebaseAuth.instance.currentUser;
+  void signUserOut() {
+    FirebaseAuth.instance.signOut();
+  }
+
   @override
   Widget build(BuildContext context) {
     // final ap = Provider.of<AuthProvider>(context, listen: false);
@@ -34,12 +40,17 @@ class _AccountScreenState extends State<AccountScreen> {
           IconButton(
             onPressed: () {
               // ap.userSignOut().then(
-              //   (value) => Navigator.of(context, rootNavigator: true).push(
-              //     MaterialPageRoute(
-              //       builder: (context) => const WelcomeScreen(),
-              //     ),
-              //   ),
-              // );
+              //       (value) => Navigator.of(context, rootNavigator: true).push(
+              //         MaterialPageRoute(
+              //           builder: (context) => const WelcomeScreen(),
+              //         ),
+              //       ),
+              //     );
+              signUserOut();
+              Navigator.of(context, rootNavigator: true).pushAndRemoveUntil(
+                MaterialPageRoute(builder: (context) => const WelcomeScreen()),
+                (route) => false,
+              );
             },
             icon: const Icon(Icons.exit_to_app),
           ),
@@ -64,7 +75,7 @@ class _AccountScreenState extends State<AccountScreen> {
             // ),
             const SizedBox(height: 15),
             // Text(userModel?.phoneNumber ?? ''),
-            // Text(userModel?.email ?? ''),
+            Text(user!.email!),
             // Text(userModel?.bio ?? ''),
             const SizedBox(height: 15),
             SizedBox(

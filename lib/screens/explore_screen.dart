@@ -183,9 +183,8 @@ class _ExploreScreenState extends State<ExploreScreen> {
                           context,
                           MaterialPageRoute(
                             builder: (context) => const HawkerStallScreen(
-                              stallName: 'Old Nonya',
-                              stallAddress: 'Stall address',
-                              stallDescription: 'Stall description',
+                              postalCode: '',
+                              unitNumber: '',
                             ),
                           ),
                         );
@@ -380,9 +379,8 @@ class _ExploreScreenState extends State<ExploreScreen> {
           context,
           MaterialPageRoute(
             builder: (context) => HawkerStallScreen(
-              stallName: title,
-              stallAddress: stallAddress,
-              stallDescription: stallDescription,
+              postalCode: '',
+              unitNumber: '',
             ),
           ),
         );
