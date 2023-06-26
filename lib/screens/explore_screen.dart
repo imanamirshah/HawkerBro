@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:hawkerbro/provider/auth_provider.dart';
+// import 'package:hawkerbro/provider/auth_provider.dart';
 import 'package:hawkerbro/screens/account_screen.dart';
 import 'package:hawkerbro/screens/hawker_screen.dart';
 import 'package:hawkerbro/screens/search_screen.dart';
-import 'package:provider/provider.dart';
+// import 'package:provider/provider.dart';
 
 class ExploreScreen extends StatefulWidget {
   const ExploreScreen({Key? key}) : super(key: key);
@@ -18,7 +18,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final ap = Provider.of<AuthProvider>(context, listen: false);
+    // final ap = Provider.of<AuthProvider>(context, listen: false);
 
     return Scaffold(
       appBar: AppBar(
@@ -29,12 +29,12 @@ class _ExploreScreenState extends State<ExploreScreen> {
         title: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              'Hi, ${ap.userModel.name} ',
-              style: const TextStyle(
-                fontWeight: FontWeight.bold,
-              ),
-            ),
+            // Text(
+            //   'Hi, ${ap.userModel.name} ',
+            //   style: const TextStyle(
+            //     fontWeight: FontWeight.bold,
+            //   ),
+            // ),
             const SizedBox(height: 4),
             const Text(
               'Find Delicious Hawker Food',
@@ -58,9 +58,9 @@ class _ExploreScreenState extends State<ExploreScreen> {
                   ),
                 );
               },
-              icon: CircleAvatar(
+              icon: const CircleAvatar(
                 backgroundColor: Colors.black,
-                backgroundImage: NetworkImage(ap.userModel.profilePic),
+                // backgroundImage: NetworkImage(ap.userModel.profilePic),
                 radius: 50,
               ),
             ),
@@ -90,11 +90,11 @@ class _ExploreScreenState extends State<ExploreScreen> {
                     borderRadius: BorderRadius.circular(8),
                   ),
                   padding: const EdgeInsets.symmetric(horizontal: 16),
-                  child: const Row(
+                  child: Row(
                     children: [
-                      Icon(Icons.search),
-                      SizedBox(width: 10),
-                      Text('Search...'),
+                      const Icon(Icons.search),
+                      const SizedBox(width: 10),
+                      const Text('Search...'),
                     ],
                   ),
                 ),
@@ -134,7 +134,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
                             ),
                             child: const Center(
                               child: Text(
-                                'Hawker Centre 1',
+                                'Maxwell Hawker Centre',
                                 style: TextStyle(
                                   color: Colors.black,
                                   fontWeight: FontWeight.bold,
@@ -162,7 +162,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
                             ),
                             child: const Center(
                               child: Text(
-                                'Hawker Centre 2',
+                                'Newton Food Centre',
                                 style: TextStyle(
                                   color: Colors.black,
                                   fontWeight: FontWeight.bold,
@@ -183,8 +183,8 @@ class _ExploreScreenState extends State<ExploreScreen> {
                           context,
                           MaterialPageRoute(
                             builder: (context) => const HawkerStallScreen(
-                              unitNumber: '',
                               postalCode: '',
+                              unitNumber: '',
                             ),
                           ),
                         );
@@ -212,14 +212,14 @@ class _ExploreScreenState extends State<ExploreScreen> {
                             if (position == 0) {
                               return _buildPageItem(
                                 'assets/hawker3.jpeg',
-                                'Hawker Stall 3',
+                                'Hup Kee Fried Oyster Omelette',
                                 '4.5',
                                 '256',
                               );
                             } else {
                               return _buildPageItem(
                                 'assets/hawker4.jpeg',
-                                'Hawker Stall 4',
+                                'Kwang Kee Teochew Fish Porridge',
                                 '4.2',
                                 '789',
                               );
@@ -244,39 +244,24 @@ class _ExploreScreenState extends State<ExploreScreen> {
                       scrollDirection: Axis.horizontal,
                       children: [
                         _buildRecommendedPageItem(
-                          'assets/hawker5.jpeg',
+                          'assets/tangshui.jpeg',
                           '115 Tang Shui',
-                          'assets/hawker5_profile.jpeg',
-                          'Stall address',
-                          'Stall description',
                         ),
                         _buildRecommendedPageItem(
-                          'assets/hawker6.jpeg',
+                          'assets/whampoaprawnmee.jpeg',
                           '545 Whampoa Prawn Noodles',
-                          'assets/hawker6_profile.jpeg',
-                          'Stall address',
-                          'Stall description',
                         ),
                         _buildRecommendedPageItem(
-                          'assets/hawker7.jpeg',
+                          'assets/75peanut.jpeg',
                           '75 China Street Peanut Soup',
-                          'assets/hawker7_profile.jpeg',
-                          'Stall address',
-                          'Stall description',
                         ),
                         _buildRecommendedPageItem(
-                          'assets/hawker8.jpeg',
+                          'assets/ahwee.jpeg',
                           'Ah Hwee BBQ',
-                          'assets/hawker8_profile.jpeg',
-                          'Stall address',
-                          'Stall description',
                         ),
                         _buildRecommendedPageItem(
-                          'assets/hawker9.jpeg',
+                          'assets/ahxiao.jpeg',
                           'Ah Xiao Teochew Braised Duck',
-                          'assets/hawker9_profile.jpeg',
-                          'Stall address',
-                          'Stall description',
                         ),
                       ],
                     ),
@@ -369,9 +354,6 @@ class _ExploreScreenState extends State<ExploreScreen> {
   Widget _buildRecommendedPageItem(
     String imagePath,
     String title,
-    String profilePic,
-    String stallAddress,
-    String stallDescription,
   ) {
     return InkWell(
       onTap: () {
@@ -379,8 +361,8 @@ class _ExploreScreenState extends State<ExploreScreen> {
           context,
           MaterialPageRoute(
             builder: (context) => HawkerStallScreen(
-              unitNumber: '',
               postalCode: '',
+              unitNumber: '',
             ),
           ),
         );

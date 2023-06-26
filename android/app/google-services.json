@@ -1,24 +1,69 @@
 {
   "project_info": {
     "project_number": "484751014681",
+    "firebase_url": "https://orbitalflutterhawkerbro-default-rtdb.asia-southeast1.firebasedatabase.app",
     "project_id": "orbitalflutterhawkerbro",
     "storage_bucket": "orbitalflutterhawkerbro.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:484751014681:android:8a6c2e55414ec3080ca388",
+        "mobilesdk_app_id": "1:484751014681:android:9fdd74d542b9ef3d0ca388",
         "android_client_info": {
           "package_name": "com.example.hawkerbro"
         }
       },
       "oauth_client": [
         {
-          "client_id": "484751014681-mkk29kmdqtepcfkq6k7pqk535es54d33.apps.googleusercontent.com",
+          "client_id": "484751014681-1tqemtc46h20lgdfu23p3ptkjm72o377.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCx3KbABiG19bpfUtvEQqZJBFNSdDrvoD0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "484751014681-1tqemtc46h20lgdfu23p3ptkjm72o377.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "484751014681-2usrrom8hqa0kqjqle5qarqs9c4bov4o.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.orbitalflutter.RunnerTests"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:484751014681:android:8a6c2e55414ec3080ca388",
+        "android_client_info": {
+          "package_name": "com.example.orbitalflutter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "484751014681-8arepdght5fvgikq950h0gs6daid77fu.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.hawkerbro",
+            "package_name": "com.example.orbitalflutter",
             "certificate_hash": "01d55c9335a2951a0fa636a279de33f250a51e91"
+          }
+        },
+        {
+          "client_id": "484751014681-c3m4jc09j9sombs6206qp6ivaelbib5c.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.orbitalflutter",
+            "certificate_hash": "1256ceb9363ab02f16bf7ac678113d317847fe39"
           }
         },
         {
@@ -42,7 +87,7 @@
               "client_id": "484751014681-2usrrom8hqa0kqjqle5qarqs9c4bov4o.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.example.hawkerbro.RunnerTests"
+                "bundle_id": "com.example.orbitalflutter.RunnerTests"
               }
             }
           ]
@@ -51,6 +96,4 @@
     }
   ],
   "configuration_version": "1"
-
-
 }
