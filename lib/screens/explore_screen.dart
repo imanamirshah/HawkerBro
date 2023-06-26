@@ -134,7 +134,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
                             ),
                             child: const Center(
                               child: Text(
-                                'Hawker Centre 1',
+                                'Maxwell Hawker Centre',
                                 style: TextStyle(
                                   color: Colors.black,
                                   fontWeight: FontWeight.bold,
@@ -162,7 +162,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
                             ),
                             child: const Center(
                               child: Text(
-                                'Hawker Centre 2',
+                                'Newton Food Centre',
                                 style: TextStyle(
                                   color: Colors.black,
                                   fontWeight: FontWeight.bold,
@@ -212,14 +212,14 @@ class _ExploreScreenState extends State<ExploreScreen> {
                             if (position == 0) {
                               return _buildPageItem(
                                 'assets/hawker3.jpeg',
-                                'Hawker Stall 3',
+                                'Hup Kee Fried Oyster Omelette',
                                 '4.5',
                                 '256',
                               );
                             } else {
                               return _buildPageItem(
                                 'assets/hawker4.jpeg',
-                                'Hawker Stall 4',
+                                'Kwang Kee Teochew Fish Porridge',
                                 '4.2',
                                 '789',
                               );
@@ -244,39 +244,24 @@ class _ExploreScreenState extends State<ExploreScreen> {
                       scrollDirection: Axis.horizontal,
                       children: [
                         _buildRecommendedPageItem(
-                          'assets/hawker5.jpeg',
+                          'assets/tangshui.jpeg',
                           '115 Tang Shui',
-                          'assets/hawker5_profile.jpeg',
-                          'Stall address',
-                          'Stall description',
                         ),
                         _buildRecommendedPageItem(
-                          'assets/hawker6.jpeg',
+                          'assets/whampoaprawnmee.jpeg',
                           '545 Whampoa Prawn Noodles',
-                          'assets/hawker6_profile.jpeg',
-                          'Stall address',
-                          'Stall description',
                         ),
                         _buildRecommendedPageItem(
-                          'assets/hawker7.jpeg',
+                          'assets/75peanut.jpeg',
                           '75 China Street Peanut Soup',
-                          'assets/hawker7_profile.jpeg',
-                          'Stall address',
-                          'Stall description',
                         ),
                         _buildRecommendedPageItem(
-                          'assets/hawker8.jpeg',
+                          'assets/ahwee.jpeg',
                           'Ah Hwee BBQ',
-                          'assets/hawker8_profile.jpeg',
-                          'Stall address',
-                          'Stall description',
                         ),
                         _buildRecommendedPageItem(
-                          'assets/hawker9.jpeg',
+                          'assets/ahxiao.jpeg',
                           'Ah Xiao Teochew Braised Duck',
-                          'assets/hawker9_profile.jpeg',
-                          'Stall address',
-                          'Stall description',
                         ),
                       ],
                     ),
@@ -369,9 +354,6 @@ class _ExploreScreenState extends State<ExploreScreen> {
   Widget _buildRecommendedPageItem(
     String imagePath,
     String title,
-    String profilePic,
-    String stallAddress,
-    String stallDescription,
   ) {
     return InkWell(
       onTap: () {
@@ -421,17 +403,6 @@ class _ExploreScreenState extends State<ExploreScreen> {
                       ),
                     ],
                   ),
-                ),
-              ),
-            ),
-            Align(
-              alignment: Alignment.topRight,
-              child: Container(
-                margin: const EdgeInsets.all(10),
-                child: CircleAvatar(
-                  backgroundColor: Colors.black,
-                  // backgroundImage: NetworkImage(profilePic),
-                  radius: 15,
                 ),
               ),
             ),
