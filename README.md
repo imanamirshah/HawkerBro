@@ -67,11 +67,10 @@ Our app offers a visually appealing login/signup page to warmly welcome users. W
 
 **[Current Progress]**
 
-We have implemented a robust OTP (One-Time Password) function as our two-factor authentication (2FA) mechanism. We made use of Firebase as our backend and database due to the ease of implementation and management of user credentials.
+Primarily, HawkerBro uses the main sign-in method of Email and Password. By utilising the Firebase SDK Authentication, users would be able to create a new account and login to an existing account. For the Signup Page, there is a password and confirm password textfield. If the passwords do not match, an error would pop up.
 
-To prevent automated bot attacks and maintain the integrity of our user base, we are exploring the implementation of Captcha. This added security measure verifies that the users interacting with our login/signup page are genuine individuals, further mitigating the risk of fraudulent activities.
-
-Currently the phone authentication only accepts dummy numbers as we have yet to set up actual SMS OTP. These dummy numbers have their own OTPs where users can key in to create their own profiles with these dummy numbers. Our next step is to include the SMS service for OTP authentication to allow users to create their profile using their respective mobile numbers.
+**[Implementation Challenges]**
+During Milestone 1, our primary focus was on implementing phone authentication. However, we encountered various challenges in generating OTP messages and faced difficulties with deployment as our app could not obtain a valid Google Play Integrity token since it was not obtained through Google Play Store. As a result, we decided to switch to email authentication, which proved to be a more straightforward solution. This decision was also influenced by considering our target user audience, including tourists, who may incur additional charges for receiving SMS messages internationally. Although we had initially included a feature for generating international phone numbers, we determined that email authentication would be a more practical and user-friendly approach.
 
 
 ### Explore page
@@ -87,7 +86,9 @@ By combining location-based suggestions with customizable filters, the app offer
 Furthermore, the app's Explore page serves as a hub for all the app's main features, consolidating key functionalities into a single, intuitive interface. This design approach ensures that users can easily navigate through the app, access relevant information about each hawker stall, view ratings and reviews, and make well-informed dining choices—all in one centralised location.
 
 **[Current Progress]**
-Currently, the Explore page only displays the account details as well as a logout button that will bring users back to the welcome screen. 
+As of Milestone 2, we have a mockup front end of the Explore page. It consists of buttons that allow users to access their account page, swap to different tabs such as Notifications and Favourites and toggle between two nearby hawker centres to display the stalls that are located there (We have yet to implement location services to identify and show hawker centres near the user’s location as it is costly to make use of Google geocoding API without first optimising our search queries. As such, this feature may only be available after the end of this project as we have to fine tune all our queries before paying to use the API. For now, we may think of slightly different features with similar interfaces that are free to use instead.) Clicking on the stalls displayed will navigate the users to the respective hawker stall screens.
+
+On our explore page, we have also implemented a functioning search button. This navigates the users to a search page where they will be able to search for hawker stalls. This function is implemented with search history as well as suggestions for stalls that match user input in the search bar.
 
 
 ### Ratings and Review 
@@ -105,7 +106,9 @@ This two-way communication feature enables hawker stall owners to directly inter
 By combining the features of ratings, reviews, and auto-translation, the app serves as a valuable tool for both users and hawker stall owners alike. It promotes a culture of feedback, encourages growth, and helps maintain the high quality and authenticity of hawker food, ultimately benefiting the entire community of food enthusiasts and hawker stall owners.
 
 **[Current Progress]**
-N.A. for milestone 1
+The hawker stall screen now displays a ratings and reviews section at the bottom. Each entry will comprise of a review that will truncate to a maximum of 2 lines, with the ability to expand upon clicking the “show more” button, as well as the number of stars given together with the review by the user. For now, the names are only placeholders as we have yet implemented the backend link between the user account and the reviews section.
+
+We have also successfully built a page for consumers to leave their ratings, in terms of the number of stars, and their reviews for the stall. This page can be navigated from the hawker stall screen by clicking the “Leave a Review” button at the bottom of the screen. Users will then be able to choose the number of stars they want to rate and type in the reviews that they want to post. Clicking the “Post Review” button will post the review and navigate the user back to the hawker stall screen. As of now, we have yet to implement the ability to post and display pictures and will be done after this milestone.
 
 
 ### Vendor Listing
@@ -115,7 +118,11 @@ N.A. for milestone 1
 The app facilitates hawker stall owners in creating comprehensive profiles where they can list their menu items, prices, opening hours, and location, while also recognizing that some hawkers may not be tech-savvy. Additionally, consumers have the opportunity to create profiles for their favourite hawker stalls, empowering them to promote hidden gems and underrated food stalls they discover, thereby showcasing their support and appreciation through the app.
 
 **[Current Progress]**
-N.A. for milestone 1
+The hawker stall screen is almost done, with minor fine tuning left to do. It displays the stall name, images, information and reviews about the stall, fetched from our database. The average rating is also calculated from all the ratings given for the particular store and displayed in this page. We have also implemented a basic editing screen for the hawker stall that allows users to edit the certain information about the stall. As of now, we have yet to implement the changing of stall images, postal code and unit number. We have also yet to implement restrictive functions to allow only certain individuals (e.g the creator or the owner of the stall profile) to edit so that the information cannot be edited by anyone unless they have access to it.
+
+To list a stall such that it appears in our database and can be found through our search page, users will be able to create a hawker stall at their own account screen. This will navigate them to a screen where they can input details and images to add a stall into our database. There are also validation checks for some of the fields. For example, if a user keys in a unit number that already exists in the same postal code in our database, their submission will be rejected as the stall has already been recorded. This helps to prevent duplicates. 
+
+The hawker stall screen is also equipped with a refresh function. Users can swipe down from the top to refresh the page and get the most updated information. Additionally, as a user successfully posts a review or edits the stall information, the hawker stall screen will automatically refresh as they are navigated out of these pages so that they will be able to see the updates immediately reflected.
 
 
 ### Real-time updates
@@ -142,8 +149,8 @@ N.A. for milestone 1
 - Review/Ratings (List of review/ratings published by the food reviewers)
 
 ### Register/Log-in
-- Verification through phone number
-- OTP
+- Verification through email and password
+- Creation of user account
 
 ### Review/Ratings (in conjunction with point 1c and 2c)
 - Food Reviewers able to leave reviews/ratings on the food that they have tried at the hawker stall
@@ -171,33 +178,19 @@ For Milestone 1, we mainly created the following:
 - Profile creation page
 - A simple home screen that only displays the account details for now
 
-For now, dummy numbers and OTPs are registered into Firebase that one can use to test the login. The next step is to set up the actual OTP service to be sent to actual phone numbers. After keying in the phone numbers, users will be brought into an OTP page that prompts users for an OTP (dummy OTPs are linked to dummy numbers). Keying in the right OTP will log users into the home page. For new phone numbers, the users will be brought to a profile creation screen whereas existing phone numbers will bring users straight to the home page. On the home page, there is a logout button that will bring users to the welcome page.
+For Milestone 2, we mainly created the following: 
+- Welcome page
+- Registration page
+- OTP page
+- Profile creation page
+- A simple home screen that only displays the account details for now
 
-The following are the dummy numbers and OTPs that can be used for our login as of this stage:
 
-Phone Numbers         (6-Digit OTP)
+![Authentication Flow](https://github.com/imanamirshah/hawkerbro/assets/110608505/cef7b2ef-e863-4065-9880-1f5c11b26b31)
 
-+65 11111111             (111111)
+![Entity Relationship Diagram](https://github.com/imanamirshah/hawkerbro/assets/110608505/48015cad-b943-4116-8ea1-1ed61dd211a0)
 
-+65 22222222             (222222)
-
-+65 33333333             (333333)
-
-+65 44444444             (444444)
-
-+65 55555555             (555555)
-
-+65 66666666             (666666)
-
-+65 77777777             (777777)
-
-+65 88888888             (888888)
-
-+65 99999999             (999999)
-
-## Phone Authentication Flow Diagram
-
-![phoneauthdiagram](https://github.com/imanamirshah/hawkerbro/assets/110608505/a92d4cec-fa0f-4b2e-a9a7-5072af963c1e)
+![UML Diagram](https://github.com/imanamirshah/hawkerbro/assets/110608505/516fed78-3cdd-4643-8eb8-b704a2e03aec)
 
 
 
