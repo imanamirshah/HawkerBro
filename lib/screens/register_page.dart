@@ -1,9 +1,11 @@
-import 'dart:math';
+// import 'dart:math';
+
+// ignore_for_file: use_build_context_synchronously
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:hawkerbro/screens/register_screen.dart';
-import 'package:provider/provider.dart';
+// import 'package:provider/provider.dart';
 import '../components/my_button.dart';
 import '../components/my_textfield.dart';
 import '../components/square_tile.dart';
@@ -13,7 +15,7 @@ class RegisterPage extends StatefulWidget {
   final VoidCallback onTap;
   final VoidCallback onTapLogin;
 
-  RegisterPage({Key? key, required this.onTap, required this.onTapLogin})
+  const RegisterPage({Key? key, required this.onTap, required this.onTapLogin})
       : super(key: key);
 
   @override
@@ -69,10 +71,14 @@ class _RegisterPageState extends State<RegisterPage> {
         showErrorMessage('Weak Password', 'Please choose a stronger password.');
       } else if (e.code == 'email-already-in-use') {
         showErrorMessage(
-            'Email Already in Use', 'The email is already registered.');
+          'Email Already in Use',
+          'The email is already registered.',
+        );
       } else {
         showErrorMessage(
-            'Sign Up Failed', 'An error occurred while signing up.');
+          'Sign Up Failed',
+          'An error occurred while signing up.',
+        );
       }
     }
   }
@@ -115,14 +121,14 @@ class _RegisterPageState extends State<RegisterPage> {
       backgroundColor: Colors.grey[300],
       body: SafeArea(
         child: SingleChildScrollView(
-          child: Container(
+          child: SizedBox(
             height: MediaQuery.of(context).size.height,
             child: Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  SizedBox(height: 20),
-                  Icon(
+                  const SizedBox(height: 20),
+                  const Icon(
                     Icons.lock,
                     size: 80,
                   ),
@@ -219,9 +225,10 @@ class _RegisterPageState extends State<RegisterPage> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => LoginPage(
-                                  onTap: () {},
-                                )),
+                          builder: (context) => LoginPage(
+                            onTap: () {},
+                          ),
+                        ),
                       );
                     },
                     child: Row(
@@ -232,7 +239,7 @@ class _RegisterPageState extends State<RegisterPage> {
                           style: TextStyle(color: Colors.grey[700]),
                         ),
                         const SizedBox(width: 4),
-                        Text(
+                        const Text(
                           'Login now',
                           style: TextStyle(
                             color: Colors.blue,

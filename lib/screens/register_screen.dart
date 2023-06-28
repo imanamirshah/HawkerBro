@@ -1,3 +1,5 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import '../components/my_button.dart';
@@ -10,7 +12,7 @@ import 'register_page.dart';
 class LoginPage extends StatefulWidget {
   final void Function() onTap;
 
-  LoginPage({Key? key, required this.onTap}) : super(key: key);
+  const LoginPage({Key? key, required this.onTap}) : super(key: key);
 
   @override
   State<LoginPage> createState() => _LoginPageState();
@@ -36,7 +38,6 @@ class _LoginPageState extends State<LoginPage> {
         password: passwordController.text,
       );
       Navigator.pop(context); // Pop the loading circle dialog
-      // ignore: use_build_context_synchronously
       Navigator.push(
         context,
         MaterialPageRoute(builder: (context) => const HomeScreen()),
@@ -145,7 +146,8 @@ class _LoginPageState extends State<LoginPage> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => ForgotPasswordPage(),
+                                builder: (context) =>
+                                    const ForgotPasswordPage(),
                               ),
                             );
                           },
@@ -220,7 +222,7 @@ class _LoginPageState extends State<LoginPage> {
                       const SizedBox(width: 4),
                       GestureDetector(
                         onTap: goToRegisterPage,
-                        child: Text(
+                        child: const Text(
                           'Register now',
                           style: TextStyle(
                             color: Colors.blue,
@@ -229,7 +231,7 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                       ),
                     ],
-                  )
+                  ),
                 ],
               ),
             ),
