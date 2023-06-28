@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:hawkerbro/provider/auth_provider.dart';
+// import 'package:hawkerbro/provider/auth_provider.dart';
 import 'package:hawkerbro/screens/welcome_screen.dart';
-import 'package:provider/provider.dart';
+// import 'package:provider/provider.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -20,17 +20,18 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiProvider(
-      providers: [ChangeNotifierProvider(create: (_) => AuthProvider())],
-      child: MaterialApp(
-        theme: ThemeData(
-          textTheme: GoogleFonts.openSansTextTheme(),
-        ),
-        debugShowCheckedModeBanner: false,
-        home: const WelcomeScreen(),
-        title: 'HawkerBro',
-        scaffoldMessengerKey: snackBarKey,
+    // return MultiProvider(
+    //   providers: [ChangeNotifierProvider(create: (_) => AuthProvider())],
+    //   child:
+    return MaterialApp(
+      theme: ThemeData(
+        textTheme: GoogleFonts.openSansTextTheme(),
       ),
+      debugShowCheckedModeBanner: false,
+      home: const WelcomeScreen(),
+      title: 'HawkerBro',
+      scaffoldMessengerKey: snackBarKey,
     );
+    // );
   }
 }

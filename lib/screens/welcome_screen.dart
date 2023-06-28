@@ -1,11 +1,11 @@
 // ignore_for_file: avoid_print
 
 import 'package:flutter/material.dart';
-import 'package:hawkerbro/provider/auth_provider.dart';
+// import 'package:hawkerbro/provider/auth_provider.dart';
 import 'package:hawkerbro/screens/register_screen.dart';
-import 'package:hawkerbro/screens/home_screen.dart';
+// import 'package:hawkerbro/screens/home_screen.dart';
 import 'package:hawkerbro/widgets/custom_button.dart';
-import 'package:provider/provider.dart';
+// import 'package:provider/provider.dart';
 import 'package:geolocator/geolocator.dart';
 
 class WelcomeScreen extends StatefulWidget {
@@ -27,7 +27,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final ap = Provider.of<AuthProvider>(context, listen: false);
+    // final ap = Provider.of<AuthProvider>(context, listen: false);
 
     return Scaffold(
       backgroundColor: Colors.white,
@@ -76,26 +76,34 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                       height: 50,
                       child: CustomButton(
                         onPressed: () async {
-                          getLocation();
-                          if (ap.isSignedIn == true) {
-                            await ap.getDataFromSP().whenComplete(
-                                  () => Navigator.pushReplacement(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) => const HomeScreen(),
-                                    ),
-                                  ),
-                                );
-                          } else {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => LoginPage(
-                                  onTap: () {},
-                                ),
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => LoginPage(
+                                onTap: () {},
                               ),
-                            );
-                          }
+                            ),
+                          );
+                          // getLocation();
+                          // if (ap.isSignedIn == true) {
+                          //   await ap.getDataFromSP().whenComplete(
+                          //         () => Navigator.pushReplacement(
+                          //           context,
+                          //           MaterialPageRoute(
+                          //             builder: (context) => const HomeScreen(),
+                          //           ),
+                          //         ),
+                          //       );
+                          // } else {
+                          //   Navigator.push(
+                          //     context,
+                          //     MaterialPageRoute(
+                          //       builder: (context) => LoginPage(
+                          //         onTap: () {},
+                          //       ),
+                          //     ),
+                          //   );
+                          // }
                         },
                         text: "Get Started",
                       ),

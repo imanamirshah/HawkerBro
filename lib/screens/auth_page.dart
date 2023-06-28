@@ -2,7 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:hawkerbro/screens/home_screen.dart';
 import 'package:hawkerbro/screens/login_or_register.dart';
-import 'package:hawkerbro/screens/register_screen.dart';
+// import 'package:hawkerbro/screens/register_screen.dart';
 
 class AuthPage extends StatelessWidget {
   const AuthPage({super.key});
@@ -15,7 +15,7 @@ class AuthPage extends StatelessWidget {
         builder: (context, snapshot) {
           // user is logged in
           if (snapshot.hasData) {
-            return HomeScreen();
+            return const HomeScreen();
           }
 
           // user is NOT logged in

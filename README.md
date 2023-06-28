@@ -205,7 +205,7 @@ For Milestone 2, we mainly created the following:
 
 **OR**
 
-- Download the android apk located at build/app/outputs/flutter-apk/app-release.apk
+- Download the android apk here
 - Install and run it on an android device
 
 ### IOS 

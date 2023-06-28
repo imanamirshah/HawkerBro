@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
 
 class NotificationsScreen extends StatelessWidget {
+  const NotificationsScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Notifications'),
-        backgroundColor: Colors.blue,
+        toolbarHeight: 70,
+        title: const Text('Notifications'),
+        backgroundColor: Colors.yellow,
+        foregroundColor: Colors.black,
       ),
       backgroundColor: Colors.white,
       body: ListView.builder(
@@ -89,6 +93,7 @@ class NotificationCard extends StatelessWidget {
   final VoidCallback onTap;
 
   const NotificationCard({
+    super.key,
     required this.title,
     required this.description,
     required this.onTap,

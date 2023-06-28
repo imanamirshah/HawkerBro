@@ -23,10 +23,10 @@ class _ExploreScreenState extends State<ExploreScreen> {
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 70,
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.yellow,
         foregroundColor: Colors.black,
         titleSpacing: 8,
-        title: Column(
+        title: const Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             // Text(
@@ -35,11 +35,11 @@ class _ExploreScreenState extends State<ExploreScreen> {
             //     fontWeight: FontWeight.bold,
             //   ),
             // ),
-            const SizedBox(height: 4),
-            const Text(
+            SizedBox(height: 4),
+            Text(
               'Find Delicious Hawker Food',
               style: TextStyle(
-                fontSize: 12,
+                fontSize: 20,
               ),
             ),
           ],
@@ -90,11 +90,11 @@ class _ExploreScreenState extends State<ExploreScreen> {
                     borderRadius: BorderRadius.circular(8),
                   ),
                   padding: const EdgeInsets.symmetric(horizontal: 16),
-                  child: Row(
+                  child: const Row(
                     children: [
-                      const Icon(Icons.search),
-                      const SizedBox(width: 10),
-                      const Text('Search...'),
+                      Icon(Icons.search),
+                      SizedBox(width: 10),
+                      Text('Search...'),
                     ],
                   ),
                 ),
@@ -360,7 +360,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
         Navigator.push(
           context,
           MaterialPageRoute(
-            builder: (context) => HawkerStallScreen(
+            builder: (context) => const HawkerStallScreen(
               postalCode: '',
               unitNumber: '',
             ),
