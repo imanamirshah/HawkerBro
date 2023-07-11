@@ -2,9 +2,11 @@
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:hawkerbro/provider/auth_provider.dart';
+import 'package:hawkerbro/utils/utils.dart';
+import 'package:provider/provider.dart';
 import '../components/my_button.dart';
 import '../components/my_textfield.dart';
-import '../components/square_tile.dart';
 import 'forgot_password_page.dart';
 import 'home_screen.dart';
 import 'register_page.dart';
@@ -22,68 +24,72 @@ class _LoginPageState extends State<LoginPage> {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
 
-  Future<void> signUserIn() async {
-    showDialog(
-      context: context,
-      builder: (context) {
-        return const Center(
-          child: CircularProgressIndicator(),
-        );
-      },
-    );
+  // Future<void> signUserIn() async {
+  //   showDialog(
+  //     context: context,
+  //     builder: (context) {
+  //       return const Center(
+  //         child: CircularProgressIndicator(),
+  //       );
+  //     },
+  //   );
+
+  //   try {
+  //     await FirebaseAuth.instance.signInWithEmailAndPassword(
+  //       email: emailController.text,
+  //       password: passwordController.text,
+  //     );
+  //     Navigator.pop(context); // Pop the loading circle dialog
+  //     Navigator.push(
+  //       context,
+  //       MaterialPageRoute(builder: (context) => const HomeScreen()),
+  //     );
+  //   } on FirebaseAuthException catch (e) {
+  //     Navigator.pop(context); // Pop the loading circle dialog
+  //     if (e.code == 'user-not-found') {
+  //       wrongEmailMessage();
+  //     } else if (e.code == 'wrong-password') {
+  //       wrongPasswordMessage();
+  //     }
+  //   }
+  // }
+
+  void signUserIn() async {
+    String email = emailController.text.trim();
+    String password = passwordController.text.trim();
+
+    if (email.isEmpty || password.isEmpty) {
+      // Show an error message indicating that the email and password fields are required
+      return;
+    }
 
     try {
-      await FirebaseAuth.instance.signInWithEmailAndPassword(
-        email: emailController.text,
-        password: passwordController.text,
-      );
-      Navigator.pop(context); // Pop the loading circle dialog
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => const HomeScreen()),
-      );
+      // Access the AuthProvider instance using Provider
+      AuthProvider ap = Provider.of<AuthProvider>(context, listen: false);
+
+      // Call the signInWithEmailAndPassword method from the authProvider
+      await ap.signInWithEmailAndPassword(email, password);
+
+      // Check if the sign-in was successful
+      if (ap.isSignedIn) {
+        // Navigate to the home screen
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => const HomeScreen(),
+          ),
+        );
+      } else {
+        // Show an error message indicating that the sign-in failed
+      }
     } on FirebaseAuthException catch (e) {
-      Navigator.pop(context); // Pop the loading circle dialog
-      if (e.code == 'user-not-found') {
-        wrongEmailMessage();
-      } else if (e.code == 'wrong-password') {
-        wrongPasswordMessage();
+      if (e.code == 'user-not-found' || e.code == 'wrong-password') {
+        showSnackBar(
+          context,
+          "Email or password in incorrect. Please try again.",
+        );
       }
     }
-  }
-
-  void wrongEmailMessage() {
-    showDialog(
-      context: context,
-      builder: (context) {
-        return const AlertDialog(
-          backgroundColor: Colors.deepPurple,
-          title: Center(
-            child: Text(
-              'Incorrect Email/Password',
-              style: TextStyle(color: Colors.white),
-            ),
-          ),
-        );
-      },
-    );
-  }
-
-  void wrongPasswordMessage() {
-    showDialog(
-      context: context,
-      builder: (context) {
-        return const AlertDialog(
-          backgroundColor: Colors.deepPurple,
-          title: Center(
-            child: Text(
-              'Incorrect Password',
-              style: TextStyle(color: Colors.white),
-            ),
-          ),
-        );
-      },
-    );
   }
 
   void goToRegisterPage() {
@@ -163,53 +169,6 @@ class _LoginPageState extends State<LoginPage> {
                   MyButton(
                     onTap: signUserIn,
                     text: 'Sign In',
-                  ),
-                  const SizedBox(height: 20),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                    child: Row(
-                      children: [
-                        Expanded(
-                          child: Divider(
-                            thickness: 0.5,
-                            color: Colors.grey[400],
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                          child: Text(
-                            'Or continue with',
-                            style: TextStyle(color: Colors.grey[700]),
-                          ),
-                        ),
-                        Expanded(
-                          child: Divider(
-                            thickness: 0.5,
-                            color: Colors.grey[400],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  const SizedBox(height: 10),
-                  const Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      SizedBox(
-                        width: 60,
-                        child: AspectRatio(
-                          aspectRatio: 1,
-                          child: SquareTile(imagePath: 'assets/google.png'),
-                        ),
-                      ),
-                      SizedBox(
-                        width: 60,
-                        child: AspectRatio(
-                          aspectRatio: 1,
-                          child: SquareTile(imagePath: 'assets/apple.png'),
-                        ),
-                      ),
-                    ],
                   ),
                   const SizedBox(height: 20),
                   Row(

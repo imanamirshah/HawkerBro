@@ -1,10 +1,10 @@
 import 'package:flutter/cupertino.dart';
-import 'package:hawkerbro/screens/register_screen.dart';
+import 'package:hawkerbro/screens/login_screen.dart';
 
 import 'register_page.dart';
 
 class LoginOrRegisterPage extends StatefulWidget {
-  const LoginOrRegisterPage({Key? key, required Null Function() onTap});
+  const LoginOrRegisterPage({super.key, required Null Function() onTap});
 
   @override
   State<LoginOrRegisterPage> createState() => _LoginOrRegisterPageState();

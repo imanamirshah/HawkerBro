@@ -6,6 +6,7 @@ import 'package:hawkerbro/screens/edit_stall_screen.dart';
 import 'package:hawkerbro/widgets/custom_button.dart';
 import 'package:hawkerbro/widgets/loading_screen.dart';
 import 'package:hawkerbro/widgets/review_row.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class HawkerStallScreen extends StatefulWidget {
   final String unitNumber;
@@ -24,6 +25,7 @@ class HawkerStallScreen extends StatefulWidget {
 class _HawkerStallScreenState extends State<HawkerStallScreen> {
   final GlobalKey<RefreshIndicatorState> _refreshIndicatorKey =
       GlobalKey<RefreshIndicatorState>();
+  //bool isLiked = false;
 
   FetchStallModel? stall;
 
@@ -31,7 +33,16 @@ class _HawkerStallScreenState extends State<HawkerStallScreen> {
   void initState() {
     super.initState();
     _fetchStallData();
+    //   getLikeStatus();
   }
+
+  // Future<void> getLikeStatus() async {
+  //   SharedPreferences prefs = await SharedPreferences.getInstance();
+  //   setState(() {
+  //     isLiked = prefs.getBool('likeStatus') ??
+  //         false; // Retrieve the like status or set it to false if not found
+  //   });
+  // }
 
   Future<void> _refreshData() async {
     final stallData = await _fetchStallData();
@@ -115,6 +126,12 @@ class _HawkerStallScreenState extends State<HawkerStallScreen> {
 
           var stall = stallSnapshot.data!;
 
+          debugPrint('Reviews length: ${stall.reviews.length}');
+          debugPrint('Reviews: ${stall.reviews}');
+
+          debugPrint('Reviewers length: ${stall.reviewers.length}');
+          debugPrint('Reviewers: ${stall.reviewers}');
+
           debugPrint('there are ${stall.stallImages.length} images');
           debugPrint('Stall Images: ${stall.stallImages}');
 
@@ -144,30 +161,48 @@ class _HawkerStallScreenState extends State<HawkerStallScreen> {
                     }
                   },
                 ),
+                // IconButton(
+                //   icon: Icon(
+                //     isLiked ? Icons.favorite : Icons.favorite_border,
+                //     color: isLiked ? Colors.red : null,
+                //   ),
+                //   onPressed: onLikeButtonTapped,
+                // ),
               ],
             ),
             body: ListView(
               padding: const EdgeInsets.all(16.0),
               children: [
-                SizedBox(
-                  height: 280.0,
-                  child: ListView.builder(
-                    scrollDirection: Axis.horizontal,
-                    itemCount: stall.stallImages.length,
-                    itemBuilder: (context, index) {
-                      return ClipRRect(
-                        borderRadius: BorderRadius.circular(20.0),
-                        child: Card(
-                          child: Image.network(
-                            stall.stallImages[index],
-                            fit: BoxFit.cover,
-                            width: 350,
+                if (stall.stallImages.isEmpty)
+                  const SizedBox(
+                    height: 100.0,
+                    child: Center(
+                      child: Text(
+                        "This stall has no images.",
+                        style: TextStyle(fontSize: 15),
+                      ),
+                    ),
+                  )
+                else
+                  SizedBox(
+                    height: 280.0,
+                    child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      itemCount: stall.stallImages.length,
+                      itemBuilder: (context, index) {
+                        return ClipRRect(
+                          borderRadius: BorderRadius.circular(20.0),
+                          child: Card(
+                            child: Image.network(
+                              stall.stallImages[index],
+                              fit: BoxFit.cover,
+                              width: 350,
+                            ),
                           ),
-                        ),
-                      );
-                    },
+                        );
+                      },
+                    ),
                   ),
-                ),
                 const SizedBox(height: 8.0),
                 Text(
                   stall.name,
@@ -238,11 +273,10 @@ class _HawkerStallScreenState extends State<HawkerStallScreen> {
                 ),
                 const SizedBox(height: 8.0),
                 // Review Rows
-
                 if (stall.reviews.isEmpty)
                   const Text(
                     'This stall has no reviews.',
-                  ) // Display when there are no reviews
+                  )
                 else
                   SizedBox(
                     height: 200, // Set a specific height that fits your layout
@@ -253,7 +287,7 @@ class _HawkerStallScreenState extends State<HawkerStallScreen> {
                             .entries
                             .map(
                               (entry) => ReviewRow(
-                                username: 'User',
+                                username: stall.reviewers[entry.key].toString(),
                                 reviewText: entry.value,
                                 rating: stall.ratings[entry.key].toString(),
                               ),
@@ -292,6 +326,18 @@ class _HawkerStallScreenState extends State<HawkerStallScreen> {
       ),
     );
   }
+
+  // Future<void> onLikeButtonTapped() async {
+  //   SharedPreferences prefs = await SharedPreferences.getInstance();
+  //   setState(() {
+  //     isLiked = !isLiked; // Toggle the like status
+  //   });
+  //   await prefs.setBool('likeStatus', isLiked); // Save the like status
+  //   // final bool success= await sendRequest();
+
+  //   /// if failed, you can do nothing
+  //   // return success? !isLiked:isLiked;
+  // }
 
   // List<Widget> _buildMenuItems() {
   //   // Replace this with your logic to generate menu items

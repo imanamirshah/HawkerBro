@@ -8,6 +8,7 @@ class FetchStallModel {
   final String bio;
   final List<int> ratings;
   final List<String> reviews;
+  final List<String> reviewers;
   final List<String> stallImages;
 
   FetchStallModel({
@@ -20,6 +21,7 @@ class FetchStallModel {
     required this.bio,
     required this.ratings,
     required this.reviews,
+    required this.reviewers,
     required this.stallImages,
   });
 
@@ -35,6 +37,7 @@ class FetchStallModel {
       phoneNumber: map['phoneNumber'] ?? '',
       ratings: List<int>.from(map['ratings'] ?? []),
       reviews: List<String>.from(map['reviews'] ?? []),
+      reviewers: List<String>.from(map['reviewers'] ?? []),
       stallImages: List<String>.from(map['stall images'] ?? []),
     );
   }
@@ -51,6 +54,7 @@ class FetchStallModel {
       "phoneNumber": phoneNumber,
       "ratings": ratings,
       "reviews": reviews,
+      "reviewers": reviewers,
       "stall images": stallImages,
     };
   }

@@ -3,8 +3,10 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:hawkerbro/model/fetch_stall_model.dart';
+import 'package:hawkerbro/provider/auth_provider.dart';
 import 'package:hawkerbro/screens/hawker_screen.dart';
 import 'package:hawkerbro/widgets/loading_screen.dart';
+import 'package:provider/provider.dart';
 
 class LeaveReviewScreen extends StatefulWidget {
   final String unitNumber;
@@ -24,7 +26,7 @@ class _LeaveReviewScreenState extends State<LeaveReviewScreen> {
   late Future<FetchStallModel?> _stallDataFuture;
   FetchStallModel? stall;
   final TextEditingController _reviewController = TextEditingController();
-  int _rating = 0;
+  int rating = 0;
 
   @override
   void initState() {
@@ -51,6 +53,9 @@ class _LeaveReviewScreenState extends State<LeaveReviewScreen> {
 
   Future<void> _postReview() async {
     final review = _reviewController.text.trim();
+    final ap = Provider.of<AuthProvider>(context, listen: false);
+    final userModel = ap.userModel;
+    final reviewer = userModel.name;
     if (review.isNotEmpty) {
       try {
         final stallRef = FirebaseFirestore.instance
@@ -66,19 +71,24 @@ class _LeaveReviewScreenState extends State<LeaveReviewScreen> {
         reviews.add(review);
 
         List<int> ratings = List<int>.from(stallData['ratings'] ?? []);
-        ratings.add(_rating); // Add the selected rating
+        ratings.add(rating);
+
+        List<String> reviewers =
+            List<String>.from(stallData['reviewers'] ?? []);
+        reviewers.add(reviewer);
 
         // Update the stall data in Firestore
         await stallRef.update({
           'reviews': reviews,
           'ratings': ratings,
+          'reviewers': reviewers,
         });
 
         Navigator.pop(context, stall);
 
         _reviewController.clear();
         setState(() {
-          _rating = 0;
+          rating = 0;
         });
 
         showDialog(
@@ -163,9 +173,9 @@ class _LeaveReviewScreenState extends State<LeaveReviewScreen> {
                 ),
                 const SizedBox(height: 16.0),
                 RatingBar(
-                  onRatingChanged: (int rating) {
+                  onRatingChanged: (int inputRating) {
                     setState(() {
-                      _rating = rating;
+                      rating = inputRating;
                     });
                   },
                 ),
