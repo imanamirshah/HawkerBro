@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:hawkerbro/provider/auth_provider.dart';
 // import 'package:hawkerbro/provider/auth_provider.dart';
 import 'package:hawkerbro/screens/account_screen.dart';
 import 'package:hawkerbro/screens/hawker_screen.dart';
 import 'package:hawkerbro/screens/search_screen.dart';
+import 'package:provider/provider.dart';
 // import 'package:provider/provider.dart';
 
 class ExploreScreen extends StatefulWidget {
@@ -18,7 +20,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
 
   @override
   Widget build(BuildContext context) {
-    // final ap = Provider.of<AuthProvider>(context, listen: false);
+    final ap = Provider.of<AuthProvider>(context, listen: false);
 
     return Scaffold(
       appBar: AppBar(
@@ -26,20 +28,19 @@ class _ExploreScreenState extends State<ExploreScreen> {
         backgroundColor: Colors.yellow,
         foregroundColor: Colors.black,
         titleSpacing: 8,
-        title: const Column(
+        title: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Text(
-            //   'Hi, ${ap.userModel.name} ',
-            //   style: const TextStyle(
-            //     fontWeight: FontWeight.bold,
-            //   ),
-            // ),
-            SizedBox(height: 4),
             Text(
+              'Hi, ${ap.userModel.name} ',
+              style: const TextStyle(
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            const Text(
               'Find Delicious Hawker Food',
               style: TextStyle(
-                fontSize: 20,
+                fontSize: 15,
               ),
             ),
           ],
@@ -58,9 +59,9 @@ class _ExploreScreenState extends State<ExploreScreen> {
                   ),
                 );
               },
-              icon: const CircleAvatar(
+              icon: CircleAvatar(
                 backgroundColor: Colors.black,
-                // backgroundImage: NetworkImage(ap.userModel.profilePic),
+                backgroundImage: NetworkImage(ap.userModel.profilePic),
                 radius: 50,
               ),
             ),

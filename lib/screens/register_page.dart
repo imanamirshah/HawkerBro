@@ -4,12 +4,11 @@
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:hawkerbro/screens/register_screen.dart';
+import 'package:hawkerbro/screens/login_screen.dart';
+import 'package:hawkerbro/screens/user_information_screen.dart';
 // import 'package:provider/provider.dart';
 import '../components/my_button.dart';
 import '../components/my_textfield.dart';
-import '../components/square_tile.dart';
-import 'home_screen.dart';
 
 class RegisterPage extends StatefulWidget {
   final VoidCallback onTap;
@@ -26,14 +25,12 @@ class _RegisterPageState extends State<RegisterPage> {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
   final confirmPasswordController = TextEditingController();
-  final usernameController = TextEditingController();
 
   @override
   void dispose() {
     emailController.dispose();
     passwordController.dispose();
     confirmPasswordController.dispose();
-    usernameController.dispose();
     super.dispose();
   }
 
@@ -59,7 +56,9 @@ class _RegisterPageState extends State<RegisterPage> {
         Navigator.pop(context); // Pop the loading circle dialog
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => const HomeScreen()),
+          MaterialPageRoute(
+            builder: (context) => const UserInformationScreen(),
+          ),
         );
       } else {
         Navigator.pop(context); // Pop the loading circle dialog
@@ -142,12 +141,6 @@ class _RegisterPageState extends State<RegisterPage> {
                   ),
 
                   // name input
-                  const SizedBox(height: 25),
-                  MyTextField(
-                    controller: usernameController,
-                    hintText: 'Username',
-                    obscureText: false,
-                  ),
 
                   const SizedBox(height: 25),
                   MyTextField(
@@ -171,53 +164,6 @@ class _RegisterPageState extends State<RegisterPage> {
                   MyButton(
                     onTap: signUserUp,
                     text: 'Sign Up',
-                  ),
-                  const SizedBox(height: 20),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                    child: Row(
-                      children: [
-                        Expanded(
-                          child: Divider(
-                            thickness: 0.5,
-                            color: Colors.grey[400],
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                          child: Text(
-                            'Or continue with',
-                            style: TextStyle(color: Colors.grey[700]),
-                          ),
-                        ),
-                        Expanded(
-                          child: Divider(
-                            thickness: 0.5,
-                            color: Colors.grey[400],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  const SizedBox(height: 10),
-                  const Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      SizedBox(
-                        width: 60,
-                        child: AspectRatio(
-                          aspectRatio: 1,
-                          child: SquareTile(imagePath: 'assets/google.png'),
-                        ),
-                      ),
-                      SizedBox(
-                        width: 60,
-                        child: AspectRatio(
-                          aspectRatio: 1,
-                          child: SquareTile(imagePath: 'assets/apple.png'),
-                        ),
-                      ),
-                    ],
                   ),
                   const SizedBox(height: 20),
                   GestureDetector(

@@ -1,3 +1,5 @@
+// ignore_for_file: use_build_context_synchronously, avoid_print
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
@@ -24,8 +26,8 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
       showDialog(
         context: context,
         builder: (context) {
-          return AlertDialog(
-            content: const Text('Password reset link sent. Check your email'),
+          return const AlertDialog(
+            content: Text('Password reset link sent. Check your email'),
           );
         },
       );
@@ -84,8 +86,8 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
           const SizedBox(height: 10),
           MaterialButton(
             onPressed: passwordReset,
-            child: const Text('Reset Password'),
             color: Colors.yellow,
+            child: const Text('Reset Password'),
           ),
         ],
       ),
