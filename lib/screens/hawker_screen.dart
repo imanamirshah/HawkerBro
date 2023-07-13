@@ -1,12 +1,16 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:hawkerbro/model/fetch_stall_model.dart';
+import 'package:hawkerbro/provider/auth_provider.dart';
 import 'package:hawkerbro/screens/consmer_leave_review.dart';
 import 'package:hawkerbro/screens/edit_stall_screen.dart';
+import 'package:hawkerbro/utils/utils.dart';
 import 'package:hawkerbro/widgets/custom_button.dart';
 import 'package:hawkerbro/widgets/loading_screen.dart';
 import 'package:hawkerbro/widgets/review_row.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:provider/provider.dart';
 
 class HawkerStallScreen extends StatefulWidget {
   final String unitNumber;
@@ -25,24 +29,34 @@ class HawkerStallScreen extends StatefulWidget {
 class _HawkerStallScreenState extends State<HawkerStallScreen> {
   final GlobalKey<RefreshIndicatorState> _refreshIndicatorKey =
       GlobalKey<RefreshIndicatorState>();
-  //bool isLiked = false;
 
   FetchStallModel? stall;
+  bool isLiked = false;
 
   @override
   void initState() {
     super.initState();
     _fetchStallData();
-    //   getLikeStatus();
+    getLikeStatus();
   }
 
-  // Future<void> getLikeStatus() async {
-  //   SharedPreferences prefs = await SharedPreferences.getInstance();
-  //   setState(() {
-  //     isLiked = prefs.getBool('likeStatus') ??
-  //         false; // Retrieve the like status or set it to false if not found
-  //   });
-  // }
+  Future<void> getLikeStatus() async {
+    // Get the currently logged-in user
+    final ap = Provider.of<AuthProvider>(context, listen: false);
+    final user = ap.userModel;
+
+    // Retrieve the like status for the current stall and set the local state
+    final snapshot = await FirebaseFirestore.instance
+        .collection('users')
+        .doc(user.email)
+        .collection('favourites')
+        .doc(widget.unitNumber)
+        .get();
+
+    setState(() {
+      isLiked = snapshot.exists;
+    });
+  }
 
   Future<void> _refreshData() async {
     final stallData = await _fetchStallData();
@@ -82,7 +96,7 @@ class _HawkerStallScreenState extends State<HawkerStallScreen> {
     final List<int> ratings = stall.ratings;
 
     if (ratings.isEmpty) {
-      return '0.0'; // or any other default value you prefer
+      return '0.0'; // default 0 stars if none is clicked
     } else {
       double sum = 0;
       for (int rating in ratings) {
@@ -90,6 +104,42 @@ class _HawkerStallScreenState extends State<HawkerStallScreen> {
       }
       double average = sum / ratings.length;
       return average.toStringAsFixed(1);
+    }
+  }
+
+  Future<void> onLikeButtonTapped() async {
+    // Get the currently logged-in user
+    final ap = Provider.of<AuthProvider>(context, listen: false);
+    final user = ap.userModel;
+    final stall = await _fetchStallData();
+
+    // Add or remove the stall from the user's favorites subcollection
+    final favorites = FirebaseFirestore.instance
+        .collection('users')
+        .doc(user.email)
+        .collection('favourites')
+        .doc(widget.unitNumber);
+
+    setState(() {
+      isLiked = !isLiked; // Toggle the like status locally
+    });
+
+    debugPrint(user.name);
+
+    if (isLiked) {
+      // Add the stall to favorites
+      await favorites.set({
+        'unitNumber': widget.unitNumber,
+        'postalCode': widget.postalCode,
+        'stallName': stall?.name,
+        'address': stall?.address,
+        'imageUrl': stall!.stallImages.isNotEmpty ? stall.stallImages[0] : null,
+      });
+      showSnackBarFavourites(context, 'Stall added to Favourites.');
+    } else {
+      // Remove the stall from favorites
+      await favorites.delete();
+      showSnackBarFavourites(context, 'Stall removed from Favourites.');
     }
   }
 
@@ -161,13 +211,13 @@ class _HawkerStallScreenState extends State<HawkerStallScreen> {
                     }
                   },
                 ),
-                // IconButton(
-                //   icon: Icon(
-                //     isLiked ? Icons.favorite : Icons.favorite_border,
-                //     color: isLiked ? Colors.red : null,
-                //   ),
-                //   onPressed: onLikeButtonTapped,
-                // ),
+                IconButton(
+                  icon: Icon(
+                    isLiked ? Icons.bookmark : Icons.bookmark_outline,
+                    color: isLiked ? Colors.black : null,
+                  ),
+                  onPressed: onLikeButtonTapped,
+                ),
               ],
             ),
             body: ListView(
@@ -177,9 +227,10 @@ class _HawkerStallScreenState extends State<HawkerStallScreen> {
                   const SizedBox(
                     height: 100.0,
                     child: Center(
-                      child: Text(
-                        "This stall has no images.",
-                        style: TextStyle(fontSize: 15),
+                      child: Icon(
+                        Icons.image_not_supported_rounded,
+                        color: Colors.black12,
+                        size: 50,
                       ),
                     ),
                   )
@@ -234,8 +285,11 @@ class _HawkerStallScreenState extends State<HawkerStallScreen> {
                 ),
                 const SizedBox(height: 8.0),
                 Text(
-                  'Address: ${stall.address}, #${stall.unitNumber}, S${stall.postalCode}',
+                  'Address: ${stall.address},  Singapore ${stall.postalCode}',
                 ),
+                const SizedBox(height: 4.0),
+                Text('Unit: #${stall.unitNumber}'),
+                const SizedBox(height: 4.0),
                 Text('Opening Hours: ${stall.openingHours}'),
                 const SizedBox(height: 16.0),
                 const Text(
@@ -326,18 +380,6 @@ class _HawkerStallScreenState extends State<HawkerStallScreen> {
       ),
     );
   }
-
-  // Future<void> onLikeButtonTapped() async {
-  //   SharedPreferences prefs = await SharedPreferences.getInstance();
-  //   setState(() {
-  //     isLiked = !isLiked; // Toggle the like status
-  //   });
-  //   await prefs.setBool('likeStatus', isLiked); // Save the like status
-  //   // final bool success= await sendRequest();
-
-  //   /// if failed, you can do nothing
-  //   // return success? !isLiked:isLiked;
-  // }
 
   // List<Widget> _buildMenuItems() {
   //   // Replace this with your logic to generate menu items

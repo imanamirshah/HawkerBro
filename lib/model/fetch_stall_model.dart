@@ -10,6 +10,7 @@ class FetchStallModel {
   final List<String> reviews;
   final List<String> reviewers;
   final List<String> stallImages;
+  // bool isLiked;
 
   FetchStallModel({
     required this.name,
@@ -23,6 +24,7 @@ class FetchStallModel {
     required this.reviews,
     required this.reviewers,
     required this.stallImages,
+    //  this.isLiked = false,
   });
 
   // from map

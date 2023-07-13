@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:hawkerbro/screens/explore_screen.dart';
-import 'package:hawkerbro/screens/likes_screen.dart';
+import 'package:hawkerbro/screens/favourites_screen.dart';
 import 'package:hawkerbro/screens/notfications.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -27,7 +27,7 @@ class HomeScreen extends StatelessWidget {
           ),
           BottomNavigationBarItem(
             label: 'Favourites',
-            icon: Icon(CupertinoIcons.heart),
+            icon: Icon(CupertinoIcons.bookmark),
           ),
         ],
       ),
@@ -35,7 +35,7 @@ class HomeScreen extends StatelessWidget {
         switch (index) {
           case 0:
             return CupertinoTabView(
-              builder: (context) => NotificationsScreen(),
+              builder: (context) => const NotificationsScreen(),
             );
           case 1:
             return CupertinoTabView(
@@ -44,7 +44,7 @@ class HomeScreen extends StatelessWidget {
           case 2:
           default:
             return CupertinoTabView(
-              builder: (context) => const LikesScreen(),
+              builder: (context) => const FavouritesScreen(),
             );
         }
       },
