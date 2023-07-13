@@ -1,3 +1,5 @@
+// ignore_for_file: use_build_context_synchronously
+
 import 'dart:io';
 
 import 'package:flutter/material.dart';
@@ -7,6 +9,16 @@ void showSnackBar(BuildContext context, String content) {
   ScaffoldMessenger.of(context).showSnackBar(
     SnackBar(
       content: Text(content),
+      duration: const Duration(seconds: 4),
+    ),
+  );
+}
+
+void showSnackBarFavourites(BuildContext context, String content) {
+  ScaffoldMessenger.of(context).showSnackBar(
+    SnackBar(
+      content: Text(content),
+      duration: const Duration(seconds: 1),
     ),
   );
 }
