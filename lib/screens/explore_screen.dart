@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:hawkerbro/provider/auth_provider.dart';
-// import 'package:hawkerbro/provider/auth_provider.dart';
 import 'package:hawkerbro/screens/account_screen.dart';
 import 'package:hawkerbro/screens/hawker_screen.dart';
 import 'package:hawkerbro/screens/search_screen.dart';
 import 'package:provider/provider.dart';
-// import 'package:provider/provider.dart';
 
 class ExploreScreen extends StatefulWidget {
   const ExploreScreen({Key? key}) : super(key: key);
@@ -17,6 +15,29 @@ class ExploreScreen extends StatefulWidget {
 class _ExploreScreenState extends State<ExploreScreen> {
   PageController pageController = PageController(viewportFraction: 0.85);
   bool isHawkerCentre1Selected = true;
+
+  // String fetchHawkerCentreInfo(String postalCode) {
+  //   String hawkerCentreName = '';
+
+  //   try {
+  //     QuerySnapshot querySnapshot = await FirebaseFirestore.instance
+  //         .collection('hawkercentres')
+  //         .where('postalCode', isEqualTo: postalCode)
+  //         .limit(1)
+  //         .get();
+
+  //     if (querySnapshot.docs.isNotEmpty) {
+  //       // Assuming 'name' is the field containing the hawker centre's name
+  //       Map<String, dynamic> data =
+  //           querySnapshot.docs.first.data() as Map<String, dynamic>;
+  //       hawkerCentreName = data['name'] as String;
+  //     }
+  //   } catch (e) {
+  //     throw Exception('Error fetching hawker centre info: $e');
+  //   }
+
+  //   return hawkerCentreName;
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -135,7 +156,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
                             ),
                             child: const Center(
                               child: Text(
-                                'Maxwell Hawker Centre',
+                                'Maxwell Food Centre',
                                 style: TextStyle(
                                   color: Colors.black,
                                   fontWeight: FontWeight.bold,

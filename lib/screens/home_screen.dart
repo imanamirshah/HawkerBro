@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
+import 'package:hawkerbro/screens/account_screen.dart';
 import 'package:hawkerbro/screens/explore_screen.dart';
 import 'package:hawkerbro/screens/favourites_screen.dart';
-import 'package:hawkerbro/screens/notfications.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -18,12 +18,12 @@ class HomeScreen extends StatelessWidget {
         onTap: (index) {},
         items: const [
           BottomNavigationBarItem(
-            label: 'Notifications',
-            icon: Icon(CupertinoIcons.bell),
-          ),
-          BottomNavigationBarItem(
             label: 'Explore',
             icon: Icon(CupertinoIcons.compass),
+          ),
+          BottomNavigationBarItem(
+            label: 'Account',
+            icon: Icon(CupertinoIcons.person),
           ),
           BottomNavigationBarItem(
             label: 'Favourites',
@@ -35,11 +35,11 @@ class HomeScreen extends StatelessWidget {
         switch (index) {
           case 0:
             return CupertinoTabView(
-              builder: (context) => const NotificationsScreen(),
+              builder: (context) => const ExploreScreen(),
             );
           case 1:
             return CupertinoTabView(
-              builder: (context) => const ExploreScreen(),
+              builder: (context) => const AccountScreen(),
             );
           case 2:
           default:

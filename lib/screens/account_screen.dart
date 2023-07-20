@@ -54,8 +54,6 @@ class _AccountScreenState extends State<AccountScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            const Text("This page is still under development."),
-            const SizedBox(height: 30),
             CircleAvatar(
               backgroundColor: Colors.black,
               backgroundImage: NetworkImage(userModel.profilePic),
