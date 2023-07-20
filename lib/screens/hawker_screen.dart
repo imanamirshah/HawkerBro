@@ -7,10 +7,10 @@ import 'package:hawkerbro/provider/auth_provider.dart';
 import 'package:hawkerbro/screens/consmer_leave_review.dart';
 import 'package:hawkerbro/screens/edit_stall_screen.dart';
 import 'package:hawkerbro/utils/utils.dart';
-import 'package:hawkerbro/widgets/custom_button.dart';
 import 'package:hawkerbro/widgets/loading_screen.dart';
 import 'package:hawkerbro/widgets/review_row.dart';
 import 'package:provider/provider.dart';
+import 'package:url_launcher/link.dart';
 
 class HawkerStallScreen extends StatefulWidget {
   final String unitNumber;
@@ -175,6 +175,9 @@ class _HawkerStallScreenState extends State<HawkerStallScreen> {
           }
 
           var stall = stallSnapshot.data!;
+          final websiteUri = Uri.parse(
+            "https://www.google.com/maps/search/?api=1&query=${stall.postalCode}",
+          );
 
           debugPrint('Reviews length: ${stall.reviews.length}');
           debugPrint('Reviews: ${stall.reviews}');
@@ -352,26 +355,84 @@ class _HawkerStallScreenState extends State<HawkerStallScreen> {
                   ),
 
                 const SizedBox(height: 16),
-                SizedBox(
-                  child: CustomButton(
-                    text: "Leave A Review",
-                    onPressed: () async {
-                      final result = await Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => LeaveReviewScreen(
-                            unitNumber: stall.unitNumber,
-                            postalCode: stall.postalCode,
+                Row(
+                  children: [
+                    Expanded(
+                      child: SizedBox(
+                        child: ElevatedButton.icon(
+                          style: ButtonStyle(
+                            foregroundColor: MaterialStateProperty.all<Color>(
+                              Colors.black,
+                            ),
+                            backgroundColor: MaterialStateProperty.all<Color>(
+                              const Color.fromARGB(255, 255, 217, 0),
+                            ),
+                            shape: MaterialStateProperty.all<
+                                RoundedRectangleBorder>(
+                              const RoundedRectangleBorder(
+                                borderRadius: BorderRadius.zero,
+                              ),
+                            ),
+                          ),
+                          icon: const Icon(Icons.reviews_outlined),
+                          label: const Text(
+                            "Leave A Review",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 15,
+                            ),
+                          ),
+                          onPressed: () async {
+                            final result = await Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => LeaveReviewScreen(
+                                  unitNumber: stall.unitNumber,
+                                  postalCode: stall.postalCode,
+                                ),
+                              ),
+                            );
+                            if (result != null) {
+                              setState(() {
+                                stall = result;
+                              });
+                            }
+                          },
+                        ),
+                      ),
+                    ),
+                    const SizedBox(width: 12),
+                    Expanded(
+                      child: Link(
+                        uri: websiteUri,
+                        builder: (context, openLink) => ElevatedButton.icon(
+                          icon: const Icon(Icons.map_outlined),
+                          onPressed: openLink,
+                          style: ButtonStyle(
+                            foregroundColor: MaterialStateProperty.all<Color>(
+                              Colors.black,
+                            ),
+                            backgroundColor: MaterialStateProperty.all<Color>(
+                              const Color.fromARGB(255, 255, 217, 0),
+                            ),
+                            shape: MaterialStateProperty.all<
+                                RoundedRectangleBorder>(
+                              const RoundedRectangleBorder(
+                                borderRadius: BorderRadius.zero,
+                              ),
+                            ),
+                          ),
+                          label: const Text(
+                            'Directions',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 15,
+                            ),
                           ),
                         ),
-                      );
-                      if (result != null) {
-                        setState(() {
-                          stall = result;
-                        });
-                      }
-                    },
-                  ),
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),

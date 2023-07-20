@@ -347,6 +347,7 @@ class _EditStallScreenState extends State<EditStallScreen> {
                   ),
                   const SizedBox(height: 5.0),
                   TextFormField(
+                    enabled: false,
                     controller: _addressController,
                     decoration: InputDecoration(
                       border: OutlineInputBorder(
@@ -432,31 +433,31 @@ class _EditStallScreenState extends State<EditStallScreen> {
                     },
                   ),
                   const SizedBox(height: 5.0),
-                  TextFormField(
-                    controller: _phoneNumberController,
-                    keyboardType: TextInputType.phone,
-                    inputFormatters: <TextInputFormatter>[
-                      FilteringTextInputFormatter.digitsOnly,
-                      LengthLimitingTextInputFormatter(8),
-                    ],
-                    decoration: InputDecoration(
-                      border: OutlineInputBorder(
-                        borderSide: BorderSide.none,
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      filled: true,
-                      fillColor: Colors.grey[200],
-                      hintText: 'Phone Number',
-                    ),
-                    validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return 'Please enter a phone number';
-                      } else if (value.length != 8) {
-                        return 'Please enter a valid 8-digit phone number';
-                      }
-                      return null;
-                    },
-                  ),
+                  // TextFormField(
+                  //   controller: _phoneNumberController,
+                  //   keyboardType: TextInputType.phone,
+                  //   inputFormatters: <TextInputFormatter>[
+                  //     FilteringTextInputFormatter.digitsOnly,
+                  //     LengthLimitingTextInputFormatter(8),
+                  //   ],
+                  //   decoration: InputDecoration(
+                  //     border: OutlineInputBorder(
+                  //       borderSide: BorderSide.none,
+                  //       borderRadius: BorderRadius.circular(10),
+                  //     ),
+                  //     filled: true,
+                  //     fillColor: Colors.grey[200],
+                  //     hintText: 'Phone Number',
+                  //   ),
+                  //   validator: (value) {
+                  //     if (value == null || value.isEmpty) {
+                  //       return 'Please enter a phone number';
+                  //     } else if (value.length != 8) {
+                  //       return 'Please enter a valid 8-digit phone number';
+                  //     }
+                  //     return null;
+                  //   },
+                  // ),
                   const SizedBox(height: 5.0),
                   TextFormField(
                     controller: _bioController,
@@ -468,7 +469,7 @@ class _EditStallScreenState extends State<EditStallScreen> {
                       ),
                       filled: true,
                       fillColor: Colors.grey[200],
-                      hintText: 'Business Information',
+                      hintText: 'Description',
                     ),
                     validator: (value) {
                       if (value == null || value.isEmpty) {
