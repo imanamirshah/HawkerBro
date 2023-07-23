@@ -1,10 +1,11 @@
 // ignore_for_file: use_build_context_synchronously
 
+import 'package:back_button_interceptor/back_button_interceptor.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:hawkerbro/model/fetch_stall_model.dart';
 import 'package:hawkerbro/provider/auth_provider.dart';
-import 'package:hawkerbro/screens/hawker_screen.dart';
+import 'package:hawkerbro/widgets/custom_button.dart';
 import 'package:hawkerbro/widgets/loading_screen.dart';
 import 'package:provider/provider.dart';
 
@@ -30,11 +31,12 @@ class _LeaveReviewScreenState extends State<LeaveReviewScreen> {
 
   @override
   void initState() {
+    BackButtonInterceptor.add(myInterceptor);
     super.initState();
-    _stallDataFuture = _fetchStallData();
+    _stallDataFuture = fetchStallData();
   }
 
-  Future<FetchStallModel?> _fetchStallData() async {
+  Future<FetchStallModel?> fetchStallData() async {
     try {
       final DocumentSnapshot stallSnapshot = await FirebaseFirestore.instance
           .collection('hawkerCentres')
@@ -51,7 +53,7 @@ class _LeaveReviewScreenState extends State<LeaveReviewScreen> {
     }
   }
 
-  Future<void> _postReview() async {
+  Future<void> postReview() async {
     final review = _reviewController.text.trim();
     final ap = Provider.of<AuthProvider>(context, listen: false);
     final userModel = ap.userModel;
@@ -124,6 +126,17 @@ class _LeaveReviewScreenState extends State<LeaveReviewScreen> {
     }
   }
 
+  bool myInterceptor(bool stopDefaultButtonEvent, RouteInfo info) {
+    Navigator.pop(context);
+    return true;
+  }
+
+  @override
+  void dispose() {
+    BackButtonInterceptor.remove(myInterceptor);
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return FutureBuilder<FetchStallModel?>(
@@ -136,85 +149,59 @@ class _LeaveReviewScreenState extends State<LeaveReviewScreen> {
         stall = stallSnapshot.data!;
 
         return Scaffold(
-          resizeToAvoidBottomInset: true,
-          body: Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Container(
-                  alignment: Alignment.topLeft,
-                  margin: const EdgeInsets.only(top: 16.0),
-                  child: IconButton(
-                    icon: const Icon(
-                      Icons.arrow_back,
-                      size: 32.0,
+          resizeToAvoidBottomInset: false,
+          appBar: AppBar(
+            backgroundColor: Colors.white,
+            foregroundColor: Colors.black,
+            elevation: 0,
+          ),
+          body: SingleChildScrollView(
+            child: Padding(
+              padding: const EdgeInsets.all(35.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    stall!.name,
+                    style: const TextStyle(
+                      fontSize: 24.0,
+                      fontWeight: FontWeight.bold,
                     ),
-                    onPressed: () {
-                      Navigator.pop(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => HawkerStallScreen(
-                            postalCode: stall!.postalCode,
-                            unitNumber: stall!.unitNumber,
-                          ),
-                        ),
-                      );
+                  ),
+                  const SizedBox(height: 16.0),
+                  RatingBar(
+                    onRatingChanged: (int inputRating) {
+                      setState(() {
+                        rating = inputRating;
+                      });
                     },
                   ),
-                ),
-                const SizedBox(height: 16.0),
-                Text(
-                  stall!.name,
-                  style: const TextStyle(
-                    fontSize: 24.0,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                const SizedBox(height: 16.0),
-                RatingBar(
-                  onRatingChanged: (int inputRating) {
-                    setState(() {
-                      rating = inputRating;
-                    });
-                  },
-                ),
-                const SizedBox(height: 16.0),
-                Container(
-                  padding: const EdgeInsets.all(8.0),
-                  decoration: BoxDecoration(
-                    border: Border.all(color: Colors.grey),
-                    borderRadius: BorderRadius.circular(8.0),
-                  ),
-                  child: TextField(
-                    controller: _reviewController,
-                    decoration: const InputDecoration.collapsed(
-                      hintText: 'Leave your review!',
+                  const SizedBox(height: 20.0),
+                  Container(
+                    padding: const EdgeInsets.all(8.0),
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Colors.grey),
+                      borderRadius: BorderRadius.circular(8.0),
                     ),
-                    maxLines: 6,
-                  ),
-                ),
-                const SizedBox(height: 16.0),
-                Container(
-                  width: double.infinity,
-                  height: 50,
-                  decoration: BoxDecoration(
-                    color: Colors.yellow,
-                    borderRadius: BorderRadius.circular(8.0),
-                  ),
-                  child: TextButton(
-                    onPressed: _postReview,
-                    child: const Text(
-                      'Post Review',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 18.0,
-                        fontWeight: FontWeight.bold,
+                    child: TextField(
+                      controller: _reviewController,
+                      decoration: const InputDecoration.collapsed(
+                        hintText: 'Leave your review!',
                       ),
+                      maxLines: 6,
                     ),
                   ),
-                ),
-              ],
+                  const SizedBox(height: 20.0),
+                  SizedBox(
+                    width: double.infinity,
+                    height: 50,
+                    child: CustomButton(
+                      onPressed: postReview,
+                      text: 'Post Review',
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         );

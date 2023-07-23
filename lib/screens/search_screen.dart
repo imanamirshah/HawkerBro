@@ -30,7 +30,7 @@ class _SearchPageState extends State<SearchPage> {
   @override
   void initState() {
     super.initState();
-    _loadSearchHistory();
+    loadSearchHistory();
     _searchController.addListener(
       () {
         setState(
@@ -43,14 +43,14 @@ class _SearchPageState extends State<SearchPage> {
     );
   }
 
-  Future<void> _loadSearchHistory() async {
+  Future<void> loadSearchHistory() async {
     _preferences = await SharedPreferences.getInstance();
     setState(() {
       searchHistory = _preferences.getStringList('searchHistory') ?? [];
     });
   }
 
-  Future<void> _saveSearchHistory() async {
+  Future<void> saveSearchHistory() async {
     await _preferences.setStringList('searchHistory', searchHistory);
   }
 
@@ -90,7 +90,7 @@ class _SearchPageState extends State<SearchPage> {
       }
 
       searchHistory.insert(0, name);
-      _saveSearchHistory();
+      saveSearchHistory();
     });
 
     try {
@@ -128,7 +128,7 @@ class _SearchPageState extends State<SearchPage> {
   void _clearSearchHistory() {
     setState(() {
       searchHistory.clear();
-      _saveSearchHistory();
+      saveSearchHistory();
     });
   }
 
@@ -136,7 +136,6 @@ class _SearchPageState extends State<SearchPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      resizeToAvoidBottomInset: false,
       body: SafeArea(
         child: Column(
           children: [

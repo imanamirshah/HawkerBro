@@ -4,17 +4,19 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:hawkerbro/provider/auth_provider.dart';
 import 'package:hawkerbro/utils/utils.dart';
+import 'package:hawkerbro/widgets/custom_button.dart';
 import 'package:provider/provider.dart';
-import '../components/my_button.dart';
 import '../components/my_textfield.dart';
 import 'forgot_password_page.dart';
 import 'home_screen.dart';
 import 'register_page.dart';
 
 class LoginPage extends StatefulWidget {
-  final void Function() onTap;
+  // final void Function() onTap;
 
-  const LoginPage({Key? key, required this.onTap}) : super(key: key);
+  const LoginPage({
+    Key? key,
+  }) : super(key: key);
 
   @override
   State<LoginPage> createState() => _LoginPageState();
@@ -63,6 +65,15 @@ class _LoginPageState extends State<LoginPage> {
       return;
     }
 
+    showDialog(
+      context: context,
+      builder: (context) {
+        return const Center(
+          child: CircularProgressIndicator(),
+        );
+      },
+    );
+
     try {
       // Access the AuthProvider instance using Provider
       AuthProvider ap = Provider.of<AuthProvider>(context, listen: false);
@@ -96,10 +107,7 @@ class _LoginPageState extends State<LoginPage> {
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) => RegisterPage(
-          onTap: () {},
-          onTapLogin: () {},
-        ),
+        builder: (context) => const RegisterPage(),
       ),
     );
   }
@@ -107,44 +115,45 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey[300],
+      backgroundColor: Colors.white,
       body: SafeArea(
         child: SingleChildScrollView(
           child: SizedBox(
             height: MediaQuery.of(context).size.height - kToolbarHeight,
-            child: Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const SizedBox(height: 50),
-                  const Icon(
-                    Icons.lock,
-                    size: 100,
-                  ),
-                  const SizedBox(height: 50),
-                  Text(
-                    'Welcome back you\'ve been missed!',
-                    style: TextStyle(
-                      color: Colors.grey[700],
-                      fontSize: 16,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(vertical: 25, horizontal: 35),
+              child: Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const SizedBox(height: 50),
+                    Image.asset(
+                      "assets/hawkerbro.png",
                     ),
-                  ),
-                  const SizedBox(height: 25),
-                  MyTextField(
-                    controller: emailController,
-                    hintText: 'Email',
-                    obscureText: false,
-                  ),
-                  const SizedBox(height: 10),
-                  MyTextField(
-                    controller: passwordController,
-                    hintText: 'Password',
-                    obscureText: true,
-                  ),
-                  const SizedBox(height: 10),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                    child: Row(
+                    // Text(
+                    //   'Welcome back!',
+                    //   style: TextStyle(
+                    //     color: Colors.grey[700],
+                    //     fontSize: 16,
+                    //   ),
+                    // ),
+                    const SizedBox(height: 25),
+                    MyTextField(
+                      controller: emailController,
+                      hintText: 'Email',
+                      obscureText: false,
+                    ),
+                    const SizedBox(height: 10),
+                    SizedBox(
+                      width: double.infinity,
+                      child: MyTextField(
+                        controller: passwordController,
+                        hintText: 'Password',
+                        obscureText: true,
+                      ),
+                    ),
+                    const SizedBox(height: 10),
+                    Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         GestureDetector(
@@ -164,34 +173,38 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                       ],
                     ),
-                  ),
-                  const SizedBox(height: 15),
-                  MyButton(
-                    onTap: signUserIn,
-                    text: 'Sign In',
-                  ),
-                  const SizedBox(height: 20),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        'Not a member?',
-                        style: TextStyle(color: Colors.grey[700]),
+                    const SizedBox(height: 15),
+                    SizedBox(
+                      width: double.infinity,
+                      height: 50,
+                      child: CustomButton(
+                        onPressed: signUserIn,
+                        text: 'Sign In',
                       ),
-                      const SizedBox(width: 4),
-                      GestureDetector(
-                        onTap: goToRegisterPage,
-                        child: const Text(
-                          'Register now',
-                          style: TextStyle(
-                            color: Colors.blue,
-                            fontWeight: FontWeight.bold,
+                    ),
+                    const SizedBox(height: 20),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          'Not a member?',
+                          style: TextStyle(color: Colors.grey[700]),
+                        ),
+                        const SizedBox(width: 4),
+                        GestureDetector(
+                          onTap: goToRegisterPage,
+                          child: const Text(
+                            'Register now',
+                            style: TextStyle(
+                              color: Colors.blue,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                         ),
-                      ),
-                    ],
-                  ),
-                ],
+                      ],
+                    ),
+                  ],
+                ),
               ),
             ),
           ),

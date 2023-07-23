@@ -28,7 +28,7 @@ class StallProvider extends ChangeNotifier {
     }
 
     // Upload images to Firebase Storage and get the download URLs
-    List<String> imageUrls = await _uploadImages(unitNumber, imageFiles);
+    List<String> imageUrls = await uploadImages(unitNumber, imageFiles);
 
     // Store the data in Firestore along with the image URLs
     FirebaseFirestore firestore = FirebaseFirestore.instance;
@@ -123,7 +123,7 @@ class StallProvider extends ChangeNotifier {
     List<File> imageFiles,
   ) async {
     // Upload images to Firebase Storage and get the download URLs
-    // List<String> imageUrls = await _uploadImages(unitNumber, imageFiles);
+    List<String> imageUrls = await uploadImages(unitNumber, imageFiles);
 
     // Update the data in Firestore along with the image URLs
     await firestore
@@ -138,11 +138,11 @@ class StallProvider extends ChangeNotifier {
       'openingHours': openingHours,
       'phoneNumber': phoneNumber,
       'bio': bio,
-      //  'stall images': imageUrls,
+      'stall images': imageUrls,
     });
   }
 
-  Future<List<String>> _uploadImages(
+  Future<List<String>> uploadImages(
     String unitNumber,
     List<File> imageFiles,
   ) async {
