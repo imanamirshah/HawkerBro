@@ -2,6 +2,7 @@
 
 import 'dart:math';
 import 'dart:async';
+import 'package:back_button_interceptor/back_button_interceptor.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -34,7 +35,8 @@ Future<void> fetchDataByHawkerCentre(String postalCode) async {
 }
 
 Future<List<Map<String, dynamic>>> fetchHawkerStallsData(
-    String postalCode) async {
+  String postalCode,
+) async {
   try {
     CollectionReference hawkerStallsCollection = FirebaseFirestore.instance
         .collection('hawkerCentres')
@@ -128,6 +130,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
   @override
   void initState() {
     super.initState();
+    BackButtonInterceptor.add(myInterceptor);
 // Initialize _randomHawkerStalls with an empty list
     _randomHawkerStalls = [];
 // Set hawker stalls data for Maxwell Hawker Centre as default
@@ -136,6 +139,16 @@ class _ExploreScreenState extends State<ExploreScreen> {
     _scheduleMidnightTask();
 // Fetch initial recommendations when the screen loads
     _refreshRecommendations(); // Renamed from _fetchRecommendations
+  }
+
+  bool myInterceptor(bool stopDefaultButtonEvent, RouteInfo info) {
+    return true;
+  }
+
+  @override
+  void dispose() {
+    BackButtonInterceptor.remove(myInterceptor);
+    super.dispose();
   }
 
   void _setDefaultHawkerStallsData() async {
@@ -179,7 +192,10 @@ class _ExploreScreenState extends State<ExploreScreen> {
       child: Container(
         height: 250,
         margin: const EdgeInsets.only(
-            left: 10, right: 10, bottom: 20), // Add a bottom margin of 20
+          left: 10,
+          right: 10,
+          bottom: 20,
+        ), // Add a bottom margin of 20
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(30),
           color: Colors.yellow,
@@ -328,7 +344,8 @@ class _ExploreScreenState extends State<ExploreScreen> {
               alignment: Alignment.bottomCenter,
               child: Padding(
                 padding: const EdgeInsets.only(
-                    bottom: 10), // Add padding to the bottom
+                  bottom: 10,
+                ), // Add padding to the bottom
                 child: Container(
                   height: 125, // Height of the smaller white container
                   width: containerWidth - (whiteContainerPadding * 2),
@@ -402,9 +419,11 @@ class _ExploreScreenState extends State<ExploreScreen> {
             .get();
 
 // Add all hawker stall names from the current hawker centre's subcollection to the list
-        allHawkerStalls.addAll(stallsSnapshot.docs.map((stallDoc) {
-          return stallDoc['name'] as String? ?? '';
-        }).toList());
+        allHawkerStalls.addAll(
+          stallsSnapshot.docs.map((stallDoc) {
+            return stallDoc['name'] as String? ?? '';
+          }).toList(),
+        );
       }
 
       return allHawkerStalls;
@@ -559,9 +578,11 @@ class _ExploreScreenState extends State<ExploreScreen> {
                         itemCount: _randomHawkerStalls.length,
                         itemBuilder: (context, index) {
                           String stallName = _randomHawkerStalls[index];
-                          Map<String, dynamic> stallData = _hawkerStallsData
-                              .firstWhere((data) => data['name'] == stallName,
-                                  orElse: () => {});
+                          Map<String, dynamic> stallData =
+                              _hawkerStallsData.firstWhere(
+                            (data) => data['name'] == stallName,
+                            orElse: () => {},
+                          );
 
                           return InkWell(
                             onTap: () {
