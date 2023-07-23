@@ -1,3 +1,4 @@
+import 'package:back_button_interceptor/back_button_interceptor.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:hawkerbro/provider/auth_provider.dart';
@@ -12,6 +13,22 @@ class FavouritesScreen extends StatefulWidget {
 }
 
 class _FavouritesScreenState extends State<FavouritesScreen> {
+  @override
+  void initState() {
+    super.initState();
+    BackButtonInterceptor.add(myInterceptor);
+  }
+
+  bool myInterceptor(bool stopDefaultButtonEvent, RouteInfo info) {
+    return true;
+  }
+
+  @override
+  void dispose() {
+    BackButtonInterceptor.remove(myInterceptor);
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     final ap = Provider.of<AuthProvider>(context, listen: false);

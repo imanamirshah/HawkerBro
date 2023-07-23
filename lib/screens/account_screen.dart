@@ -1,7 +1,9 @@
+import 'package:back_button_interceptor/back_button_interceptor.dart';
 import 'package:flutter/material.dart';
 import 'package:hawkerbro/provider/auth_provider.dart';
 // import 'package:hawkerbro/provider/auth_provider.dart';
 import 'package:hawkerbro/screens/add_stall_screen.dart';
+import 'package:hawkerbro/screens/edit_account_screen.dart';
 import 'package:hawkerbro/screens/welcome_screen.dart';
 import 'package:provider/provider.dart';
 // import 'package:provider/provider.dart';
@@ -16,6 +18,22 @@ class AccountScreen extends StatefulWidget {
 }
 
 class _AccountScreenState extends State<AccountScreen> {
+  @override
+  void initState() {
+    super.initState();
+    BackButtonInterceptor.add(myInterceptor);
+  }
+
+  bool myInterceptor(bool stopDefaultButtonEvent, RouteInfo info) {
+    return true;
+  }
+
+  @override
+  void dispose() {
+    BackButtonInterceptor.remove(myInterceptor);
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     final ap = Provider.of<AuthProvider>(context, listen: false);
@@ -35,6 +53,20 @@ class _AccountScreenState extends State<AccountScreen> {
           ),
         ),
         actions: [
+          IconButton(
+            padding: const EdgeInsets.only(right: 12),
+            icon: const Icon(Icons.edit),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => EditAccountScreen(
+                    email: userModel.email,
+                  ),
+                ),
+              );
+            },
+          ),
           IconButton(
             onPressed: () {
               ap.userSignOut().then(

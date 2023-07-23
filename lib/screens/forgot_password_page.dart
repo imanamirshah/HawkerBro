@@ -2,6 +2,9 @@
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:hawkerbro/components/my_textfield.dart';
+import 'package:hawkerbro/utils/utils.dart';
+import 'package:hawkerbro/widgets/custom_button.dart';
 
 class ForgotPasswordPage extends StatefulWidget {
   const ForgotPasswordPage({Key? key}) : super(key: key);
@@ -26,70 +29,72 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
       showDialog(
         context: context,
         builder: (context) {
-          return const AlertDialog(
-            content: Text('Password reset link sent. Check your email'),
+          return AlertDialog(
+            content: const Text('Password reset link sent. Check your email.'),
+            actions: [
+              TextButton(
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+                child: const Text('OK'),
+              ),
+            ],
           );
         },
       );
     } on FirebaseAuthException catch (e) {
       print(e);
-      showDialog(
-        context: context,
-        builder: (context) {
-          return AlertDialog(
-            content: Text(e.message.toString()),
-          );
-        },
-      );
+      showSnackBar(context, "User not found");
     }
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: true,
       appBar: AppBar(
         backgroundColor: Colors.yellow,
+        foregroundColor: Colors.black,
         elevation: 0,
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 25.0),
-            child: Text(
-              'Enter Your Email and we will send you a password reset link',
-              textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 20),
-            ),
-          ),
-          const SizedBox(height: 10),
-          // Email textfield
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 25.0),
-            child: TextField(
-              controller: _emailController,
-              decoration: InputDecoration(
-                enabledBorder: OutlineInputBorder(
-                  borderSide: const BorderSide(color: Colors.white),
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                focusedBorder: OutlineInputBorder(
-                  borderSide: const BorderSide(color: Colors.yellow),
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                hintText: 'Email',
-                fillColor: Colors.grey[200],
-                filled: true,
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 25.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Padding(
+              padding: EdgeInsets.only(right: 63),
+              child: Text(
+                'Forgot your password?',
+                textAlign: TextAlign.left,
+                style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
               ),
             ),
-          ),
-          const SizedBox(height: 10),
-          MaterialButton(
-            onPressed: passwordReset,
-            color: Colors.yellow,
-            child: const Text('Reset Password'),
-          ),
-        ],
+            const SizedBox(height: 20),
+            const Text(
+              'Enter your email and we will send you a password reset link.',
+              textAlign: TextAlign.left,
+              style: TextStyle(fontSize: 18),
+            ),
+            const SizedBox(height: 50),
+            // Email textfield
+            MyTextField(
+              controller: _emailController,
+              hintText: "Email",
+              obscureText: false,
+            ),
+
+            const SizedBox(height: 40),
+            SizedBox(
+              height: 50,
+              width: double.infinity,
+              child: CustomButton(
+                onPressed: passwordReset,
+                text: "Reset Password",
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

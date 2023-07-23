@@ -79,12 +79,9 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => LoginPage(
-                                onTap: () {},
-                              ),
+                              builder: (context) => const LoginPage(),
                             ),
                           );
-                          // getLocation();
                           // if (ap.isSignedIn == true) {
                           //   await ap.getDataFromSP().whenComplete(
                           //         () => Navigator.pushReplacement(

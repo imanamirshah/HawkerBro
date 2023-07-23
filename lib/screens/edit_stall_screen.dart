@@ -1,11 +1,13 @@
 // ignore_for_file: use_build_context_synchronously
 
 import 'dart:io';
+import 'package:back_button_interceptor/back_button_interceptor.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:hawkerbro/model/fetch_stall_model.dart';
 import 'package:hawkerbro/provider/stall_provider.dart';
+import 'package:hawkerbro/widgets/custom_button.dart';
 import 'package:hawkerbro/widgets/loading_screen.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:progress_dialog_null_safe/progress_dialog_null_safe.dart';
@@ -18,9 +20,6 @@ class EditStallScreen extends StatefulWidget {
     Key? key,
     required this.unitNumber,
     required this.postalCode,
-    String? stallName,
-    String? stallAddress,
-    String? stallDescription,
   }) : super(key: key);
 
   @override
@@ -45,6 +44,7 @@ class _EditStallScreenState extends State<EditStallScreen> {
 
   @override
   void initState() {
+    BackButtonInterceptor.add(myInterceptor);
     super.initState();
     _stallDataFuture = _fetchStallData();
     //  _existingStallsStream = _fetchExistingStalls(); // Fetch existing stalls
@@ -61,6 +61,11 @@ class _EditStallScreenState extends State<EditStallScreen> {
         });
       }
     });
+  }
+
+  bool myInterceptor(bool stopDefaultButtonEvent, RouteInfo info) {
+    Navigator.pop(context);
+    return true;
   }
 
   Future<FetchStallModel?> _fetchStallData() async {
@@ -80,30 +85,6 @@ class _EditStallScreenState extends State<EditStallScreen> {
     }
   }
 
-  // Stream<List<StallModel>> _fetchExistingStalls() {
-  //   // Create a stream of existing stalls
-  //   return FirebaseFirestore.instance
-  //       .collection('hawkerCentres')
-  //       .doc(widget.postalCode)
-  //       .collection('stalls')
-  //       .snapshots()
-  //       .map((querySnapshot) {
-  //     return querySnapshot.docs.map((doc) {
-  //       final stallData = doc.data() as Map<String, dynamic>;
-  //       return StallModel.fromJSON(stallData);
-  //     }).toList();
-  //   });
-  // }
-
-  // bool _isUnitNumberExists(List<StallModel> stalls, String unitNumber) {
-  //   // Check if a stall with the given unit number exists
-  //   return stalls.any(
-  //     (stall) =>
-  //         stall.unitNumber == unitNumber &&
-  //         stall.unitNumber != widget.unitNumber,
-  //   );
-  // }
-
   @override
   void dispose() {
     _nameController.dispose();
@@ -113,6 +94,7 @@ class _EditStallScreenState extends State<EditStallScreen> {
     _openingHoursController.dispose();
     _phoneNumberController.dispose();
     _bioController.dispose();
+    BackButtonInterceptor.remove(myInterceptor);
     super.dispose();
   }
 
@@ -155,7 +137,7 @@ class _EditStallScreenState extends State<EditStallScreen> {
     }
   }
 
-  Future<void> _submitForm() async {
+  Future<void> submitForm() async {
     if (_formKey.currentState!.validate()) {
       String name = _nameController.text;
       String address = _addressController.text;
@@ -249,54 +231,54 @@ class _EditStallScreenState extends State<EditStallScreen> {
     }
   }
 
-  // Widget _buildImagesSection() {
-  //   if (_imageFileList.isEmpty) {
-  //     return ElevatedButton.icon(
-  //       onPressed: getImages,
-  //       icon: const Icon(Icons.add_a_photo),
-  //       label: const Text('Select Images'),
-  //       style: ElevatedButton.styleFrom(
-  //         backgroundColor: Colors.yellow[600],
-  //         foregroundColor: Colors.black,
-  //         textStyle: const TextStyle(
-  //           fontSize: 16,
-  //         ),
-  //       ),
-  //     );
-  //   } else {
-  //     return Column(
-  //       crossAxisAlignment: CrossAxisAlignment.start,
-  //       children: [
-  //         Wrap(
-  //           spacing: 8.0,
-  //           runSpacing: 8.0,
-  //           children: _imageFileList.map((image) {
-  //             return SizedBox(
-  //               width: double.infinity,
-  //               height: 260,
-  //               child: Image.file(
-  //                 image,
-  //                 fit: BoxFit.cover,
-  //               ),
-  //             );
-  //           }).toList(),
-  //         ),
-  //         const SizedBox(height: 8.0),
-  //         Center(
-  //           child: ElevatedButton.icon(
-  //             onPressed: getImages,
-  //             icon: const Icon(Icons.add),
-  //             label: const Text('Add More Images'),
-  //             style: ElevatedButton.styleFrom(
-  //               backgroundColor: Colors.yellow[600],
-  //               foregroundColor: Colors.black,
-  //             ),
-  //           ),
-  //         ),
-  //       ],
-  //     );
-  //   }
-  // }
+  Widget _buildImagesSection() {
+    if (_imageFileList.isEmpty) {
+      return ElevatedButton.icon(
+        onPressed: getImages,
+        icon: const Icon(Icons.add_a_photo),
+        label: const Text('Select Images'),
+        style: ElevatedButton.styleFrom(
+          backgroundColor: Colors.yellow[600],
+          foregroundColor: Colors.black,
+          textStyle: const TextStyle(
+            fontSize: 16,
+          ),
+        ),
+      );
+    } else {
+      return Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Wrap(
+            spacing: 8.0,
+            runSpacing: 8.0,
+            children: _imageFileList.map((image) {
+              return SizedBox(
+                width: double.infinity,
+                height: 260,
+                child: Image.file(
+                  image,
+                  fit: BoxFit.cover,
+                ),
+              );
+            }).toList(),
+          ),
+          const SizedBox(height: 8.0),
+          Center(
+            child: ElevatedButton.icon(
+              onPressed: getImages,
+              icon: const Icon(Icons.add),
+              label: const Text('Add More Images'),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.yellow[600],
+                foregroundColor: Colors.black,
+              ),
+            ),
+          ),
+        ],
+      );
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -325,7 +307,7 @@ class _EditStallScreenState extends State<EditStallScreen> {
               child: ListView(
                 padding: const EdgeInsets.all(16),
                 children: [
-                  //        _buildImagesSection(),
+                  _buildImagesSection(),
                   const SizedBox(height: 5.0),
                   TextFormField(
                     controller: _nameController,
@@ -347,7 +329,7 @@ class _EditStallScreenState extends State<EditStallScreen> {
                   ),
                   const SizedBox(height: 5.0),
                   TextFormField(
-                    enabled: false,
+                    enabled: true,
                     controller: _addressController,
                     decoration: InputDecoration(
                       border: OutlineInputBorder(
@@ -358,12 +340,12 @@ class _EditStallScreenState extends State<EditStallScreen> {
                       fillColor: Colors.grey[200],
                       hintText: 'Address',
                     ),
-                    validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return 'Please enter an address';
-                      }
-                      return null;
-                    },
+                    // validator: (value) {
+                    //   if (value == null || value.isEmpty) {
+                    //     return 'Please enter an address';
+                    //   }
+                    //   return null;
+                    // },
                   ),
                   const SizedBox(height: 5.0),
                   TextFormField(
@@ -473,24 +455,15 @@ class _EditStallScreenState extends State<EditStallScreen> {
                     ),
                     validator: (value) {
                       if (value == null || value.isEmpty) {
-                        return 'Please enter a bio';
+                        return null;
                       }
                       return null;
                     },
                   ),
                   const SizedBox(height: 16.0),
-                  ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.yellow[600],
-                      foregroundColor: Colors.black,
-                    ),
-                    onPressed: _submitForm,
-                    child: const Text(
-                      'Update',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
+                  CustomButton(
+                    onPressed: submitForm,
+                    text: 'Update',
                   ),
                 ],
               ),

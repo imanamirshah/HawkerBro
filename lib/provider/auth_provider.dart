@@ -159,7 +159,7 @@ class AuthProvider extends ChangeNotifier {
         .get()
         .then((DocumentSnapshot snapshot) {
       _userModel = UserModel(
-        name: snapshot['Stall Name'],
+        name: snapshot['name'],
         email: snapshot['email'],
         bio: snapshot['bio'],
         profilePic: snapshot['profilePic'],

@@ -1,5 +1,6 @@
 // ignore_for_file: use_build_context_synchronously
 
+import 'package:back_button_interceptor/back_button_interceptor.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:hawkerbro/model/fetch_stall_model.dart';
@@ -35,9 +36,21 @@ class _HawkerStallScreenState extends State<HawkerStallScreen> {
 
   @override
   void initState() {
+    BackButtonInterceptor.add(myInterceptor);
     super.initState();
     _fetchStallData();
     getLikeStatus();
+  }
+
+  bool myInterceptor(bool stopDefaultButtonEvent, RouteInfo info) {
+    Navigator.pop(context);
+    return true;
+  }
+
+  @override
+  void dispose() {
+    BackButtonInterceptor.remove(myInterceptor);
+    super.dispose();
   }
 
   Future<void> getLikeStatus() async {
@@ -176,7 +189,7 @@ class _HawkerStallScreenState extends State<HawkerStallScreen> {
 
           var stall = stallSnapshot.data!;
           final websiteUri = Uri.parse(
-            "https://www.google.com/maps/search/?api=1&query=${stall.postalCode}",
+            "https://www.google.com/maps/search/?api=1&query=Singapore ${stall.postalCode}",
           );
 
           debugPrint('Reviews length: ${stall.reviews.length}');
@@ -359,6 +372,7 @@ class _HawkerStallScreenState extends State<HawkerStallScreen> {
                   children: [
                     Expanded(
                       child: SizedBox(
+                        height: 50,
                         child: ElevatedButton.icon(
                           style: ButtonStyle(
                             foregroundColor: MaterialStateProperty.all<Color>(
@@ -403,30 +417,33 @@ class _HawkerStallScreenState extends State<HawkerStallScreen> {
                     ),
                     const SizedBox(width: 12),
                     Expanded(
-                      child: Link(
-                        uri: websiteUri,
-                        builder: (context, openLink) => ElevatedButton.icon(
-                          icon: const Icon(Icons.map_outlined),
-                          onPressed: openLink,
-                          style: ButtonStyle(
-                            foregroundColor: MaterialStateProperty.all<Color>(
-                              Colors.black,
-                            ),
-                            backgroundColor: MaterialStateProperty.all<Color>(
-                              const Color.fromARGB(255, 255, 217, 0),
-                            ),
-                            shape: MaterialStateProperty.all<
-                                RoundedRectangleBorder>(
-                              const RoundedRectangleBorder(
-                                borderRadius: BorderRadius.zero,
+                      child: SizedBox(
+                        height: 50,
+                        child: Link(
+                          uri: websiteUri,
+                          builder: (context, openLink) => ElevatedButton.icon(
+                            icon: const Icon(Icons.map_outlined),
+                            onPressed: openLink,
+                            style: ButtonStyle(
+                              foregroundColor: MaterialStateProperty.all<Color>(
+                                Colors.black,
+                              ),
+                              backgroundColor: MaterialStateProperty.all<Color>(
+                                const Color.fromARGB(255, 255, 217, 0),
+                              ),
+                              shape: MaterialStateProperty.all<
+                                  RoundedRectangleBorder>(
+                                const RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.zero,
+                                ),
                               ),
                             ),
-                          ),
-                          label: const Text(
-                            'Directions',
-                            style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 15,
+                            label: const Text(
+                              'Directions',
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 15,
+                              ),
                             ),
                           ),
                         ),
