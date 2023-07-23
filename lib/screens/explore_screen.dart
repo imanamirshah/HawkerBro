@@ -24,18 +24,17 @@ Future<void> fetchDataByHawkerCentre(String postalCode) async {
       String name = docSnapshot['name'] ?? '';
 
 // Print or process the data
-      debugPrint('Hawker Centre Name: $name');
+      print('Hawker Centre Name: $name');
     } else {
-      debugPrint('Hawker Centre not found with postal code: $postalCode');
+      print('Hawker Centre not found with postal code: $postalCode');
     }
   } catch (e) {
-    debugPrint('Error fetching data: $e');
+    print('Error fetching data: $e');
   }
 }
 
 Future<List<Map<String, dynamic>>> fetchHawkerStallsData(
-  String postalCode,
-) async {
+    String postalCode) async {
   try {
     CollectionReference hawkerStallsCollection = FirebaseFirestore.instance
         .collection('hawkerCentres')
@@ -94,7 +93,7 @@ Future<List<Map<String, dynamic>>> fetchHawkerStallsData(
 
     return hawkerStallsData;
   } catch (e) {
-    debugPrint('Error fetching hawker stalls data: $e');
+    print('Error fetching hawker stalls data: $e');
     return [];
   }
 }
@@ -103,7 +102,7 @@ class ExploreScreen extends StatefulWidget {
   const ExploreScreen({Key? key}) : super(key: key);
 
   @override
-  State<ExploreScreen> createState() => _ExploreScreenState();
+  _ExploreScreenState createState() => _ExploreScreenState();
 }
 
 class _ExploreScreenState extends State<ExploreScreen> {
@@ -113,6 +112,12 @@ class _ExploreScreenState extends State<ExploreScreen> {
     {'name': 'Hong Lim Market and Food Centre', 'postalCode': '051531'},
     {'name': 'Newton Food Centre', 'postalCode': '229495'},
     {'name': 'Tiong Bahru Food Centre', 'postalCode': '168898'},
+    {'name': 'Golden Mile Food Centre', 'postalCode': '199583'},
+    {'name': 'Tekka Centre', 'postalCode': '210665'},
+    {'name': 'Newton Circus Food Centre', 'postalCode': '229495'},
+    {'name': 'Adam Food Centre', 'postalCode': '2289876'},
+    {'name': 'Old Aiport Road Food Centre', 'postalCode': '390051'},
+    {'name': 'East Coast Lagoon Food Village', 'postalCode': '468890'},
 // Add more hawker centres here
   ];
 
@@ -143,13 +148,17 @@ class _ExploreScreenState extends State<ExploreScreen> {
     setState(() {});
   }
 
+// Add a GlobalKey for the RefreshIndicator
+  final GlobalKey<RefreshIndicatorState> _refreshKey =
+      GlobalKey<RefreshIndicatorState>();
+
   Widget _buildHawkerCentreItem(Map<String, dynamic> hawkerCentreData) {
     String name = hawkerCentreData['name'] ?? '';
     String postalCode = hawkerCentreData['postalCode'] ?? '';
 
     return InkWell(
       onTap: () async {
-        debugPrint('Tapped on Hawker Centre: $name, Postal Code: $postalCode');
+        print('Tapped on Hawker Centre: $name, Postal Code: $postalCode');
 
         if (postalCode.isNotEmpty) {
           try {
@@ -161,19 +170,16 @@ class _ExploreScreenState extends State<ExploreScreen> {
               _hawkerStallsData = hawkerStallsData;
             });
           } catch (e) {
-            debugPrint('Error fetching hawker stalls data: $e');
+            print('Error fetching hawker stalls data: $e');
           }
         } else {
-          debugPrint('Invalid postalCode: $postalCode');
+          print('Invalid postalCode: $postalCode');
         }
       },
       child: Container(
         height: 250,
         margin: const EdgeInsets.only(
-          left: 10,
-          right: 10,
-          bottom: 20,
-        ), // Add a bottom margin of 20
+            left: 10, right: 10, bottom: 20), // Add a bottom margin of 20
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(30),
           color: Colors.yellow,
@@ -203,7 +209,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
   }
 
   Widget _buildHawkerStallsList(List<Map<String, dynamic>> hawkerStallsData) {
-    return SizedBox(
+    return Container(
       height: 200,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
@@ -223,6 +229,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
             rating: averageRating,
             reviews: totalReviews,
             onTap: () {
+// Implement the navigation to the HawkerStallScreen here
               Navigator.push(
                 context,
                 MaterialPageRoute(
@@ -301,12 +308,12 @@ class _ExploreScreenState extends State<ExploreScreen> {
     return InkWell(
       onTap: onTap,
       child: Container(
-        height: 400,
+        height: 400, // Add extra height to the blue container
         width: containerWidth,
         margin: const EdgeInsets.only(left: 20, right: 20),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(30),
-          color: const Color.fromARGB(255, 201, 201, 201),
+          color: const Color.fromARGB(255, 213, 213, 213),
           image: imageUrl != null && imageUrl.isNotEmpty
               ? DecorationImage(
                   fit: BoxFit.cover,
@@ -321,8 +328,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
               alignment: Alignment.bottomCenter,
               child: Padding(
                 padding: const EdgeInsets.only(
-                  bottom: 10,
-                ), // Add padding to the bottom
+                    bottom: 10), // Add padding to the bottom
                 child: Container(
                   height: 125, // Height of the smaller white container
                   width: containerWidth - (whiteContainerPadding * 2),
@@ -374,7 +380,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
       setState(() {});
       _hasRefreshedRecommendationsToday = true; // Set the flag to true
     } catch (e) {
-      debugPrint('Error fetching recommendations: $e');
+      print('Error fetching recommendations: $e');
     }
   }
 
@@ -396,16 +402,14 @@ class _ExploreScreenState extends State<ExploreScreen> {
             .get();
 
 // Add all hawker stall names from the current hawker centre's subcollection to the list
-        allHawkerStalls.addAll(
-          stallsSnapshot.docs.map((stallDoc) {
-            return stallDoc['name'] as String? ?? '';
-          }).toList(),
-        );
+        allHawkerStalls.addAll(stallsSnapshot.docs.map((stallDoc) {
+          return stallDoc['name'] as String? ?? '';
+        }).toList());
       }
 
       return allHawkerStalls;
     } catch (e) {
-      debugPrint('Error fetching hawker stall names: $e');
+      print('Error fetching hawker stall names: $e');
       return [];
     }
   }
@@ -418,9 +422,27 @@ class _ExploreScreenState extends State<ExploreScreen> {
         .toList(); // Take the first 5 hawker stalls after shuffling
   }
 
+  Future<void> _refreshData() async {
+// Reset the hawker centre data to the default
+    _setDefaultHawkerStallsData();
+
+// Fetch new random recommendations
+    await _refreshRecommendations();
+
+// Manually trigger a rebuild of the widget to update the UI
+    setState(() {});
+
+// Delay the indicator's dismiss to provide visual feedback
+    await Future.delayed(const Duration(seconds: 1));
+
+// Dismiss the refresh indicator
+    _refreshKey.currentState?.show(atTop: false);
+  }
+
   @override
   Widget build(BuildContext context) {
     AuthProvider ap = Provider.of<AuthProvider>(context, listen: false);
+
     return Scaffold(
       appBar: AppBar(
         elevation: 1,
@@ -445,122 +467,152 @@ class _ExploreScreenState extends State<ExploreScreen> {
           ],
         ),
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(16),
-              child: InkWell(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const SearchPage(),
+      body: RefreshIndicator(
+        key: _refreshKey, // Use the refresh key
+        onRefresh: () =>
+            _refreshData(), // Call the refresh method when pulled down
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(16),
+                child: InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const SearchPage(),
+                      ),
+                    );
+                  },
+                  child: Container(
+                    height: 40,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      color: Colors.grey[200],
+                      borderRadius: BorderRadius.circular(8),
                     ),
-                  );
-                },
-                child: Container(
-                  height: 40,
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    color: Colors.grey[200],
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                  padding: const EdgeInsets.symmetric(horizontal: 16),
-                  child: const Row(
-                    children: [
-                      Icon(Icons.search),
-                      SizedBox(width: 10),
-                      Text('Search...'),
-                    ],
+                    padding: const EdgeInsets.symmetric(horizontal: 16),
+                    child: const Row(
+                      children: [
+                        Icon(Icons.search),
+                        SizedBox(width: 10),
+                        Text('Search...'),
+                      ],
+                    ),
                   ),
                 ),
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const SizedBox(height: 25),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const SizedBox(height: 25),
 // The 'Near You' Text widget has been removed.
-                  SizedBox(
-                    height: 80,
-                    child: ListView.builder(
-                      scrollDirection: Axis.horizontal,
-                      itemCount: hawkerCentres.length,
-                      itemBuilder: (context, index) {
-                        return _buildHawkerCentreItem(hawkerCentres[index]);
-                      },
+                    SizedBox(
+                      height: 80,
+                      child: ListView.builder(
+                        scrollDirection: Axis.horizontal,
+                        itemCount: hawkerCentres.length,
+                        itemBuilder: (context, index) {
+                          return _buildHawkerCentreItem(hawkerCentres[index]);
+                        },
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-            ),
-            SizedBox(
-              height: 200,
-              child: _hawkerStallsData.isNotEmpty
-                  ? _buildHawkerStallsList(_hawkerStallsData)
-                  : Container(), // Show empty container when there are no hawker stalls data
-            ),
+              SizedBox(
+                height: 200,
+                child: _hawkerStallsData.isNotEmpty
+                    ? _buildHawkerStallsList(_hawkerStallsData)
+                    : Container(), // Show empty container when there are no hawker stalls data
+              ),
 
 // Add Recommendations Section
-            Padding(
-              padding: const EdgeInsets.all(16),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const Text(
-                    'Feeling Lucky?',
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
+              const SizedBox(height: 10),
+              Padding(
+                padding: const EdgeInsets.all(16),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Text(
+                      'Feeling Lucky?',
+                      style: TextStyle(
+                        fontSize: 17,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
-                  ),
-                  const SizedBox(height: 8),
-                  const Text(
-                    "Here are the 5 stalls you should try!",
-                    style: TextStyle(
-                      fontSize: 16,
+                    const Text(
+                      "Here are the 5 stalls you should try!",
+                      style: TextStyle(
+                        fontSize: 13,
+                      ),
                     ),
-                  ),
-                  const SizedBox(
-                    height: 16,
-                  ),
-                  SizedBox(
-                    height: 200,
-                    child: ListView.builder(
-                      scrollDirection: Axis.horizontal,
-                      itemCount: _randomHawkerStalls.length,
-                      itemBuilder: (context, index) {
-                        String stallName = _randomHawkerStalls[index];
-                        return InkWell(
-                          onTap: () {
+                    const SizedBox(height: 15),
+                    SizedBox(
+                      height: 200,
+                      child: ListView.builder(
+                        scrollDirection: Axis.horizontal,
+                        itemCount: _randomHawkerStalls.length,
+                        itemBuilder: (context, index) {
+                          String stallName = _randomHawkerStalls[index];
+                          Map<String, dynamic> stallData = _hawkerStallsData
+                              .firstWhere((data) => data['name'] == stallName,
+                                  orElse: () => {});
+
+                          return InkWell(
+                            onTap: () {
+                              if (stallData.isNotEmpty) {
 // Implement the navigation to the HawkerStallScreen here
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => HawkerStallScreen(
-                                  unitNumber: _hawkerStallsData[index]
-                                      ['unitNumber'],
-                                  postalCode: _hawkerStallsData[index]
-                                      ['postalCode'],
-                                ),
-                              ),
-                            );
-                          },
-                          child: _buildStallWidget(stallName),
-                        );
-                      },
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => HawkerStallScreen(
+                                      unitNumber: stallData['unitNumber'],
+                                      postalCode: stallData['postalCode'],
+                                    ),
+                                  ),
+                                );
+                              } else {
+                                print('Stall data not found for: $stallName');
+                              }
+                            },
+                            child: _buildStallWidget(
+                              stallName,
+                              imageUrl: stallData['imageUrl'],
+                              rating: stallData['averageRating'] ?? 0.0,
+                              reviews: stallData['totalReviews'] ?? 0,
+                            ),
+                          );
+                        },
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
+  }
+}
+
+class ExploreScreenNavigatorObserver extends NavigatorObserver {
+// This method is called whenever a new route is pushed on top of the navigator.
+  @override
+  void didPush(Route<dynamic> route, Route<dynamic>? previousRoute) {
+    super.didPush(route, previousRoute);
+// Check if the route being pushed is ExploreScreen and if the previous route is not ExploreScreen
+    if (route.settings.name == '/explore' &&
+        previousRoute?.settings.name != '/explore') {
+// Refresh the ExploreScreen by calling its refresh method
+      final exploreScreenState =
+          route.settings.arguments as _ExploreScreenState?;
+      exploreScreenState?._refreshData();
+    }
   }
 }
