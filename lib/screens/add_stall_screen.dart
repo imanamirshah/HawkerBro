@@ -183,204 +183,192 @@ class _AddStallScreenState extends State<AddStallScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return WillPopScope(
-      child: Scaffold(
-        appBar: AppBar(
-          leading: IconButton(
-            icon: Icon(Icons.arrow_back_ios_new),
-            onPressed: () {
-              Navigator.of(context).pop();
-            },
-          ),
-          title: const Text(
-            'Add a Hawker Stall',
-            style: TextStyle(fontWeight: FontWeight.bold),
-          ),
-          toolbarHeight: 65,
-          elevation: 1,
-          backgroundColor: Colors.white,
-          foregroundColor: Colors.black,
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text(
+          'Add a Hawker Stall',
+          style: TextStyle(fontWeight: FontWeight.bold),
         ),
-        body: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Form(
-            key: _formKey,
-            child: ListView(
-              padding: const EdgeInsets.all(16),
-              children: [
-                _buildImagesSection(),
-                const SizedBox(height: 5.0),
-                TextFormField(
-                  controller: _nameController,
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(
-                      borderSide: BorderSide.none,
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    filled: true,
-                    fillColor: Colors.grey[200],
-                    hintText: 'Stall Name',
+        toolbarHeight: 65,
+        elevation: 1,
+        backgroundColor: Colors.white,
+        foregroundColor: Colors.black,
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Form(
+          key: _formKey,
+          child: ListView(
+            padding: const EdgeInsets.all(16),
+            children: [
+              _buildImagesSection(),
+              const SizedBox(height: 5.0),
+              TextFormField(
+                controller: _nameController,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(
+                    borderSide: BorderSide.none,
+                    borderRadius: BorderRadius.circular(10),
                   ),
-                  validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return 'Please enter a stall name';
-                    }
-                    return null;
-                  },
+                  filled: true,
+                  fillColor: Colors.grey[200],
+                  hintText: 'Stall Name',
                 ),
-                const SizedBox(height: 5.0),
-                TextFormField(
-                  controller: _addressController,
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(
-                      borderSide: BorderSide.none,
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    filled: true,
-                    fillColor: Colors.grey[200],
-                    hintText: 'Address',
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please enter a stall name';
+                  }
+                  return null;
+                },
+              ),
+              const SizedBox(height: 5.0),
+              TextFormField(
+                controller: _addressController,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(
+                    borderSide: BorderSide.none,
+                    borderRadius: BorderRadius.circular(10),
                   ),
-                  validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return 'Please enter an address';
-                    }
-                    return null;
-                  },
+                  filled: true,
+                  fillColor: Colors.grey[200],
+                  hintText: 'Address',
                 ),
-                const SizedBox(height: 5.0),
-                TextFormField(
-                  controller: _unitNumberController,
-                  keyboardType: TextInputType.number,
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(
-                      borderSide: BorderSide.none,
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    filled: true,
-                    fillColor: Colors.grey[200],
-                    hintText: 'Unit Number',
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please enter an address';
+                  }
+                  return null;
+                },
+              ),
+              const SizedBox(height: 5.0),
+              TextFormField(
+                controller: _unitNumberController,
+                keyboardType: TextInputType.number,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(
+                    borderSide: BorderSide.none,
+                    borderRadius: BorderRadius.circular(10),
                   ),
-                  validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return 'Please enter a unit number';
-                    }
-                    return null;
-                  },
+                  filled: true,
+                  fillColor: Colors.grey[200],
+                  hintText: 'Unit Number',
                 ),
-                const SizedBox(height: 5.0),
-                TextFormField(
-                  controller: _postalCodeController,
-                  keyboardType: TextInputType.number,
-                  inputFormatters: <TextInputFormatter>[
-                    FilteringTextInputFormatter.digitsOnly,
-                    LengthLimitingTextInputFormatter(6),
-                  ],
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(
-                      borderSide: BorderSide.none,
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    filled: true,
-                    fillColor: Colors.grey[200],
-                    hintText: 'Postal Code',
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please enter a unit number';
+                  }
+                  return null;
+                },
+              ),
+              const SizedBox(height: 5.0),
+              TextFormField(
+                controller: _postalCodeController,
+                keyboardType: TextInputType.number,
+                inputFormatters: <TextInputFormatter>[
+                  FilteringTextInputFormatter.digitsOnly,
+                  LengthLimitingTextInputFormatter(6),
+                ],
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(
+                    borderSide: BorderSide.none,
+                    borderRadius: BorderRadius.circular(10),
                   ),
-                  validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return 'Please enter a postal code';
-                    } else if (value.length != 6) {
-                      return 'Please enter a valid 6-digit postal code';
-                    }
-                    return null;
-                  },
+                  filled: true,
+                  fillColor: Colors.grey[200],
+                  hintText: 'Postal Code',
                 ),
-                const SizedBox(height: 5.0),
-                TextFormField(
-                  controller: _openingHoursController,
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(
-                      borderSide: BorderSide.none,
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    filled: true,
-                    fillColor: Colors.grey[200],
-                    hintText: 'Opening Hours',
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please enter a postal code';
+                  } else if (value.length != 6) {
+                    return 'Please enter a valid 6-digit postal code';
+                  }
+                  return null;
+                },
+              ),
+              const SizedBox(height: 5.0),
+              TextFormField(
+                controller: _openingHoursController,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(
+                    borderSide: BorderSide.none,
+                    borderRadius: BorderRadius.circular(10),
                   ),
-                  validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return 'Please enter opening hours';
-                    }
-                    return null;
-                  },
+                  filled: true,
+                  fillColor: Colors.grey[200],
+                  hintText: 'Opening Hours',
                 ),
-                const SizedBox(height: 5.0),
-                TextFormField(
-                  controller: _phoneNumberController,
-                  keyboardType: TextInputType.phone,
-                  inputFormatters: <TextInputFormatter>[
-                    FilteringTextInputFormatter.digitsOnly,
-                    LengthLimitingTextInputFormatter(8),
-                  ],
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(
-                      borderSide: BorderSide.none,
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    filled: true,
-                    fillColor: Colors.grey[200],
-                    hintText: 'Phone Number',
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please enter opening hours';
+                  }
+                  return null;
+                },
+              ),
+              const SizedBox(height: 5.0),
+              TextFormField(
+                controller: _phoneNumberController,
+                keyboardType: TextInputType.phone,
+                inputFormatters: <TextInputFormatter>[
+                  FilteringTextInputFormatter.digitsOnly,
+                  LengthLimitingTextInputFormatter(8),
+                ],
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(
+                    borderSide: BorderSide.none,
+                    borderRadius: BorderRadius.circular(10),
                   ),
-                  validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return 'Please enter a phone number';
-                    } else if (value.length != 8) {
-                      return 'Please enter a valid 8-digit phone number';
-                    }
-                    return null;
-                  },
+                  filled: true,
+                  fillColor: Colors.grey[200],
+                  hintText: 'Phone Number',
                 ),
-                const SizedBox(height: 5.0),
-                TextFormField(
-                  controller: _bioController,
-                  maxLines: 3,
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(
-                      borderSide: BorderSide.none,
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    filled: true,
-                    fillColor: Colors.grey[200],
-                    hintText: 'Business Information',
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please enter a phone number';
+                  } else if (value.length != 8) {
+                    return 'Please enter a valid 8-digit phone number';
+                  }
+                  return null;
+                },
+              ),
+              const SizedBox(height: 5.0),
+              TextFormField(
+                controller: _bioController,
+                maxLines: 3,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(
+                    borderSide: BorderSide.none,
+                    borderRadius: BorderRadius.circular(10),
                   ),
-                  validator: (value) {
-                    if (value == null || value.isEmpty) {
-                      return 'Please enter a bio';
-                    }
-                    return null;
-                  },
+                  filled: true,
+                  fillColor: Colors.grey[200],
+                  hintText: 'Business Information',
                 ),
-                const SizedBox(height: 16.0),
-                ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.yellow[600],
-                    foregroundColor: Colors.black,
-                  ),
-                  onPressed: _submitForm,
-                  child: const Text(
-                    'Add Stall',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                    ),
+                validator: (value) {
+                  if (value == null || value.isEmpty) {
+                    return 'Please enter a bio';
+                  }
+                  return null;
+                },
+              ),
+              const SizedBox(height: 16.0),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.yellow[600],
+                  foregroundColor: Colors.black,
+                ),
+                onPressed: _submitForm,
+                child: const Text(
+                  'Add Stall',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),
-      onWillPop: () async {
-        Navigator.pop(context);
-        return false;
-      },
     );
   }
 }

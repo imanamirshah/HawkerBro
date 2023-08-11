@@ -12,8 +12,6 @@ import 'home_screen.dart';
 import 'register_page.dart';
 
 class LoginPage extends StatefulWidget {
-  // final void Function() onTap;
-
   const LoginPage({
     Key? key,
   }) : super(key: key);
@@ -25,36 +23,7 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
-
-  // Future<void> signUserIn() async {
-  //   showDialog(
-  //     context: context,
-  //     builder: (context) {
-  //       return const Center(
-  //         child: CircularProgressIndicator(),
-  //       );
-  //     },
-  //   );
-
-  //   try {
-  //     await FirebaseAuth.instance.signInWithEmailAndPassword(
-  //       email: emailController.text,
-  //       password: passwordController.text,
-  //     );
-  //     Navigator.pop(context); // Pop the loading circle dialog
-  //     Navigator.push(
-  //       context,
-  //       MaterialPageRoute(builder: (context) => const HomeScreen()),
-  //     );
-  //   } on FirebaseAuthException catch (e) {
-  //     Navigator.pop(context); // Pop the loading circle dialog
-  //     if (e.code == 'user-not-found') {
-  //       wrongEmailMessage();
-  //     } else if (e.code == 'wrong-password') {
-  //       wrongPasswordMessage();
-  //     }
-  //   }
-  // }
+  bool _isLoading = false; // Track loading state
 
   void signUserIn() async {
     String email = emailController.text.trim();
@@ -65,25 +34,16 @@ class _LoginPageState extends State<LoginPage> {
       return;
     }
 
-    showDialog(
-      context: context,
-      builder: (context) {
-        return const Center(
-          child: CircularProgressIndicator(),
-        );
-      },
-    );
+    setState(() {
+      _isLoading = true; // Show loading indicator
+    });
 
     try {
-      // Access the AuthProvider instance using Provider
       AuthProvider ap = Provider.of<AuthProvider>(context, listen: false);
 
-      // Call the signInWithEmailAndPassword method from the authProvider
       await ap.signInWithEmailAndPassword(email, password);
 
-      // Check if the sign-in was successful
       if (ap.isSignedIn) {
-        // Navigate to the home screen
         Navigator.push(
           context,
           MaterialPageRoute(
@@ -91,15 +51,23 @@ class _LoginPageState extends State<LoginPage> {
           ),
         );
       } else {
-        // Show an error message indicating that the sign-in failed
+        showSnackBar(
+          context,
+          "Email or password is incorrect. Please try again.",
+        );
       }
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found' || e.code == 'wrong-password') {
         showSnackBar(
           context,
-          "Email or password in incorrect. Please try again.",
+          "Email or password is incorrect. Please try again.",
         );
       }
+    } finally {
+      setState(() {
+        _isLoading =
+            false; // Hide loading indicator in both success and failure cases
+      });
     }
   }
 
@@ -130,13 +98,6 @@ class _LoginPageState extends State<LoginPage> {
                     Image.asset(
                       "assets/hawkerbro.png",
                     ),
-                    // Text(
-                    //   'Welcome back!',
-                    //   style: TextStyle(
-                    //     color: Colors.grey[700],
-                    //     fontSize: 16,
-                    //   ),
-                    // ),
                     const SizedBox(height: 25),
                     MyTextField(
                       controller: emailController,
@@ -174,14 +135,17 @@ class _LoginPageState extends State<LoginPage> {
                       ],
                     ),
                     const SizedBox(height: 15),
-                    SizedBox(
-                      width: double.infinity,
-                      height: 50,
-                      child: CustomButton(
-                        onPressed: signUserIn,
-                        text: 'Sign In',
-                      ),
-                    ),
+                    // Loading indicator based on _isLoading state
+                    _isLoading
+                        ? const CircularProgressIndicator()
+                        : SizedBox(
+                            width: double.infinity,
+                            height: 50,
+                            child: CustomButton(
+                              onPressed: signUserIn,
+                              text: 'Sign In',
+                            ),
+                          ),
                     const SizedBox(height: 20),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,

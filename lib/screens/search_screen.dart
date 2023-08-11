@@ -125,7 +125,7 @@ class _SearchPageState extends State<SearchPage> {
     }
   }
 
-  void _clearSearchHistory() {
+  void clearSearchHistory() {
     setState(() {
       searchHistory.clear();
       saveSearchHistory();
@@ -187,7 +187,7 @@ class _SearchPageState extends State<SearchPage> {
                         ),
                         if (searchHistory.isNotEmpty)
                           TextButton(
-                            onPressed: _clearSearchHistory,
+                            onPressed: clearSearchHistory,
                             child: const Text(
                               'Clear',
                               style: TextStyle(

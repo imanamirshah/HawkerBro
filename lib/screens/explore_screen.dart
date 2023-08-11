@@ -199,7 +199,6 @@ class _ExploreScreenState extends State<ExploreScreen> {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(30),
           color: Colors.yellow,
-// No image associated with the hawker centre
         ),
         child: Center(
           child: Padding(
@@ -215,7 +214,6 @@ class _ExploreScreenState extends State<ExploreScreen> {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-// No stars and reviews information displayed
               ],
             ),
           ),
@@ -262,7 +260,6 @@ class _ExploreScreenState extends State<ExploreScreen> {
     );
   }
 
-// Your _buildStallWidget function
   Widget _buildStallWidget(
     String stallName, {
     double rating = 0.0,
@@ -395,7 +392,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
 
 // Update the UI by calling setState()
       setState(() {});
-      _hasRefreshedRecommendationsToday = true; // Set the flag to true
+      _hasRefreshedRecommendationsToday = true;
     } catch (e) {
       print('Error fetching recommendations: $e');
     }
@@ -529,7 +526,6 @@ class _ExploreScreenState extends State<ExploreScreen> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const SizedBox(height: 25),
-// The 'Near You' Text widget has been removed.
                     SizedBox(
                       height: 80,
                       child: ListView.builder(
@@ -547,7 +543,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
                 height: 200,
                 child: _hawkerStallsData.isNotEmpty
                     ? _buildHawkerStallsList(_hawkerStallsData)
-                    : Container(), // Show empty container when there are no hawker stalls data
+                    : Container(),
               ),
 
 // Add Recommendations Section
@@ -587,7 +583,6 @@ class _ExploreScreenState extends State<ExploreScreen> {
                           return InkWell(
                             onTap: () {
                               if (stallData.isNotEmpty) {
-// Implement the navigation to the HawkerStallScreen here
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
@@ -623,14 +618,11 @@ class _ExploreScreenState extends State<ExploreScreen> {
 }
 
 class ExploreScreenNavigatorObserver extends NavigatorObserver {
-// This method is called whenever a new route is pushed on top of the navigator.
   @override
   void didPush(Route<dynamic> route, Route<dynamic>? previousRoute) {
     super.didPush(route, previousRoute);
-// Check if the route being pushed is ExploreScreen and if the previous route is not ExploreScreen
     if (route.settings.name == '/explore' &&
         previousRoute?.settings.name != '/explore') {
-// Refresh the ExploreScreen by calling its refresh method
       final exploreScreenState =
           route.settings.arguments as _ExploreScreenState?;
       exploreScreenState?._refreshData();
